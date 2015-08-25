@@ -80,3 +80,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias off="sudo poweroff"
 alias reboot_and_sfck="sudo shutdown -rF now"
+alias lsb="ls -1 | sed -e 's/\..*$//'"
