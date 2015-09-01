@@ -53,7 +53,7 @@ ZSH_THEME="robbyrussell"
 plugins=(git common-aliases fasd rsync debian)
 
 # User configuration
-export PATH=~/bin:~/:bin/newvt:$PATH
+export PATH=/media/e/virtual_tours/.archives/bin/newvt:~/bin:~/:bin/newvt:$PATH
 
 source $ZSH/oh-my-zsh.sh
 
