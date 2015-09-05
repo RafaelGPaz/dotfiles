@@ -4,3 +4,6 @@
 [submodule "newvt"]
 	path = newvt
 	url = git@github.com:rafaelgp/newvt.git
+[submodule "elearning"]
+	path = elearning
+	url = git@github.com:rafaelgp/elearning.git
