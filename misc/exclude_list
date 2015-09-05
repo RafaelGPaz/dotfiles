@@ -1,0 +1,36 @@
+$RECYCLE.BIN
+System Volume Information/
+Documents/mail_thunderbird/
+AppData/Roaming/Thunderbird/
+Downloads/
+Temp/
+temp/
+*.tmp
+cache/
+Cache/
+Dropbox/
+Temporary Internet Files/
+My Music
+My Pictures
+My Videos
+History
+Application Data
+Cookies
+Local Settings
+My Documents
+NetHood
+PrintHood
+Recent
+SendTo
+Start Menu
+Templates
+NTUSER.DAT*
+ntuser.dat*
+*.DAT
+*.dat
+chc.*
+Microsoft/
+Microsoft_Corporation/
+*.lock
+lockfile
+Debian/

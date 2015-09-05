@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano version="1.0.8.14" onstart="start(pano1);">
+
+<!--<plugin url="krpano/plugins/options.swf" keep="true" />-->
+<!--<plugin url="krpano/plugins/editor.swf"  keep="true" />-->
+<!--<include url="coord_finder/coord_finder.xml"/>-->
+<!--<events name="hs_coordinates" keep="true" onpreviewcomplete="run_hs_editor();" />    -->

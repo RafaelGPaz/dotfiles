@@ -1,0 +1,130 @@
+
+<!--{{{--> HOTSPOTS  
+
+<!-- Add a hotspot: hs(up, pano1, 0, 0, 0, 0); -->
+
+<textstyle name="hs_style"
+           alpha="1"
+           background="true"
+           backgroundcolor="0x000000"
+           border="true"
+           bordercolor="0xFFFFFF" 
+           bold="true"
+           font="Arial"
+           fontsize="14"
+           origin="cursor" 
+           textcolor="0xFFFFFF"
+           xoffset="0" 
+           yoffset="-5"
+           italic="true"
+/>
+
+<data name="hotspot_css">	
+	p { color:#ffffff; 
+		font-family:verdana; 
+		font-weight:bold; 
+		font-size:12; 			  
+		text-align:center;
+		margin-left:10;
+		margin-right:10;
+	}	
+</data>	
+
+<data name="tooltip">	
+	<p>Click here to explore</p>	
+</data>	
+
+<action name="loadnewpano">
+    lookto(%5,%6,50,smooth(100,20,50)); 
+    activatepano(%2, scene));
+</action>
+
+<action name="up">
+	set(hotspot[%2_arrow].rotate,0);
+	set(hotspot[%2_arrow].ox,-50);
+</action>
+
+<action name="down">
+	set(hotspot[%2_arrow].rotate,180);
+	set(hotspot[%2_arrow].ox,50);
+</action>
+
+<action name="right">
+	set(hotspot[%2_arrow].rotate,90);
+	set(hotspot[%2_arrow].ox,0);
+	set(hotspot[%2_arrow].oy,50);
+</action>
+
+<action name="left">
+	set(hotspot[%2_arrow].rotate,-90);
+	set(hotspot[%2_arrow].ox,0);
+	set(hotspot[%2_arrow].oy,-50);
+</action>
+
+<action name="hs">		
+addhotspot(%2_arrow);
+	set(hotspot[%2_arrow].alpha,0.8);
+	set(hotspot[%2_arrow].ath,%3);
+	set(hotspot[%2_arrow].atv,%4);
+	set(hotspot[%2_arrow].children,false);
+	set(hotspot[%2_arrow].edge,center);
+	set(hotspot[%2_arrow].handcursor,true);
+	set(hotspot[%2_arrow].height,35);
+	set(hotspot[%2_arrow].keep,false);	
+	set(hotspot[%2_arrow].onclick,action(loadnewpano, %1, %2, %3, %4, %5, %6));
+	set(hotspot[%2_arrow].onhover,showtext(Click here to explore););
+	set(hotspot[%2_arrow].url,%SWFPATH%/../images/arrow.png);
+	set(hotspot[%2_arrow].width,35);
+	set(hotspot[%2_arrow].zorder,10);
+        	
+addhotspot(%2_hotspot_bg);
+	set(hotspot[%2_hotspot_bg].alpha,0.8);
+	set(hotspot[%2_hotspot_bg].ath,%3);
+	set(hotspot[%2_hotspot_bg].atv,%4);
+	set(hotspot[%2_hotspot_bg].background,true);
+	set(hotspot[%2_hotspot_bg].backgroundcolor,0x000000);
+	set(hotspot[%2_hotspot_bg].bordercolor,0xffffff);
+	set(hotspot[%2_hotspot_bg].borderwidth,1);
+	set(hotspot[%2_hotspot_bg].children,false);
+	set(hotspot[%2_hotspot_bg].edge,center);
+	set(hotspot[%2_hotspot_bg].height,50);
+	set(hotspot[%2_hotspot_bg].handcursor,true);
+	set(hotspot[%2_hotspot_bg].keep,false);	
+	set(hotspot[%2_hotspot_bg].onclick,action(loadnewpano, %1, %2, %3, %4, %5, %6));
+	set(hotspot[%2_hotspot_bg].onhover,showtext(Click here to explore););
+	set(hotspot[%2_hotspot_bg].roundedge,5);
+	set(hotspot[%2_hotspot_bg].selectable,false);
+	set(hotspot[%2_hotspot_bg].url,%SWFPATH%/plugins/textfield.swf);
+	set(hotspot[%2_hotspot_bg].width,150);
+	set(hotspot[%2_hotspot_bg].zorder,5);
+
+addhotspot(%2_hotspot);
+	set(hotspot[%2_hotspot].alpha,0.8);
+	set(hotspot[%2_hotspot].ath,%3);
+	set(hotspot[%2_hotspot].atv,%4);
+	set(hotspot[%2_hotspot].autosize,center);
+	set(hotspot[%2_hotspot].background,false);
+	set(hotspot[%2_hotspot].children,false);
+	set(hotspot[%2_hotspot].css,data:hotspot_css);
+	set(hotspot[%2_hotspot].edge,center);
+	set(hotspot[%2_hotspot].handcursor,true);
+	set(hotspot[%2_hotspot].height,40);
+	set(hotspot[%2_hotspot].html,);
+	set(hotspot[%2_hotspot].keep,false);
+	set(hotspot[%2_hotspot].onclick,action(loadnewpano, %1, %2, %3, %4, %5, %6));
+	set(hotspot[%2_hotspot].onhover,showtext(Click here to explore););
+	set(hotspot[%2_hotspot].ox,19);
+	set(hotspot[%2_hotspot].oy,0);
+	set(hotspot[%2_hotspot].selectable,false);
+	set(hotspot[%2_hotspot].url,%SWFPATH%/plugins/textfield.swf);
+	set(hotspot[%2_hotspot].width,115);
+	set(hotspot[%2_hotspot].wordwrap,true);
+	set(hotspot[%2_hotspot].zorder,10);
+    
+    txtadd(hs_name,'[p]',get(data[%2].content),'[/p]');
+    set(hotspot[%2_hotspot].html, get(hs_name));
+
+action(%1, %1, %2); 
+
+</action>
+<!--}}}-->

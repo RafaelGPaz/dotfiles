@@ -1,0 +1,25 @@
+<!--{{{ INSTRUCTIONS -->
+
+<action name="hide_instructions">
+    tween(plugin[instructions].alpha,0,0.3,easeoutquad,wait);
+    set(plugin[instructions].visible,0);
+    delayedcall(2,if(plugin[instructions].visible==false, removeplugin(instructions)));
+</action>
+
+<plugin name="instructions"
+    align="centertop"
+    altonloaded="if(isphone, mul(scale,2));"
+    alpha="1"
+    crop="0|0|230|135"
+    handcursor="true"
+    keep="true"
+    onclick="hide_instructions();"
+    onover="hide_instructions();"
+    url="%HTMLPATH%/files/images/image_set.png"
+    alturl="%HTMLPATH%/files/images/image_set_tablet.png"
+    visible="true"
+    x="0"
+    y="200"
+    zorder="10"
+    />
+<!--}}}-->

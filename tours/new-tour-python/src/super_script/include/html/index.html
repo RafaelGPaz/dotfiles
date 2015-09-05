@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<html lang="en">
+<head>
+	<title>Tourvista virtual tour</title>
+	<meta name="author" content="TourVista, Virtual Tour and panoramic photography www.tourvista.co.uk"/>
+	<meta name="copyright" content="TourVista"/>
+	<meta name="keywords" content="virtualtour, virtual tour, flash, 360 degrees, TourVista"/>
+	<meta name="description" content="Virtual Tour created by www.tourvista.co.uk"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<style type="text/css">
+		body { font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000000; background-color: #000000; margin: 0; padding: 0; text-align: center;			} 
+		* html, * html body { overflow: hidden; }
+		html, body, #pano { height:100%; }
+		a { color: #AAAAAA; text-decoration: underline; }           
+		a:hover { color: #FFFFFF; text-decoration: underline; } 
+		#align_centre { width: 20%; float: left; margin: 20% 40% 0 40%; background-color: #FFFFFF; border: 2px solid #FF0000; }
+		/*#pano{height:500px; width:670px;}*/
+	</style>
+</head>
+<body> 
+	<div id="pano"> 
+		<noscript> 
+			<div id="align_centre"> <br/> 
+				<b>Attention:</b> <br/> 
+				<br/> 
+				Javascript is not activated. <br/> 
+				<br/> 
+				Please activate it to see the virtual tour <br/> 
+				<br/> 
+			</div> <!-- end of align_centre --> 
+		</noscript> 
+	</div> <!-- end of pano --> 
+	<script type="text/javascript" src="files/krpano/swfkrpano.js"></script>
+	<script type="text/javascript" src="files/krpano/swfaddress.js"></script>
+	<script type="text/javascript">
+		var viewer = createPanoViewer({swf:"files/krpano/krpano.swf", id:"krpanoSWFObject", target:"pano"});
+      //viewer.useHTML5("always");
+      if( viewer.isDevice("iPhone|iPod|iPad") )
+      {
+			viewer.addVariable("xml", "files/main_mac.xml");
+			viewer.addVariable("showErrors", "false");  
+			viewer.embed();
+      }
+      if( viewer.isDevice("Android") )
+      {
+			viewer.addVariable("xml", "files/main_android.xml");           
+         viewer.addVariable("showErrors", "false");  
+         viewer.embed();
+      }
+      else
+      {
+      	viewer.addVariable("xml", "files/main.xml");           
+         viewer.addVariable("showErrors", "false");  
+         viewer.embed();
+		}	
+	</script> 
+</body>
+</html>
