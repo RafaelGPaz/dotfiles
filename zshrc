@@ -84,3 +84,13 @@ alias reboot_and_sfck="sudo shutdown -rF now"
 alias lsb="ls -1 | sed -e 's/\..*$//'"
 alias rmgf="rm -f /media/c/Users/Rafael/Downloads/GForces\ 360\ Makes\ and\ Models\ \(Responses\)\ -\ Worksheet.csv"
 alias sz="source ~/.zshrc && echo '.zshrc sourced'"
+
+alias dbox='python ~/bin/dropbox.py'
+alias mountMoto='jmtpfs -o allow_other /media/moto/'
+alias sortphotos='python ~/bin/sortphotos/src/sortphotos.py'
+alias sortpictures='sortphotos ~/Pictures/import ~/Pictures/ -r --rename %Y_%m_%d_%H%M%S --ignore-tags EXIF:CreateDate'
+alias sortvideos='sortphotos ~/Videos/import ~/Videos/ -r --rename %Y_%m_%d_%H%M%S --ignore-tags EXIF:CreateDate'
+alias findallbutjpg='find . -type f ! -iname *jpg'
+alias backup_img='rsync -zvra --delete /home/rafael/ /media/rafael/Life/life_img/'
+alias backup_plus='rsync -zvra /home/rafael/ /media/rafael/Life/life_plus/'
+alias backup_all='backup_img && backup_plus'
