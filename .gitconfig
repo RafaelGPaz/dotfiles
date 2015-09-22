@@ -58,7 +58,7 @@
 [diff]
 	tool = diff3
 [include]
-  path = ~/.gitconfig.local
+	path = ~/.gitconfig.local
 [push]
 	default = simple
 [web]
