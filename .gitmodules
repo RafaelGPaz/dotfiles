@@ -8,5 +8,5 @@
 	path = elearning
 	url = git@github.com:rafaelgp/elearning.git
 [submodule "misc/clustergit"]
-	path = misc/clustergit
+	path = clustergit
 	url = git@github.com:mnagel/clustergit.git
