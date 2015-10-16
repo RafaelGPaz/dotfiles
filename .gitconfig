@@ -61,6 +61,7 @@
 	fontui = -family Hack -size -12 -weight normal -slant roman -underline 0 -overstrike 0
 	fontdiff = -family Hack -size -12 -weight normal -slant roman -underline 0 -overstrike 0
 	tabsize = 4
+	recentrepo = /media/sf_E_DRIVE/virtual_tours/gforces/cars/.src
 [include]
 	path = ~/.gitconfig.local
 [push]
