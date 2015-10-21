@@ -82,7 +82,7 @@ source $ZSH/oh-my-zsh.sh
 alias off="sudo poweroff"
 alias reboot_and_sfck="sudo shutdown -rF now"
 alias lsb="ls -1 | sed -e 's/\..*$//'"
-alias rmgf="rm -f /media/c/Users/Rafael/Downloads/GForces\ 360\ Makes\ and\ Models\ \(Responses\)\ -\ Worksheet.csv"
+alias rmgf="rm -f /media/c/Users/Rafael/Downloads/Assets-GForces%20360%20Makes%20and%20Models%20(Responses).xlsx"
 alias sz="source ~/.zshrc && echo '.zshrc sourced'"
 
 alias dbox='python ~/bin/dropbox.py'
