@@ -95,4 +95,4 @@ alias backup_img='rsync -zvra --delete /home/rafael/ /media/rafael/Life/life_img
 alias backup_plus='rsync -zvra /home/rafael/ /media/rafael/Life/life_plus/'
 alias backup_virtualbox='rsync -zvra --delete --exclude .cache --exclude .emacs.d /home/rafael/ /media/rafael/Elements/home_debian/'
 alias backup_all='backup_img && backup_plus'
-alias clustergit='~/bin/clustergit/clustergit --recursive'
+alias clustergit='~/bin/clustergit/clustergit --recursive -e .cache/'
