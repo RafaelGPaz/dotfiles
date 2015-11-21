@@ -4,9 +4,11 @@
 [submodule "newvt"]
 	path = newvt
 	url = git@github.com:rafaelgp/newvt.git
+	branch = master
 [submodule "elearning"]
 	path = elearning
 	url = git@github.com:rafaelgp/elearning.git
+	branch = master
 [submodule "misc/clustergit"]
 	path = clustergit
 	url = git@github.com:mnagel/clustergit.git
