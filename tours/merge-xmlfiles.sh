@@ -23,7 +23,7 @@ for tour in $(find ./* -maxdepth 0 -type d ! -iname "shared" ! -iname ".*" ) ; d
     printf "[ OK ] Plugins\n"
     cat $tour/files/plugins/*.xml >> $tourxml
     printf "[ OK ] Content\n"
-    cat $tour/files/content/index.xml >> $tourxml
+    cat $tour/files/content/*.xml >> $tourxml
     printf "[ OK ] Include\n"
     if [ -d "./shared" ]; then
         cat ./shared/include/index.xml >> $tourxml
