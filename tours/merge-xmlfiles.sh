@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Description: merges all the XML files inside ./shared/include/*/index.xml
 # and each tour's 'content/*.xml' and 'scenes/index.xml'
@@ -6,25 +6,33 @@
 
 krpano_version="1.18"
 
+if [ ! -d /lib/lsb/init-functions ]; then
+    source /lib/lsb/init-functions
+fi
+
 # Merge all the files in 'shared/include'
 if [ -d "./shared" ]; then
+    log_action_begin_msg $"Merge include"
     includexml="./shared/include/index.xml"
-    printf "[ OK ] Merge include\n"
     > $includexml
     for include_files in $(find ./shared/include/*/*.xml -maxdepth 1 -type f ); do
         cat $include_files >> $includexml
     done
+    log_action_end_msg $?
 fi
 
 for tour in $(find ./* -maxdepth 0 -type d ! -iname "shared" ! -iname ".*" ) ; do
-    printf "Merging $tour ...\n"
+    log_action_msg $"Tour: $(basename $tour)"
+    # printf "Merging $tour ...\n"
     tourxml="$tour/files/tour.xml"
     > $tourxml
-    printf "[ OK ] Plugins\n"
+    log_action_begin_msg $"Merge plugins"
     cat $tour/files/plugins/*.xml >> $tourxml
-    printf "[ OK ] Content\n"
+    log_action_end_msg $?
+    log_action_begin_msg $"Merge content"
     cat $tour/files/content/*.xml >> $tourxml
-    printf "[ OK ] Include\n"
+    log_action_end_msg $?
+    log_action_begin_msg $"Merge include"
     if [ -d "./shared" ]; then
         cat ./shared/include/index.xml >> $tourxml
     else
@@ -32,44 +40,33 @@ for tour in $(find ./* -maxdepth 0 -type d ! -iname "shared" ! -iname ".*" ) ; d
             cat $includefolder/*.xml >> $tourxml
         done
     fi
-    printf "[ OK ] Scenes\n"
+    log_action_end_msg $?
+    log_action_begin_msg $"Merge scenes"
     if [ -f "$tour/files/scenes/index.xml" ]; then
         cat $tour/files/scenes/index.xml >> $tourxml
     else
         cat $tour/files/scenes/*.xml >> $tourxml
     fi
+    log_action_end_msg $?
 
     # Clean up
-    printf "[ OK ] Cleanup\n"
-    # Delete empty lines
-    sed -i '/^$/d' $tourxml
-    # Delete commented lines
-    sed -i '/-->/d' $tourxml
-    # Delete indentation
-    sed -i -r 's/^[[:blank:]]+//g' $tourxml
-    # Delete empty spaces around any = signs
-    sed -i 's/\ *=\ */=/g' $tourxml
+    log_action_begin_msg $"Cleanup"
+    tidy -modify --hide-comments yes -wrap 0 -quiet -xml ./mba/files/tour.xml
+    log_action_end_msg $?
 
+    log_action_begin_msg $"Remove tags"
     # Remove all tags
-    printf "[ OK ] Remove tags\n"
     sed -i '/^<?xml/d' $tourxml
     sed -i '/^<krpano/d' $tourxml
     sed -i '/^<\/krpano/d' $tourxml
+    log_action_end_msg $?
 
     # Add krpano tags at the beginning of tour.xml
-    printf "[ OK ] Add tags\n"
+    log_action_begin_msg $"Add tags"
     sed -i "1i<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<krpano version=\"$krpano_version\" onstart=\"startup();\" showerrors=\"false\">" $tourxml
     # Add closing krpano tag at the end of tour.xml and tour_clean.xml
     printf "</krpano>\n" >> $tourxml
-
-    # Concatenate all lines
-    # printf "[ OK ] Minify\n"
-    # cat $tourxml | while read line; do
-    #     echo -n "${line} "
-    # done > $tour/files/tour-temp.xml
-
-    # mv $tour/files/tour-temp.xml $tourxml
+    log_action_end_msg $?
 
 done
-
-printf "[DONE]\n"
+log_action_end_msg $?
