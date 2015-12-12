@@ -51,7 +51,7 @@ for tour in $(find ./* -maxdepth 0 -type d ! -iname "shared" ! -iname ".*" ) ; d
 
     # Clean up
     log_action_begin_msg $"Cleanup"
-    tidy -modify --hide-comments yes -wrap 0 -quiet -xml ./mba/files/tour.xml
+    tidy -modify --hide-comments yes -wrap 0 -quiet -xml $tour/files/tour.xml
     log_action_end_msg $?
 
     log_action_begin_msg $"Remove tags"
