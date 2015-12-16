@@ -38,7 +38,7 @@ for tour in $(find ./* -maxdepth 0 -type d ! -iname "shared" ! -iname ".*" ) ; d
     if [ -d "./shared" ]; then
         cat ./shared/include/index.xml >> $tourxml
     else
-        for includefolder in $(find $tour/files/include/* -maxdepth 0 -type d) ; do
+        for includefolder in $(find $tour/files/include/* -maxdepth 0 -type d ! -iname "editor_and_options") ; do
             cat $includefolder/*.xml >> $tourxml
         done
     fi
