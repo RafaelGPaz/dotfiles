@@ -26,10 +26,18 @@ for tour in $(find ./* -maxdepth 0 -type d ! -iname "shared" ! -iname ".*" ) ; d
     # printf "Merging $tour ...\n"
     tourxml="$tour/files/tour.xml"
     > $tourxml
-    if [[ $(find $tour/files/plugins/* -maxdepth 0 -type f -name *.xml) ]]; then
-        log_action_begin_msg $"Merge plugins"
-        cat $tour/files/plugins/*.xml >> $tourxml
-        log_action_end_msg $?
+    if [ -d "./shared" ]; then
+        if [[ $(find ./shared/plugins/*.xml -maxdepth 0) ]]; then
+            log_action_begin_msg $"Merge plugins"
+            cat ./shared/plugins/*.xml >> $tourxml
+            log_action_end_msg $?
+        fi
+    else
+        if [[ $(find $tour/files/plugins/* -maxdepth 0 -type f -name *.xml) ]]; then
+            log_action_begin_msg $"Merge plugins"
+            cat $tour/files/plugins/*.xml >> $tourxml
+            log_action_end_msg $?
+        fi
     fi
     log_action_begin_msg $"Merge content"
     cat $tour/files/content/*.xml >> $tourxml
