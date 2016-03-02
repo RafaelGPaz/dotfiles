@@ -53,8 +53,6 @@ ZSH_THEME="robbyrussell"
 plugins=(git common-aliases fasd rsync debian)
 
 # User configuration
-export PATH=~/bin/gforces:~/bin/misc:~/bin/newvt:~/bin/tours:$PATH
-
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
