@@ -37,7 +37,7 @@ def main():
                 os.remove(filePath)
         for dirPath in glob.glob(os.path.join(root, "output")):
             if os.path.isdir:
-                os.rmdir(dirPath)
+                shutil.rmtree(dirPath)
 
     # Check if the directory containing the panos is empty
     if not os.listdir(panosdir):
