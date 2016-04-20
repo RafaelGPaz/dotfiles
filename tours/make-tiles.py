@@ -88,22 +88,29 @@ def main():
         krconfig = '-config=' + krdir + '/krpano_conf/templates/tv_tiles_for_cars_ipad.config'
         kr = [krpath, "makepano", krconfig ,car]
         FNULL = open(os.devnull, 'w') # Run krpano silently
-        # Visualiser car
+        # Special projects
         if "scene_" in tourbasename or parentdir == 'hr_owen':
             scenesdir = os.path.join(carbasename, "files\\scenes")
             tilesdir = os.path.join(scenesdir, carbasename)
             outputdir = panosdir + carbasename + '\\output'
             outputtilesdir = outputdir + '\\scenes\\' + tourbasename
             outputxmlfile = outputdir + "\\" + tourbasename + '.xml'
-            replaceorigin = 'scenes/' + tourbasename
+            # HROWEN cars
             if parentdir == 'hr_owen':
+                replaceorigin = 'scenes/' + tourbasename
                 replacedest = '%SWFPATH%/../../' + carbasename + '/files/scenes/' + tourbasename
-            else:
+            # Visualiser V10
+            elif os.path.exists('./shared/'):
+                replaceorigin = 'scenes/' + tourbasename
                 replacedest = '%SWFPATH%/../' + carbasename + '/files/scenes/' + tourbasename
+            # Scene Variation cars
+            else:
+                replaceorigin = 'scenes/' + tourbasename
+                replacedest = '%CURRENTXML%/scenes/' + tourbasename
             tilesdir = carbasename + '\\files\\scenes\\' + tourbasename
             xmlfile = carbasename + '\\files\\scenes\\' + tourbasename + '.xml'
             message = carbasename + '/' + tourbasename
-            # Normal car
+        # Normal car
         else:
             scenesdir = os.path.join(tourbasename, "files\\scenes")
             tilesdir = os.path.join(scenesdir, "tiles")
@@ -111,7 +118,10 @@ def main():
             outputtilesdir = outputdir + '\\scenes\\' + tourbasename
             outputxmlfile = outputdir + '\\' + tourbasename + '.xml'
             replaceorigin = 'scenes/' + tourbasename
-            replacedest = '%SWFPATH%/../' + tourbasename + '/files/scenes/tiles'
+            if os.path.exists('./shared/'):
+                replacedest = '%SWFPATH%/../' + tourbasename + '/files/scenes/tiles'
+            else:
+                replacedest = '%CURRENTXML%/scenes/tiles'
             tilesdir = tourbasename + '\\files\\scenes\\tiles'
             xmlfile = tourbasename + '\\files\\scenes\\scene.xml'
             message = tourbasename
