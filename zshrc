@@ -95,3 +95,4 @@ alias backup_virtualbox='rsync -zvra --delete --exclude .cache --exclude .emacs.
 alias backup_all='backup_img && backup_plus'
 alias clustergit='~/bin/clustergit/clustergit --recursive -e .cache/'
 alias python='python3'
+alias blog='pelican -s /media/e/websites/paralaxvirtualtours.co.uk/pelican/pelicanconf.py'
