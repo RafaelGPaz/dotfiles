@@ -5,7 +5,7 @@ BACKUPFILETEMP='/var/www/temp_moodledata.tar.gz'
 SOURCEDIR='/var/www/moodledata/'
 
 # Rename backup file
-if [ -d $BACKUPFILE ]; then
+if [ -f $BACKUPFILE ]; then
     mv $BACKUPFILE $BACKUPFILETEMP
 fi
 # Run backup. Delete temp copy if succeded
