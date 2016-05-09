@@ -55,6 +55,8 @@ def main():
                 allitems.append(subitem)
         if 'output' in item:
             cardirs.remove('output')
+        if 'panos' in item:
+            cardirs.remove('panos')
 
     # Check there aren't duplicated items
     duplicates = []
