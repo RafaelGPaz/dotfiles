@@ -54,9 +54,7 @@ def main():
             for subitem in subtours:
                 allitems.append(subitem)
         if 'output' in item:
-            cardirs.remove('output')
-        if 'panos' in item:
-            cardirs.remove('panos')
+            allitems.remove('output')
 
     # Check there aren't duplicated items
     duplicates = []
@@ -133,7 +131,7 @@ def main():
         else:
             logging.info('[    ] Making tiles for: ' + message)
             # Create folder structure
-            mkdirif(carbasename)
+            mkdirif(tourbasename)
             mkdirif(filesdir)
             mkdirif(scenesdir)
 
