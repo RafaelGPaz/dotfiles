@@ -8,7 +8,7 @@ if [ -f $BACKUPFILE ]; then
     rm -f $BACKUPFILE
 fi
 # Run backup. Delete temp copy if succeded
-tar -cpzfP $BACKUPFILE $SOURCEDIR
+tar cpzfP $BACKUPFILE $SOURCEDIR
 # All OK
 exit 0
 
