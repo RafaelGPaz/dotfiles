@@ -1,15 +1,23 @@
 #!/usr/bin/env bash
 
-BACKUPFILE='/var/www/moodledata.tar.gz'
-SOURCEDIR='/var/www/moodledata/'
+BACKUPFILE1='/var/www/moodledata.tar.gz'
+SOURCEDIR1='/var/www/moodledata/'
+BACKUPFILE2='/var/www/360certified.tar.gz'
+SOURCEDIR2='/var/www/360certified.co.uk/'
 
-# Delete previous backup file
-if [ -f $BACKUPFILE ]; then
-    rm -f $BACKUPFILE
+# 1. Delete previous backup file
+# 2. Backup directory
+
+if [ -f $BACKUPFILE1 ]; then
+    rm -f $BACKUPFILE1
 fi
-# Run backup. Delete temp copy if succeded
-tar cpzfP $BACKUPFILE $SOURCEDIR
-# All OK
+tar cpzfP $BACKUPFILE1 $SOURCEDIR1
+
+if [ -f $BACKUPFILE2 ]; then
+    rm -f $BACKUPFILE2
+fi
+tar cpzfP $BACKUPFILE2 $SOURCEDIR2
+
 exit 0
 
 # Run backup monthly on the first day at midnight
