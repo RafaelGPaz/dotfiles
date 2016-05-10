@@ -1,15 +1,14 @@
 #!/usr/bin/env bash
 
 BACKUPFILE='/var/www/moodledata.tar.gz'
-BACKUPFILETEMP='/var/www/temp_moodledata.tar.gz'
 SOURCEDIR='/var/www/moodledata/'
 
-# Rename backup file
+# Delete previous backup file
 if [ -f $BACKUPFILE ]; then
-    mv $BACKUPFILE $BACKUPFILETEMP
+    rm -f $BACKUPFILE
 fi
 # Run backup. Delete temp copy if succeded
-tar -cpzfP $BACKUPFILE $SOURCEDIR && rm -f BACKUPFILETEMP
+tar -cpzfP $BACKUPFILE $SOURCEDIR
 # All OK
 exit 0
 
