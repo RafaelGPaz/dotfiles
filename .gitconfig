@@ -53,10 +53,12 @@
 	changed = green
 	untracked = red
 [core]
-	editor = vim
-	autocrlf = false
+	editor = emacs
+	autocrlf = True
+	whitespace = cr-at-eol
 [diff]
 	tool = diff3
+	guitool = kdiff3
 [gui]
 	fontui = -family Hack -size -12 -weight normal -slant roman -underline 0 -overstrike 0
 	fontdiff = -family Hack -size -12 -weight normal -slant roman -underline 0 -overstrike 0
@@ -68,3 +70,9 @@
 	default = simple
 [web]
 	browser = firefox
+[merge]
+	tool = kdiff3
+[mergetool "kdiff3"]
+	path = C:/Program Files/KDiff3/kdiff3.exe
+[difftool "kdiff3"]
+	path = C:/Program Files/KDiff3/kdiff3.exe
