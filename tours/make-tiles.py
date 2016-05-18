@@ -13,6 +13,38 @@ def mkdirif(dirname):
     if not os.path.exists(dirname):
         os.makedirs(dirname)
 
+def query_yes_no(question, default="yes"):
+    """Ask a yes/no question via input() and return their answer.
+
+    "question" is a string that is presented to the user.
+    "default" is the presumed answer if the user just hits <Enter>.
+        It must be "yes" (the default), "no" or None (meaning
+        an answer is required of the user).
+
+    The "answer" return value is True for "yes" or False for "no".
+    """
+    valid = {"yes": True, "y": True, "ye": True,
+             "no": False, "n": False}
+    if default is None:
+        prompt = " [y/n] "
+    elif default == "yes":
+        prompt = " [Y/n] "
+    elif default == "no":
+        prompt = " [y/N] "
+    else:
+        raise ValueError("invalid default answer: '%s'" % default)
+
+    while True:
+        sys.stdout.write(question + prompt)
+        choice = input().lower()
+        if default is not None and choice == '':
+            return valid[default]
+        elif choice in valid:
+            return valid[choice]
+        else:
+            sys.stdout.write("Please respond with 'yes' or 'no' "
+                             "(or 'y' or 'n').\n")
+
 def main():
     # Script only for Windows
     if sys.platform != 'win32':
@@ -28,6 +60,11 @@ def main():
     logging.basicConfig(format='%(levelname)s:%(message)s',level=logging.DEBUG)
 
     logging.info("Started")
+
+    if query_yes_no('Do you need WebVR support?') == True:
+        webvr = "yes"
+    else:
+        webvr = "no"
 
     # Delete any residual files or folders
     panosdir = '.src\\panos\\'
@@ -84,8 +121,12 @@ def main():
         scenesdir = carbasename + '\\files\\scenes'
         parentdir = os.path.basename(os.path.abspath('..'))
         krdir = 'E:/documents/software/virtual_tours/krpano'
-        krpath = krdir +'/bin/krpanotools64.exe'
-        krconfig = '-config=' + krdir + '/krpano_conf/templates/tv_tiles_for_cars_ipad.config'
+        krpath = krdir +'/krpano-1.19-pr4/krpanotools64.exe'
+        if webvr == "yes":
+            krconfig = '-config=' + krdir + '/krpano_conf/templates/tv_tiles_with_vr.config'
+        else:
+            krconfig = '-config=' + krdir + '/krpano_conf/templates/tv_tiles_for_cars_ipad.config'
+
         kr = [krpath, "makepano", krconfig ,car]
         FNULL = open(os.devnull, 'w') # Run krpano silently
         # Special projects
