@@ -9,9 +9,42 @@ import shutil
 import subprocess
 import sys
 
-def mkdirif(dirname):
-    if not os.path.exists(dirname):
-        os.makedirs(dirname)
+def mkdirif(tourdir):
+    if not os.path.exists(tourdir):
+        os.makedirs(tourdir)
+        # logging.info("tourdir: " + tourdir)
+
+def query_yes_no(question, default="yes"):
+    """Ask a yes/no question via input() and return their answer.
+
+    "question" is a string that is presented to the user.
+    "default" is the presumed answer if the user just hits <Enter>.
+        It must be "yes" (the default), "no" or None (meaning
+        an answer is required of the user).
+
+    The "answer" return value is True for "yes" or False for "no".
+    """
+    valid = {"yes": True, "y": True, "ye": True,
+             "no": False, "n": False}
+    if default is None:
+        prompt = " [y/n] "
+    elif default == "yes":
+        prompt = " [Y/n] "
+    elif default == "no":
+        prompt = " [y/N] "
+    else:
+        raise ValueError("invalid default answer: '%s'" % default)
+
+    while True:
+        sys.stdout.write(question + prompt)
+        choice = input().lower()
+        if default is not None and choice == '':
+            return valid[default]
+        elif choice in valid:
+            return valid[choice]
+        else:
+            sys.stdout.write("Please respond with 'yes' or 'no' "
+                             "(or 'y' or 'n').\n")
 
 def main():
     # Script only for Windows
@@ -28,6 +61,11 @@ def main():
     logging.basicConfig(format='%(levelname)s:%(message)s',level=logging.DEBUG)
 
     logging.info("Started")
+
+    if query_yes_no('Do you need WebVR support?') == True:
+        webvr = "yes"
+    else:
+        webvr = "no"
 
     # Delete any residual files or folders
     panosdir = '.src\\panos\\'
@@ -78,60 +116,104 @@ def main():
 
     # Check if tiles are needed
     for car in allitems:
+        logging.info('car: ' + car)
         carbasename = os.path.basename(os.path.dirname(car))
         tourbasename = os.path.splitext(os.path.basename(car))[0]
-        filesdir = carbasename + '\\files'
-        scenesdir = carbasename + '\\files\\scenes'
+        filesdir = os.path.join(tourbasename, 'files')
+        scenesdir = os.path.join(tourbasename, 'files\\scenes')
         parentdir = os.path.basename(os.path.abspath('..'))
         krdir = 'E:/documents/software/virtual_tours/krpano'
-        krpath = krdir +'/bin/krpanotools64.exe'
-        krconfig = '-config=' + krdir + '/krpano_conf/templates/tv_tiles_for_cars_ipad.config'
+        krpath = krdir +'/krpano-1.19-pr4/krpanotools64.exe'
+        if webvr == "yes":
+            krconfig = '-config=' + krdir + '/krpano_conf/templates/tv_tiles_with_vr.config'
+        else:
+            krconfig = '-config=' + krdir + '/krpano_conf/templates/tv_tiles_for_cars_ipad.config'
+
         kr = [krpath, "makepano", krconfig ,car]
         FNULL = open(os.devnull, 'w') # Run krpano silently
         # Special projects
-        if "scene_" in tourbasename or parentdir == 'hr_owen':
-            scenesdir = os.path.join(carbasename, "files\\scenes")
-            tilesdir = os.path.join(scenesdir, carbasename)
-            outputdir = panosdir + carbasename + '\\output'
-            outputtilesdir = outputdir + '\\scenes\\' + tourbasename
-            outputxmlfile = outputdir + "\\" + tourbasename + '.xml'
-            # HROWEN cars
-            if parentdir == 'hr_owen':
-                replaceorigin = 'scenes/' + tourbasename
-                replacedest = '%SWFPATH%/../../' + carbasename + '/files/scenes/' + tourbasename
-            # Visualiser V10
-            elif os.path.exists('./shared/'):
+        if parentdir == 'gforces' or parentdir == 'hr_owen':
+            # logging.info('case 1')
+            # Visualiser
+            if "scene_" in tourbasename:
+                # logging.info('case 1: Visualiser')
+                carbasename = os.path.basename(os.path.dirname(car))
+                filesdir = os.path.join(carbasename, "files")
+                scenesdir = os.path.join(carbasename, "files\\scenes")
+                tilesdir = os.path.join(scenesdir, tourbasename)
+                # tilesdir = scenesdir + '\\' + carbasename
+                outputdir = panosdir + carbasename + '\\output'
+                outputtilesdir = outputdir + '\\scenes\\' + tourbasename
+                outputxmlfile = outputdir + "\\" + tourbasename + '.xml'
                 replaceorigin = 'scenes/' + tourbasename
                 replacedest = '%SWFPATH%/../' + carbasename + '/files/scenes/' + tourbasename
-            # Scene Variation cars
+                xmlfile = carbasename + '\\files\\scenes\\' + tourbasename + '.xml'
+                message = carbasename + '/' + tourbasename
             else:
-                replaceorigin = 'scenes/' + tourbasename
-                replacedest = '%CURRENTXML%/scenes/' + tourbasename
-            tilesdir = carbasename + '\\files\\scenes\\' + tourbasename
-            xmlfile = carbasename + '\\files\\scenes\\' + tourbasename + '.xml'
-            message = carbasename + '/' + tourbasename
+                # logging.info('case 1: Other')
+                carbasename = os.path.basename(os.path.dirname(car))
+                filesdir = os.path.join(tourbasename, "files")
+                scenesdir = os.path.join(tourbasename, "files\\scenes")
+                tilesdir = os.path.join(scenesdir, 'tiles')
+                outputdir = os.path.join(panosdir, 'output')
+                outputtilesdir = outputdir + '\\scenes\\' + tourbasename
+                outputxmlfile = outputdir + "\\" + tourbasename + '.xml'
+                # HROWEN cars
+                if parentdir == 'hr_owen':
+                    replaceorigin = 'scenes/' + tourbasename
+                    replacedest = '%SWFPATH%/../../' + carbasename + '/files/scenes/' + tourbasename
+                # V10 Not Visualiser    
+                else:
+                    replaceorigin = 'scenes/' + tourbasename
+                    replacedest = '%CURRENTXML%/scenes/tiles'
+
+                xmlfile = tourbasename + '\\files\\scenes\\scene.xml'
+                message = tourbasename + '/' + carbasename
+                
+            # Visualiser V10
+            # elif os.path.exists('./shared/'):
+                # replaceorigin = 'scenes/' + tourbasename
+                # replacedest = '%SWFPATH%/../' + carbasename + '/files/scenes/' + tourbasename
+
+            # Scene Variation cars
+                # elif:
+                #     replaceorigin = 'scenes/' + tourbasename
+                #     replacedest = '%CURRENTXML%/scenes/' + tourbasename
+
+            # Stuff for all the tours
+            # tilesdir = tourbasename + '\\files\\scenes\\' + carbasename
         # Normal car
         else:
-            scenesdir = os.path.join(tourbasename, "files\\scenes")
+            # logging.info('case 2')
+            filesdir = os.path.join(carbasename, "files")
+            scenesdir = os.path.join(carbasename, "files\\scenes")
             tilesdir = os.path.join(scenesdir, "tiles")
-            outputdir = panosdir + 'output'
+            outputdir = panosdir + '\\' + carbasename + '\\output'
             outputtilesdir = outputdir + '\\scenes\\' + tourbasename
             outputxmlfile = outputdir + '\\' + tourbasename + '.xml'
             replaceorigin = 'scenes/' + tourbasename
             if os.path.exists('./shared/'):
                 replacedest = '%SWFPATH%/../' + tourbasename + '/files/scenes/tiles'
             else:
-                replacedest = '%CURRENTXML%/scenes/tiles'
-            tilesdir = tourbasename + '\\files\\scenes\\tiles'
-            xmlfile = tourbasename + '\\files\\scenes\\scene.xml'
-            message = tourbasename
+                replacedest = '%CURRENTXML%/scenes/' + tourbasename
+            tilesdir = carbasename + '\\files\\scenes\\' + tourbasename
+            xmlfile = carbasename + '\\files\\scenes\\' + tourbasename + '.xml'
+            message = carbasename + '/' + tourbasename
 
         if os.path.exists(tilesdir):
             logging.info('[ OK ] ' + message)
         else:
             logging.info('[    ] Making tiles for: ' + message)
             # Create folder structure
-            mkdirif(tourbasename)
+            # logging.info("carbasename: " + carbasename)
+            # logging.info("tourbasename: " + tourbasename)
+            # logging.info("filesdir: " + filesdir)
+            # logging.info("scenesdir: " + scenesdir)
+            # logging.info("tilesdir: " + tilesdir)
+            # logging.info("xmlfile: " + xmlfile)
+            # logging.info("outputxmlfile: " + outputxmlfile)
+            # logging.info("outputtilesdir: " + outputtilesdir)
+            mkdirif(carbasename)
             mkdirif(filesdir)
             mkdirif(scenesdir)
 
