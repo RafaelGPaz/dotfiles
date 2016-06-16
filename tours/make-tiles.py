@@ -116,7 +116,7 @@ def main():
 
     # Check if tiles are needed
     for car in allitems:
-        logging.info('car: ' + car)
+        # logging.info('car: ' + car)
         carbasename = os.path.basename(os.path.dirname(car))
         tourbasename = os.path.splitext(os.path.basename(car))[0]
         filesdir = os.path.join(tourbasename, 'files')
@@ -162,14 +162,14 @@ def main():
                 if parentdir == 'hr_owen':
                     replaceorigin = 'scenes/' + tourbasename
                     replacedest = '%SWFPATH%/../../' + carbasename + '/files/scenes/' + tourbasename
-                # V10 Not Visualiser    
+                # V10 Not Visualiser
                 else:
                     replaceorigin = 'scenes/' + tourbasename
                     replacedest = '%CURRENTXML%/scenes/tiles'
 
                 xmlfile = tourbasename + '\\files\\scenes\\scene.xml'
                 message = tourbasename + '/' + carbasename
-                
+
             # Visualiser V10
             # elif os.path.exists('./shared/'):
                 # replaceorigin = 'scenes/' + tourbasename
@@ -200,9 +200,7 @@ def main():
             xmlfile = carbasename + '\\files\\scenes\\' + tourbasename + '.xml'
             message = carbasename + '/' + tourbasename
 
-        if os.path.exists(tilesdir):
-            logging.info('[ OK ] ' + message)
-        else:
+        if not os.path.exists(tilesdir):
             logging.info('[    ] Making tiles for: ' + message)
             # Create folder structure
             # logging.info("carbasename: " + carbasename)
