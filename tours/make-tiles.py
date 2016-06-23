@@ -152,23 +152,24 @@ def main():
             else:
                 # logging.info('case 1: Other')
                 carbasename = os.path.basename(os.path.dirname(car))
-                filesdir = os.path.join(tourbasename, "files")
-                scenesdir = os.path.join(tourbasename, "files\\scenes")
-                tilesdir = os.path.join(scenesdir, 'tiles')
-                outputdir = os.path.join(panosdir, 'output')
+                filesdir = os.path.join(carbasename, "files")
+                scenesdir = os.path.join(carbasename, "files\\scenes")
+                tilesdir = os.path.join(scenesdir, tourbasename)
+                outputdir = panosdir + carbasename + '\\output'
                 outputtilesdir = outputdir + '\\scenes\\' + tourbasename
                 outputxmlfile = outputdir + "\\" + tourbasename + '.xml'
                 # HROWEN cars
                 if parentdir == 'hr_owen':
                     replaceorigin = 'scenes/' + tourbasename
                     replacedest = '%SWFPATH%/../../' + carbasename + '/files/scenes/' + tourbasename
+                    message = carbasename + '/' + tourbasename
+                    xmlfile = carbasename + '\\files\\scenes\\' + tourbasename + '.xml'
                 # V10 Not Visualiser
                 else:
                     replaceorigin = 'scenes/' + tourbasename
                     replacedest = '%CURRENTXML%/scenes/tiles'
-
-                xmlfile = tourbasename + '\\files\\scenes\\scene.xml'
-                message = tourbasename + '/' + carbasename
+                    message = tourbasename + '/' + carbasename
+                    xmlfile = tourbasename + '\\files\\scenes\\scene.xml'
 
             # Visualiser V10
             # elif os.path.exists('./shared/'):
