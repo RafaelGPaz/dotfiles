@@ -29,7 +29,7 @@ def replace_str(filePath, str1, str2):
 
 def main():
     # Use argparse to supply 'origin' and 'destination' of the car to rename
-    parser = argparse.ArgumentParser(description='Rename a car  and all the necessary files ')
+    parser = argparse.ArgumentParser(description='Rename a car and all the necessary files in the folders import, layers, masks, panos and the virtual tours themselver.')
     parser.add_argument('-o', '--origin', action=readable_dir, dest='origin', help='Name of the car to be renamed')
     parser.add_argument('-d', '--destination', dest='destination', help='New name')
     args = parser.parse_args()
