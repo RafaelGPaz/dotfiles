@@ -100,7 +100,7 @@ def main():
         if parentdir == 'gforces' or parentdir == 'hr_owen':
             # logging.info('case 1')
             # Visualiser
-            if "scene_" in tourbasename:
+            if 'scene' in tourbasename:
                 # logging.info('case 1: Visualiser')
                 carbasename = os.path.basename(os.path.dirname(car))
                 filesdir = os.path.join(carbasename, "files")
@@ -116,10 +116,10 @@ def main():
                 message = carbasename + '/' + tourbasename
             else:
                 # logging.info('case 1: Other')
-                carbasename = os.path.basename(os.path.dirname(car))
+                carbasename = tourbasename
                 filesdir = os.path.join(carbasename, "files")
                 scenesdir = os.path.join(carbasename, "files\\scenes")
-                tilesdir = os.path.join(scenesdir, tourbasename)
+                tilesdir = os.path.join(scenesdir, 'tiles')
                 outputdir = panosdir + carbasename + '\\output'
                 outputtilesdir = outputdir + '\\scenes\\' + tourbasename
                 outputxmlfile = outputdir + "\\" + tourbasename + '.xml'
