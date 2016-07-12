@@ -120,17 +120,22 @@ def main():
                 filesdir = os.path.join(carbasename, "files")
                 scenesdir = os.path.join(carbasename, "files\\scenes")
                 tilesdir = os.path.join(scenesdir, 'tiles')
-                outputdir = panosdir + carbasename + '\\output'
-                outputtilesdir = outputdir + '\\scenes\\' + tourbasename
-                outputxmlfile = outputdir + "\\" + tourbasename + '.xml'
                 # HROWEN cars
                 if parentdir == 'hr_owen':
+                    # logging.info('case 1.1: HROWEN')
+                    outputdir = panosdir + carbasename + '\\output'
+                    outputtilesdir = outputdir + '\\scenes\\' + tourbasename
+                    outputxmlfile = outputdir + "\\" + tourbasename + '.xml'
                     replaceorigin = 'scenes/' + tourbasename
                     replacedest = '%SWFPATH%/../../' + carbasename + '/files/scenes/' + tourbasename
                     message = carbasename + '/' + tourbasename
                     xmlfile = carbasename + '\\files\\scenes\\' + tourbasename + '.xml'
                 # V10 Not Visualiser
                 else:
+                    # logging.info('case 1.2: Not Visualiser')
+                    outputdir = panosdir + '\\output'
+                    outputtilesdir = outputdir + '\\scenes\\' + tourbasename
+                    outputxmlfile = outputdir + "\\" + tourbasename + '.xml'
                     replaceorigin = 'scenes/' + tourbasename
                     replacedest = '%CURRENTXML%/scenes/tiles'
                     message = tourbasename + '/' + carbasename
