@@ -36,8 +36,8 @@ def main():
     else:
         webvr = "no"
 
-    tourpath = '//media/e//virtual_tours//gforces//cars//' + name1
-    panospath = '//media/e//virtual_tours//gforces//.src//panos//' + name1
+    tourpath = '//media//e//virtual_tours//gforces//cars//' + name1
+    panospath = '//media//e//virtual_tours//gforces//cars//.src//panos//' + name1
 
     # print(tourpath)
     # print(panospath)
