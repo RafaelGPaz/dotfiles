@@ -137,7 +137,8 @@ def main():
                     outputtilesdir = outputdir + '\\scenes\\' + tourbasename
                     outputxmlfile = outputdir + "\\" + tourbasename + '.xml'
                     replaceorigin = 'scenes/' + tourbasename
-                    replacedest = '%CURRENTXML%/scenes/tiles'
+                    replacedest = '%SWFPATH%/../' + tourbasename + '/files/scenes/tiles'
+                    # replacedest = '%CURRENTXML%/scenes/tiles'
                     message = tourbasename + '/' + carbasename
                     xmlfile = tourbasename + '\\files\\scenes\\scene.xml'
 
