@@ -3,6 +3,8 @@
 import argparse
 import colorlog
 import logging
+import os
+import shutil
 from usefulfunctions import query_yes_no
 
 class readable_dir(argparse.Action):
@@ -40,8 +42,12 @@ def main():
     # print(tourpath)
     # print(panospath)
 
-    os.remove(tourpath)
-    os.remove(panospath)
+    if os.path.exists(tourpath):
+        shutil.rmtree(tourpath)
+        logger.info(tourpath + " removed")
+    if os.path.exists(panospath):
+        shutil.rmtree(panospath)
+        logger.info(panospath + " removed")
 
     logger.info('EOL')
 
