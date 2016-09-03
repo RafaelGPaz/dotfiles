@@ -1,6 +1,3 @@
-[submodule "sortphotos"]
-	path = sortphotos
-	url = git@github.com:andrewning/sortphotos.git
 [submodule "newvt"]
 	path = newvt
 	url = git@github.com:parallaxvt/newvt.git
