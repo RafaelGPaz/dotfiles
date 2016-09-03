@@ -3,11 +3,11 @@
 	url = git@github.com:andrewning/sortphotos.git
 [submodule "newvt"]
 	path = newvt
-	url = git@github.com:rafaelgp/newvt.git
+	url = git@github.com:parallaxvt/newvt.git
 	branch = master
 [submodule "elearning"]
 	path = elearning
-	url = git@github.com:rafaelgp/elearning.git
+	url = git@github.com:parallaxvt/elearning.git
 	branch = master
 [submodule "clustergit"]
 	path = clustergit
