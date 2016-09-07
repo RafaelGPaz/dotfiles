@@ -96,6 +96,7 @@ def main():
         filepath = xmlFile
         replace_str(filepath, str1, str2)
 
+    logger.warn('Open .src/layers/' + name2 + '.psd and manually change the Background Layer name')
     logger.info('EOL')
 
 if __name__ == '__main__':
