@@ -76,6 +76,12 @@ def main():
     item2 = name2
     rename_item(path, item1, item2)
 
+    # Folder /media/e/virtual_tours/gforces/html/list/latest.html
+    path = '/media/e/virtual_tours/gforces/html/list/latest.html'
+    item1 = name1
+    item2 = name2
+    rename_item(path, item1, item2)
+
     # File ./###/files/tour.xml
     filepath = './' + name2 + '/files/tour.xml'
     str1 = name1
