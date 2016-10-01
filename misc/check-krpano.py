@@ -40,8 +40,7 @@ def main():
         tweet = version + buildDate + ' released! Click on the link underneath to download #krpano http://krpano.com/download/'
         status = api.update_status(status=tweet)
 
-
-    print('_check-kpano-EOF_')
+        print(tweet)
 
 if __name__ == "__main__":
     main()
