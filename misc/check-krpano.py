@@ -37,7 +37,7 @@ def main():
 
     if BuildDateClean == today :
         api = get_api(cfg)
-        tweet = version + buildDate + ' released! Click on the link underneath to download #krpano http://krpano.com/download/'
+        tweet = version + buildDate + ' released! Click on the following linkto download it #krpano http://krpano.com/download/'
         status = api.update_status(status=tweet)
 
         print(tweet)
