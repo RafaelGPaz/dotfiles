@@ -36,6 +36,8 @@ def main():
     # print(today)
 
     if BuildDateClean == today :
+        # Wait until 9am to post the tweet
+        time.sleep(32400)
         api = get_api(cfg)
         tweet = version + buildDate + ' released! Click on the following linkto download it #krpano http://krpano.com/download/'
         status = api.update_status(status=tweet)
