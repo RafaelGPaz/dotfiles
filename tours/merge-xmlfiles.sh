@@ -39,17 +39,20 @@ for tour in $(find ./* -maxdepth 0 -type d ! -iname "shared" ! -iname ".*" ) ; d
             log_action_end_msg $?
         fi
     fi
-    log_action_begin_msg $"Merge content"
-    cat $tour/files/content/*.xml >> $tourxml
-    log_action_end_msg $?
     log_action_begin_msg $"Merge include"
     if [ -d "./shared" ]; then
         cat ./shared/include/index.xml >> $tourxml
     else
-        for includefolder in $(find $tour/files/include/* -maxdepth 0 -type d ! -iname "editor_and_options") ; do
+        if [ -f "$tour/files/include/vtourskin/index.xml" ]; then
+            cat $tour/files/include/vtourskin/index.xml >> $tourxml
+        fi
+        for includefolder in $(find $tour/files/include/* -maxdepth 0 -type d ! -iname "editor_and_options" ! -iname "vtourskin") ; do
             cat $includefolder/*.xml >> $tourxml
         done
     fi
+    log_action_end_msg $?
+    log_action_begin_msg $"Merge content"
+    cat $tour/files/content/*.xml >> $tourxml
     log_action_end_msg $?
     log_action_begin_msg $"Merge scenes"
     if [ -f "$tour/files/scenes/index.xml" ]; then
