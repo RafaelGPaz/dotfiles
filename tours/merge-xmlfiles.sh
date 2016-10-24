@@ -76,7 +76,7 @@ for tour in $(find ./* -maxdepth 0 -type d ! -iname "shared" ! -iname ".*" ) ; d
 
     # Add krpano tags at the beginning of tour.xml
     log_action_begin_msg $"Add tags"
-    sed -i "1i<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<krpano version=\"$krpano_version\" onstart=\"startup();\" showerrors=\"false\">" $tourxml
+    sed -i "1i<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<krpano version=\"$krpano_version\">" $tourxml
     # Add closing krpano tag at the end of tour.xml and tour_clean.xml
     printf "</krpano>\n" >> $tourxml
     log_action_end_msg $?
