@@ -4,7 +4,7 @@
 # and each tour's 'content/*.xml' and 'scenes/index.xml'
 # Usage: Run inside the directory containing all the tour folders. Usually the directory where is the folder '.src'.
 
-krpano_version="1.18"
+krpano_version="1.19"
 
 if [ ! -d /lib/lsb/init-functions ]; then
     source /lib/lsb/init-functions
