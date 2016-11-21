@@ -104,3 +104,4 @@ alias clustergit='~/bin/clustergit/clustergit --recursive -e .cache/ -e .config/
 alias blog='pelican -s /media/e/websites/paralaxvirtualtours.co.uk/pelican/pelicanconf.py'
 alias ssh-para='ssh rafaelgp@81.4.120.251 -i ~/.ssh/parallax'
 alias em='emacs-snapshot &'
+alias code='code --disable-gpu &'
