@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 # Path to your oh-my-zsh installation.
-export ZSH=/home/rafael/.oh-my-zsh
+#export ZSH=/home/rafael/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -53,7 +53,7 @@ DISABLE_AUTO_TITLE="true"
 plugins=(git common-aliases fasd rsync debian virtualenvwrapper)
 
 # User configuration
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
