@@ -2,3 +2,4 @@ krpano/
 tours/__pycache__
 private.py
 __pycache__/
+.vscode/
