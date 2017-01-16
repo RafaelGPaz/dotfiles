@@ -77,7 +77,10 @@ def main():
     rename_item(path, item1, item2)
 
     # Folder /media/e/virtual_tours/gforces/html/list/latest.html
-    filepath = '/media/e/virtual_tours/gforces/html/list/latest.html'
+    if os.name == 'nt':
+        filepath = 'E:\\virtual_tours\\gforces\\html\\list\\latest.html'
+    else:
+        filepath = '/media/e/virtual_tours/gforces/html/list/latest.html'
     str1 = name1
     str2 = name2
     replace_str(filepath, str1, str2)
