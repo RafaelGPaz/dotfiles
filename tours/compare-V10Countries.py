@@ -20,7 +20,11 @@ def main():
 
     logger.info("Started")
 
-    tree = ET.parse('/media/e/virtual_tours/gforces/cars/.src/config.xml')
+    if os.name == 'nt':
+        tree = ET.parse('E:\\virtual_tours\\gforces\\cars\\.src\\config.xml')
+    else:
+        tree = ET.parse('/media/e/virtual_tours/gforces/cars/.src/config.xml')
+
     root = tree.getroot()
 
     # Compare ie and gb
