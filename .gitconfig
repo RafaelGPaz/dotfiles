@@ -76,3 +76,5 @@
 	path = C:/Program Files/KDiff3/kdiff3.exe
 [difftool "kdiff3"]
 	path = C:/Program Files/KDiff3/kdiff3.exe
+[credential]
+	helper = store
