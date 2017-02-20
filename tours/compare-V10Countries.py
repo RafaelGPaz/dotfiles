@@ -2,6 +2,7 @@
 import argparse
 import colorlog
 import logging
+import os
 import sys
 import xml.etree.ElementTree as ET
 
