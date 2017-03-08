@@ -1,10 +1,10 @@
 [submodule "newvt"]
 	path = newvt
-	url = git@github.com:parallaxvt/newvt.git
+	url = git@github.com:RafaelGPaz/newvt.git
 	branch = master
 [submodule "elearning"]
 	path = elearning
-	url = git@github.com:parallaxvt/elearning.git
+	url = git@github.com:RafaelGPaz/elearning.git
 	branch = master
 [submodule "clustergit"]
 	path = clustergit
