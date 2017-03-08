@@ -108,7 +108,6 @@ def main():
                 krconfig = '-config=' + krtemplates + '/tv_tiles_for_cars_ipad.config'
 
         krcall = [krpath, "makepano", krconfig, car]
-        #FNULL = open(os.devnull, 'w') # Run krpano silently
         # Special projects
         if parentdir == 'gforces' or parentdir == 'hr_owen':
             # logging.info('case 1')
@@ -119,7 +118,6 @@ def main():
                 filesdir = os.path.join(carbasename, "files")
                 scenesdir = os.path.join(carbasename, "files\\scenes")
                 tilesdir = os.path.join(scenesdir, tourbasename)
-                # tilesdir = scenesdir + '\\' + carbasename
                 outputdir = panosdir + carbasename + '\\output'
                 outputtilesdir = outputdir + '\\scenes\\' + tourbasename
                 outputxmlfile = outputdir + "\\" + tourbasename + '.xml'
@@ -151,22 +149,9 @@ def main():
                     outputxmlfile = outputdir + "\\" + tourbasename + '.xml'
                     replaceorigin = 'scenes/' + tourbasename
                     replacedest = '%SWFPATH%/../' + tourbasename + '/files/scenes/tiles'
-                    # replacedest = '%CURRENTXML%/scenes/tiles'
                     message = tourbasename + '/' + carbasename
                     xmlfile = tourbasename + '\\files\\scenes\\scene.xml'
 
-            # Visualiser V10
-            # elif os.path.exists('./shared/'):
-                # replaceorigin = 'scenes/' + tourbasename
-                # replacedest = '%SWFPATH%/../' + carbasename + '/files/scenes/' + tourbasename
-
-            # Scene Variation cars
-                # elif:
-                #     replaceorigin = 'scenes/' + tourbasename
-                #     replacedest = '%CURRENTXML%/scenes/' + tourbasename
-
-            # Stuff for all the tours
-            # tilesdir = tourbasename + '\\files\\scenes\\' + carbasename
         # Normal car
         else:
             # logging.info('case 2')
@@ -201,7 +186,7 @@ def main():
             mkdirif(scenesdir)
 
             subprocess.call(krcall, stdout=open(os.devnull, 'w'), stderr=subprocess.STDOUT)
-            # subprocess.call(kr)
+            # subprocess.call(krcall)
 
             for line in fileinput.input(outputxmlfile, inplace=True):
                 print(line.replace(replaceorigin, replacedest), end="")
