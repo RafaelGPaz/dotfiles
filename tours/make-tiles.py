@@ -88,7 +88,7 @@ def main():
         scenesdir = os.path.join(tourbasename, 'files\\scenes')
         parentdir = os.path.basename(os.path.abspath('..'))
         krdir = 'E:/documents/software/virtual_tours/krpano'
-        krpath = krdir +'/krpano-1.19-pr4/krpanotools64.exe'
+        krpath = krdir +'/krpano-1.19-pr8/krpanotools64.exe'
         if webvr == "yes":
             krconfig = '-config=' + krdir + '/krpano_conf/templates/tv_tiles_with_vr.config'
         else:
