@@ -7,6 +7,9 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
+# Add my scripts to $PATH
+export PATH="$HOME/scripts/elearning:$HOME/scripts/misc:$HOME/scripts/newvt:$HOME/scripts/tours:$PATH"
+
 # Disable bell on terminal
 export ZBEEP='\e[?5h\e[?5l'
 
