@@ -21,13 +21,14 @@ def main():
         sys.exit('Must be using Python 3')
 
     parser = argparse.ArgumentParser(description='Creates tiles for cars with visualiser option.')
-    parser.add_argument('-i', action='store_false', dest='ignoreunderscores', default=True, help='Skip checking 4 underscores')
+    parser.add_argument('-i', action='store_false', dest='ignoreunderscores', \
+                              default=True, help='Skip checking 4 underscores')
     args = parser.parse_args()
-    logging.basicConfig(format='%(levelname)s:%(message)s',level=logging.DEBUG)
+    logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
 
     logging.info("Started")
 
-    if query_yes_no('Do you need WebVR support?') == True:
+    if query_yes_no('Do you need WebVR support?'):
         webvr = "yes"
     else:
         webvr = "no"
@@ -39,13 +40,13 @@ def main():
 
     # Delete any residual files or folders
     panosdir = '.src\\panos\\'
-    for root, dirs, files in os.walk(panosdir):
-        for filePath in glob.glob(os.path.join(root, "*.kro")):
-            if os.path.isfile(filePath):
-                os.remove(filePath)
-        for dirPath in glob.glob(os.path.join(root, "output")):
+    for root, _, _ in os.walk(panosdir):
+        for filepath in glob.glob(os.path.join(root, "*.kro")):
+            if os.path.isfile(filepath):
+                os.remove(filepath)
+        for dirpath in glob.glob(os.path.join(root, "output")):
             if os.path.isdir:
-                shutil.rmtree(dirPath)
+                shutil.rmtree(dirpath)
 
     # Check if the directory containing the panos is empty
     if not os.listdir(panosdir):
@@ -73,16 +74,16 @@ def main():
 
     repeatedcar = [item for item, count in collections.Counter(duplicates).items() if count > 1]
     if repeatedcar:
-        sys.exit('ERROR: The following cars are repeated: ' + str(repeatedcar ))
+        sys.exit('ERROR: The following cars are repeated: ' + str(repeatedcar))
 
-    # Check that the panorama names has 3 underscores, unless this is ignored with the switch '-ignoreunderscores'
+    # Check panorama names has 3 underscores. It can be ignored with the switch '-ignoreunderscores'
     for tourname in allitems:
         if args.ignoreunderscores != False:
-            tourname = os.path.basename(i)
-            tourbasename = os.path.splitext(iname)[0]
+            tourbasename = os.path.splitext(tourname)[0]
             underscores = len(tourbasename.split('_'))
             if underscores != 4:
-                sys.exit('ERROR: File ' + tourbasename +  ' contains ' + str(underscores ) + ' underscores instead of 4. Please rename it.' )
+                sys.exit('ERROR: File ' + tourbasename +  ' contains ' + str(underscores) \
+                         + ' underscores instead of 4. Please rename it.')
 
     # Check if tiles are needed
     for car in allitems:
@@ -103,11 +104,11 @@ def main():
         else:
             if preview1024 == "yes":
                 krconfig = '-config=' + krtemplates + '/tv_tiles_for_cars_ipad_preview_1024.config'
-        else:
+            else:
                 krconfig = '-config=' + krtemplates + '/tv_tiles_for_cars_ipad.config'
 
-        kr = [krpath, "makepano", krconfig ,car]
-        FNULL = open(os.devnull, 'w') # Run krpano silently
+        krcall = [krpath, "makepano", krconfig, car]
+        #FNULL = open(os.devnull, 'w') # Run krpano silently
         # Special projects
         if parentdir == 'gforces' or parentdir == 'hr_owen':
             # logging.info('case 1')
@@ -199,7 +200,7 @@ def main():
             mkdirif(filesdir)
             mkdirif(scenesdir)
 
-            subprocess.call(kr, stdout=open(os.devnull, 'w'), stderr=subprocess.STDOUT)
+            subprocess.call(krcall, stdout=open(os.devnull, 'w'), stderr=subprocess.STDOUT)
             # subprocess.call(kr)
 
             for line in fileinput.input(outputxmlfile, inplace=True):
