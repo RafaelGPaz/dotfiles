@@ -32,6 +32,11 @@ def main():
     else:
         webvr = "no"
 
+    if query_yes_no('Do you want 1024px preview?'):
+        preview1024 = "yes"
+    else:
+        preview1024 = "no"
+
     # Delete any residual files or folders
     panosdir = '.src\\panos\\'
     for root, dirs, files in os.walk(panosdir):
@@ -89,10 +94,17 @@ def main():
         parentdir = os.path.basename(os.path.abspath('..'))
         krdir = 'E:/documents/software/virtual_tours/krpano'
         krpath = krdir +'/krpano-1.19-pr8/krpanotools64.exe'
+        krtemplates = krdir +'/krpano_conf/templates'
         if webvr == "yes":
-            krconfig = '-config=' + krdir + '/krpano_conf/templates/tv_tiles_with_vr.config'
+            if preview1024 == "yes":
+                krconfig = '-config=' + krtemplates + '/tv_tiles_with_vr_preview_1024.config'
+            else:
+                krconfig = '-config=' + krtemplates + '/tv_tiles_with_vr.config'
         else:
-            krconfig = '-config=' + krdir + '/krpano_conf/templates/tv_tiles_for_cars_ipad.config'
+            if preview1024 == "yes":
+                krconfig = '-config=' + krtemplates + '/tv_tiles_for_cars_ipad_preview_1024.config'
+        else:
+                krconfig = '-config=' + krtemplates + '/tv_tiles_for_cars_ipad.config'
 
         kr = [krpath, "makepano", krconfig ,car]
         FNULL = open(os.devnull, 'w') # Run krpano silently
