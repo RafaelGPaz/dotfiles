@@ -79,7 +79,8 @@ def main():
     # Check panorama names has 3 underscores. It can be ignored with the switch '-ignoreunderscores'
     for tourname in allitems:
         if args.ignoreunderscores != False:
-            tourbasename = os.path.splitext(tourname)[0]
+            tourname = os.path.basename(i)
+            tourbasename = os.path.splitext(iname)[0]
             underscores = len(tourbasename.split('_'))
             if underscores != 4:
                 sys.exit('ERROR: File ' + tourbasename +  ' contains ' + str(underscores) \
