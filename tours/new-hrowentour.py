@@ -217,7 +217,10 @@ def main():
 
         i = 1
         for xmlF in glob.glob(os.path.join(scenesPath, "*.xml")):
-            destF = '/tmp/tempfile'
+            if os.name == 'nt':
+                destF = os.path.join('C:\\', 'Users', 'Rafael', 'AppData', 'Local', 'Temp', 'tempfile')
+            else:
+                destF = os.path.join('/tmp', 'tempfile')
             sceneNo = 'scene' + str(i)
             newLine = '<scene name="' + sceneNo + '" thumburl="%FIRSTXML%/content/' + sceneNo + '.jpg" onstart="' + sceneNo + '();">'
             replace_first_line(xmlF, destF, newLine)
