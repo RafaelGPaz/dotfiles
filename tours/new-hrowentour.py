@@ -213,7 +213,7 @@ def main():
             shutil.rmtree(pluginsPath)
         shutil.copytree(pluginsStatic, pluginsPath)
 
-        # Edit first line of all scenes.xml files 
+        # Edit first line of all scenes.xml files
 
         i = 1
         for xmlF in glob.glob(os.path.join(scenesPath, "*.xml")):
@@ -270,7 +270,7 @@ def main():
                 with open(fname) as infile:
                     for line in infile:
                         if line.rstrip():
-                            if '<krpano>' not in line and '</krpano>' not in line:
+                            if '<krpano' not in line and '</krpano>' not in line:
                                 outfile.write(line)
             outfile.write('</krpano>')
 
