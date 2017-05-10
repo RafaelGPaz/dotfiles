@@ -271,7 +271,7 @@ def main():
                                 outfile.write(line)
             outfile.write('</krpano>')
 
-        subprocess.call(['tidy', '-modify', '--hide-comments', 'yes', '-wrap', '0', '-quiet', '-xml', tourXml])
+        #subprocess.call(['tidy', '-modify', '--hide-comments', 'yes', '-wrap', '0', '-quiet', '-xml', tourXml])
 
         # Find obsolete folders
         ignored = {".no_scenes", ".src", ".env"}
