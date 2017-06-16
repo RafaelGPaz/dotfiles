@@ -109,12 +109,10 @@ def main():
                 krconfig = '-config=' + krtemplates + '/tv_tiles_for_cars_ipad.config'
 
         krcall = [krpath, "makepano", krconfig, car]
-        # Special projects
+
         if parentdir == 'gforces' or parentdir == 'hr_owen':
-            # logging.info('case 1')
-            # Visualiser
             if 'scene' in tourbasename:
-                # logging.info('case 1: Visualiser')
+                case = 'GForces - Visualiser'
                 carbasename = os.path.basename(os.path.dirname(car))
                 filesdir = os.path.join(carbasename, "files")
                 scenesdir = os.path.join(carbasename, "files\\scenes")
@@ -125,16 +123,15 @@ def main():
                 replaceorigin = 'scenes/' + tourbasename
                 replacedest = '%SWFPATH%/../' + carbasename + '/files/scenes/' + tourbasename
                 xmlfile = carbasename + '\\files\\scenes\\' + tourbasename + '.xml'
+                xmlfilebck = carbasename + '\\files\\scenes\\' + tourbasename + '_bck.xml'
                 message = carbasename + '/' + tourbasename
             else:
-                # logging.info('case 1: Other')
                 carbasename = tourbasename
                 filesdir = os.path.join(carbasename, "files")
                 scenesdir = os.path.join(carbasename, "files\\scenes")
                 tilesdir = os.path.join(scenesdir, 'tiles')
-                # HROWEN cars
                 if parentdir == 'hr_owen':
-                    # logging.info('case 1.1: HROWEN')
+                    case = 'HR Owen'
                     outputdir = panosdir + carbasename + '\\output'
                     outputtilesdir = outputdir + '\\scenes\\' + tourbasename
                     outputxmlfile = outputdir + "\\" + tourbasename + '.xml'
@@ -142,9 +139,9 @@ def main():
                     replacedest = '%SWFPATH%/../../' + carbasename + '/files/scenes/' + tourbasename
                     message = carbasename + '/' + tourbasename
                     xmlfile = carbasename + '\\files\\scenes\\' + tourbasename + '.xml'
-                # V10 Not Visualiser
+                    xmlfilebck = carbasename + '\\files\\scenes\\' + tourbasename + '_bck.xml'
                 else:
-                    # logging.info('case 1.2: Not Visualiser')
+                    case = 'GForces - Other'
                     outputdir = panosdir + '\\output'
                     outputtilesdir = outputdir + '\\scenes\\' + tourbasename
                     outputxmlfile = outputdir + "\\" + tourbasename + '.xml'
@@ -152,10 +149,10 @@ def main():
                     replacedest = '%SWFPATH%/../' + tourbasename + '/files/scenes/tiles'
                     message = tourbasename + '/' + carbasename
                     xmlfile = tourbasename + '\\files\\scenes\\scene.xml'
+                    xmlfilebck = tourbasename + '\\files\\scenes\\scene_bck.xml'
 
-        # Normal car
         else:
-            # logging.info('case 2')
+            case = 'Normal'
             filesdir = os.path.join(carbasename, "files")
             scenesdir = os.path.join(carbasename, "files\\scenes")
             tilesdir = os.path.join(scenesdir, "tiles")
@@ -169,9 +166,11 @@ def main():
                 replacedest = '%CURRENTXML%/scenes/' + tourbasename
             tilesdir = carbasename + '\\files\\scenes\\' + tourbasename
             xmlfile = carbasename + '\\files\\scenes\\' + tourbasename + '.xml'
+            xmlfilebck = carbasename + '\\files\\scenes\\' + tourbasename + '_bck.xml'
             message = carbasename + '/' + tourbasename
 
         if not os.path.exists(tilesdir):
+            logging.info('Case: ' + case)
             logging.info('[    ] Making tiles for: ' + message)
             # Create folder structure
             # logging.info("carbasename: " + carbasename)
@@ -191,13 +190,47 @@ def main():
 
             for line in fileinput.input(outputxmlfile, inplace=True):
                 print(line.replace(replaceorigin, replacedest), end="")
-                # Move the folder containing the tiles
+
+            # Move the folder containing the tiles
             if os.path.exists(outputtilesdir):
                 shutil.move(outputtilesdir, tilesdir)
-                # Move the scene.xml file
+
+            # Don't do it for the V10 Visualiser cars
+            if case != 'GForces - Visualiser':
+                # If scene.xml exists, backup its content
+                bad_words = ['<preview', '<cube', '<level', '</level', '<mobile', '</mobile' ,'<image', '</image', '</scene', r'^\s*$']
+                if os.path.exists(xmlfile):
+                    with open(xmlfile) as oldfile, open(xmlfilebck, 'w') as newfile:
+                        for line in oldfile:
+                            if not any(bad_word in line for bad_word in bad_words):
+                                newfile.write(line)
+
+
+            # Move the scene.xml file
             if os.path.exists(outputxmlfile):
                 shutil.move(outputxmlfile, xmlfile)
-                # Delete output folder
+
+            # Don't do it for the V10 Visualiser cars
+            if case != 'GForces - Visualiser':
+                # Remove first line from scene.xml file (<scene)
+                with open(xmlfile, 'r') as fin:
+                    data = fin.read().splitlines(True)
+                with open(xmlfile, 'w') as fout:
+                    fout.writelines(data[1:])
+
+                # Copy scene.xml file content to scene_bck.xml
+                with open(xmlfile) as oldfile, open(xmlfilebck, 'a') as newfile:
+                    for line in oldfile:
+                        newfile.write(line)
+
+                # Delete scene.xml
+                if os.path.exists(xmlfile):
+                    os.remove(xmlfile)
+
+                # Rename scene_bck.xml as scene.xml
+                os.rename(xmlfilebck, xmlfile)
+
+            # Delete output folder
             if os.path.exists(outputdir):
                 shutil.rmtree(outputdir)
 
