@@ -11,6 +11,13 @@ import sys
 from usefulfunctions import mkdirif
 from usefulfunctions import query_yes_no
 
+def extract_content(xmlfile, xmlfilebck):
+    bad_words = ['<preview', '<cube', '<level', '</level', '<mobile', '</mobile' ,'<image', '</image', '</scene']
+    with open(xmlfile) as oldfile, open(xmlfilebck, 'w') as newfile:
+        for line in oldfile:
+            if not any(bad_word in line for bad_word in bad_words):
+                newfile.write(line[:-1])
+
 def main():
     # Script only for Windows
     if sys.platform != 'win32':
@@ -198,21 +205,16 @@ def main():
             # Don't do it for the V10 Visualiser cars
             if case != 'GForces - Visualiser':
                 # If scene.xml exists, backup its content
-                bad_words = ['<preview', '<cube', '<level', '</level', '<mobile', '</mobile' ,'<image', '</image', '</scene', r'^\s*$']
                 if os.path.exists(xmlfile):
-                    with open(xmlfile) as oldfile, open(xmlfilebck, 'w') as newfile:
-                        for line in oldfile:
-                            if not any(bad_word in line for bad_word in bad_words):
-                                newfile.write(line)
+                    extract_content(xmlfile, xmlfilebck)
+                # If scene.xml doesn't exist then move the new scene.xml extract the 1st line
+                else:
+                    # Move the scene.xml file
+                    if os.path.exists(outputxmlfile):
+                        shutil.move(outputxmlfile, xmlfile)
+                    extract_content(xmlfile, xmlfilebck)
 
-
-            # Move the scene.xml file
-            if os.path.exists(outputxmlfile):
-                shutil.move(outputxmlfile, xmlfile)
-
-            # Don't do it for the V10 Visualiser cars
-            if case != 'GForces - Visualiser':
-                # Remove first line from scene.xml file (<scene)
+                # Remove first line from scene.xml file (<scene) and empty lines (by using [1:])
                 with open(xmlfile, 'r') as fin:
                     data = fin.read().splitlines(True)
                 with open(xmlfile, 'w') as fout:
