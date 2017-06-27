@@ -117,7 +117,7 @@ def main():
 
         krcall = [krpath, "makepano", krconfig, car]
 
-        if parentdir == 'gforces' or parentdir == 'hr_owen':
+        if parentdir == 'gforces':
             if 'scene' in tourbasename:
                 case = 'GForces - Visualiser'
                 carbasename = os.path.basename(os.path.dirname(car))
@@ -133,30 +133,38 @@ def main():
                 xmlfilebck = carbasename + '\\files\\scenes\\' + tourbasename + '_bck.xml'
                 message = carbasename + '/' + tourbasename
             else:
+                case = 'GForces - Other'
                 carbasename = tourbasename
                 filesdir = os.path.join(carbasename, "files")
                 scenesdir = os.path.join(carbasename, "files\\scenes")
                 tilesdir = os.path.join(scenesdir, 'tiles')
-                if parentdir == 'hr_owen':
-                    case = 'HR Owen'
-                    outputdir = panosdir + carbasename + '\\output'
-                    outputtilesdir = outputdir + '\\scenes\\' + tourbasename
-                    outputxmlfile = outputdir + "\\" + tourbasename + '.xml'
-                    replaceorigin = 'scenes/' + tourbasename
-                    replacedest = '%SWFPATH%/../../' + carbasename + '/files/scenes/' + tourbasename
-                    message = carbasename + '/' + tourbasename
-                    xmlfile = carbasename + '\\files\\scenes\\' + tourbasename + '.xml'
-                    xmlfilebck = carbasename + '\\files\\scenes\\' + tourbasename + '_bck.xml'
-                else:
-                    case = 'GForces - Other'
-                    outputdir = panosdir + '\\output'
-                    outputtilesdir = outputdir + '\\scenes\\' + tourbasename
-                    outputxmlfile = outputdir + "\\" + tourbasename + '.xml'
-                    replaceorigin = 'scenes/' + tourbasename
-                    replacedest = '%SWFPATH%/../' + tourbasename + '/files/scenes/tiles'
-                    message = tourbasename + '/' + carbasename
-                    xmlfile = tourbasename + '\\files\\scenes\\scene.xml'
-                    xmlfilebck = tourbasename + '\\files\\scenes\\scene_bck.xml'
+                outputdir = panosdir + '\\output'
+                outputtilesdir = outputdir + '\\scenes\\' + tourbasename
+                outputxmlfile = outputdir + "\\" + tourbasename + '.xml'
+                replaceorigin = 'scenes/' + tourbasename
+                replacedest = '%SWFPATH%/../' + tourbasename + '/files/scenes/tiles'
+                message = tourbasename + '/' + carbasename
+                xmlfile = tourbasename + '\\files\\scenes\\scene.xml'
+                xmlfilebck = tourbasename + '\\files\\scenes\\scene_bck.xml'
+
+        if parentdir == 'hr_owen':
+            case = 'HR Owen'
+            carbasename = os.path.basename(os.path.dirname(car))
+            filesdir = os.path.join(carbasename, "files")
+            scenesdir = os.path.join(carbasename, "files\\scenes")
+            tilesdir = os.path.join(scenesdir, tourbasename)
+            # carbasename = tourbasename
+            # filesdir = os.path.join(carbasename, "files")
+            # scenesdir = os.path.join(carbasename, "files\\scenes")
+            # tilesdir = os.path.join(scenesdir, 'tiles')
+            outputdir = panosdir + carbasename + '\\output'
+            outputtilesdir = outputdir + '\\scenes\\' + tourbasename
+            outputxmlfile = outputdir + "\\" + tourbasename + '.xml'
+            replaceorigin = 'scenes/' + tourbasename
+            replacedest = '%SWFPATH%/../../' + carbasename + '/files/scenes/' + tourbasename
+            message = carbasename + '/' + tourbasename
+            xmlfile = carbasename + '\\files\\scenes\\' + tourbasename + '.xml'
+            xmlfilebck = carbasename + '\\files\\scenes\\' + tourbasename + '_bck.xml'
 
         else:
             case = 'Normal'
