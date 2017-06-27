@@ -222,6 +222,8 @@ def main():
 
                 # Copy scene.xml file content to scene_bck.xml
                 with open(xmlfile) as oldfile, open(xmlfilebck, 'a') as newfile:
+                    # Add content in the second line
+                    newfile.write("\n")
                     for line in oldfile:
                         newfile.write(line)
 
