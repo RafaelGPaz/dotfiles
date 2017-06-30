@@ -6,6 +6,7 @@ import glob
 import logging
 import os
 import colorlog
+import shutil
 
 class readabledir(argparse.Action):
     def __call__(self, parser, namespace, values, option_string=None):
@@ -13,7 +14,7 @@ class readabledir(argparse.Action):
         setattr(namespace, self.dest, prospective_dir)
 
 def new_file(item):
-    logging.info(item)
+    logging.info('Touch -> ' + item)
     try:
         open(item, 'x')
     except FileExistsError:
@@ -23,18 +24,10 @@ def replace_str(filepath, str1, str2):
     if not os.path.exists(filepath):
         logging.warning(filepath + ' cannot be found')
     else:
-        logging.info(filepath)
+        logging.info('Replace STR ->' + filepath)
         with fileinput.FileInput(filepath, inplace=True) as file:
             for line in file:
                 print(line.replace(str1, str2), end='')
-
-def rename_item(path, item1, item2):
-    if not os.path.exists(os.path.join(path, item2)):
-        if not os.path.exists(os.path.join(path, item1)):
-            logging.warning(os.path.join(path, item1) + ' cannot be found')
-        else:
-            logging.info(path + item1 + ' -> ' + item2)
-            os.rename(os.path.join(path, item1), os.path.join(path, item2))
 
 def main():
     # Use argparse to supply 'origin' and 'destination' of the car to rename
@@ -81,7 +74,7 @@ def main():
     # Folder .src/panos/###
     path = os.path.join(rootdir, 'cars', '.src', 'panos')
     item = path + '\\' + name2
-    logging.info(item)
+    logging.info('New Folder ->' + item)
 
     if not os.path.exists(item):
         os.makedirs(item)
@@ -101,10 +94,15 @@ def main():
     new_file(item6)
 
     # Folder ./###
-    path = os.path.join(rootdir, 'cars')
-    item1 = name1
-    item2 = name2
-    rename_item(path, item1, item2)
+    item1 = os.path.join(rootdir, 'cars', name1)
+    item2 = os.path.join(rootdir, 'cars', name2)
+    # Delete the folder for the new car if it alreday exists
+    if os.path.exists(item2):
+        logging.info('Remove -> ' + item2)
+        shutil.rmtree(item2)
+    # duplicate folder  folder
+    logging.info('Copy -> ' + item1 + ' -> ' + item2)
+    shutil.copytree(item1, item2)
 
     # File ./###/index.html
     filepath = os.path.join(rootdir, 'cars', name2, 'index.html')
