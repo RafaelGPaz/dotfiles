@@ -9,7 +9,7 @@ def main():
 
     alltours = []
     allxmlfiles = []
-    ignored2 = ['<krpano', '</krpano>', '<krpano version', 'coordfinder']
+    bad_words = ['<krpano', '</krpano>', '<krpano version', 'coordfinder']
 
     for tour in glob.glob(os.getcwd()):
         alltours.append(tour)
@@ -34,6 +34,7 @@ def main():
         with open(tourxml, 'w') as outfile:
             outfile.writelines('<?xml version="1.0" encoding="UTF-8"?>\n<krpano version="1.19">\n')
             for line in fileinput.input(allxmlfiles, mode="rU"):
+                if not any(bad_word in line for bad_word in bad_words):
                     outfile.write(line[1:])
             outfile.writelines("</krpano>")
         print('[ OK ] tour.xml')
