@@ -26,7 +26,7 @@ def main():
             if "devel.xml" not in item and "tour.xml" not in item and "_design_" not in item:
                 allxmlfiles.append(item)
                 # TO DO: Add line to apend vtourskin at first
-        allxmlfiles.sort(reverse=True)
+        allxmlfiles.sort(reverse=False)
 
         # Merge files into tour.xml
         tourxml = tour + '\\files\\tour.xml'
