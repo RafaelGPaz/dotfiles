@@ -23,7 +23,7 @@ def main():
 
         # Remove unwanted XML files
         for item in xmlfiles:
-            if "devel.xml" not in item and "tour.xml" not in item and "_design_" not in item:
+            if "devel.xml" not in item and "tour.xml" not in item and "_design_" not in item and "en.xml" not in item  and "ar" not in item:
                 allxmlfiles.append(item)
                 # TO DO: Add line to apend vtourskin at first
         allxmlfiles.sort(reverse=False)
