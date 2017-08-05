@@ -146,43 +146,43 @@ def main():
                 message = tourbasename + '/' + carbasename
                 xmlfile = tourbasename + '\\files\\scenes\\scene.xml'
                 xmlfilebck = tourbasename + '\\files\\scenes\\scene_bck.xml'
-
-        if parentdir == 'hr_owen':
-            case = 'HR Owen'
-            carbasename = os.path.basename(os.path.dirname(car))
-            filesdir = os.path.join(carbasename, "files")
-            scenesdir = os.path.join(carbasename, "files\\scenes")
-            tilesdir = os.path.join(scenesdir, tourbasename)
-            # carbasename = tourbasename
-            # filesdir = os.path.join(carbasename, "files")
-            # scenesdir = os.path.join(carbasename, "files\\scenes")
-            # tilesdir = os.path.join(scenesdir, 'tiles')
-            outputdir = panosdir + carbasename + '\\output'
-            outputtilesdir = outputdir + '\\scenes\\' + tourbasename
-            outputxmlfile = outputdir + "\\" + tourbasename + '.xml'
-            replaceorigin = 'scenes/' + tourbasename
-            replacedest = '%SWFPATH%/../../' + carbasename + '/files/scenes/' + tourbasename
-            message = carbasename + '/' + tourbasename
-            xmlfile = carbasename + '\\files\\scenes\\' + tourbasename + '.xml'
-            xmlfilebck = carbasename + '\\files\\scenes\\' + tourbasename + '_bck.xml'
-
         else:
-            case = 'Normal'
-            filesdir = os.path.join(carbasename, "files")
-            scenesdir = os.path.join(carbasename, "files\\scenes")
-            tilesdir = os.path.join(scenesdir, "tiles")
-            outputdir = panosdir + '\\' + carbasename + '\\output'
-            outputtilesdir = outputdir + '\\scenes\\' + tourbasename
-            outputxmlfile = outputdir + '\\' + tourbasename + '.xml'
-            replaceorigin = 'scenes/' + tourbasename
-            if os.path.exists('./shared/'):
-                replacedest = '%SWFPATH%/../' + tourbasename + '/files/scenes/tiles'
+            if parentdir == 'hr_owen':
+                case = 'HR Owen'
+                carbasename = os.path.basename(os.path.dirname(car))
+                filesdir = os.path.join(carbasename, "files")
+                scenesdir = os.path.join(carbasename, "files\\scenes")
+                tilesdir = os.path.join(scenesdir, tourbasename)
+                # carbasename = tourbasename
+                # filesdir = os.path.join(carbasename, "files")
+                # scenesdir = os.path.join(carbasename, "files\\scenes")
+                # tilesdir = os.path.join(scenesdir, 'tiles')
+                outputdir = panosdir + carbasename + '\\output'
+                outputtilesdir = outputdir + '\\scenes\\' + tourbasename
+                outputxmlfile = outputdir + "\\" + tourbasename + '.xml'
+                replaceorigin = 'scenes/' + tourbasename
+                replacedest = '%SWFPATH%/../../' + carbasename + '/files/scenes/' + tourbasename
+                message = carbasename + '/' + tourbasename
+                xmlfile = carbasename + '\\files\\scenes\\' + tourbasename + '.xml'
+                xmlfilebck = carbasename + '\\files\\scenes\\' + tourbasename + '_bck.xml'
+
             else:
-                replacedest = '%CURRENTXML%/scenes/' + tourbasename
-            tilesdir = carbasename + '\\files\\scenes\\' + tourbasename
-            xmlfile = carbasename + '\\files\\scenes\\' + tourbasename + '.xml'
-            xmlfilebck = carbasename + '\\files\\scenes\\' + tourbasename + '_bck.xml'
-            message = carbasename + '/' + tourbasename
+                case = 'Normal'
+                filesdir = os.path.join(carbasename, "files")
+                scenesdir = os.path.join(carbasename, "files\\scenes")
+                tilesdir = os.path.join(scenesdir, "tiles")
+                outputdir = panosdir + '\\' + carbasename + '\\output'
+                outputtilesdir = outputdir + '\\scenes\\' + tourbasename
+                outputxmlfile = outputdir + '\\' + tourbasename + '.xml'
+                replaceorigin = 'scenes/' + tourbasename
+                if os.path.exists('./shared/'):
+                    replacedest = '%SWFPATH%/../' + tourbasename + '/files/scenes/tiles'
+                else:
+                    replacedest = '%CURRENTXML%/scenes/' + tourbasename
+                tilesdir = carbasename + '\\files\\scenes\\' + tourbasename
+                xmlfile = carbasename + '\\files\\scenes\\' + tourbasename + '.xml'
+                xmlfilebck = carbasename + '\\files\\scenes\\' + tourbasename + '_bck.xml'
+                message = carbasename + '/' + tourbasename
 
         if not os.path.exists(tilesdir):
             logging.info('Case: ' + case)
@@ -241,6 +241,12 @@ def main():
 
                 # Rename scene_bck.xml as scene.xml
                 os.rename(xmlfilebck, xmlfile)
+
+            # Only for the V10 Visualiser cars
+            if case == 'GForces - Visualiser':
+                # Move the scene.xml file
+                if os.path.exists(outputxmlfile):
+                    shutil.move(outputxmlfile, xmlfile)
 
             # Delete output folder
             if os.path.exists(outputdir):
