@@ -3,6 +3,7 @@
 import os
 import glob
 import fileinput
+import shutil
 from usefulfunctions import safeRm
 
 def main():
@@ -11,13 +12,19 @@ def main():
     allxmlfiles = []
     bad_words = ['<krpano', '</krpano>', '<krpano version', 'coordfinder']
 
-    for tour in glob.glob(os.getcwd()):
+    for tour in os.listdir(os.getcwd()):
         alltours.append(tour)
         if '.src' in alltours:
             alltours.remove('.src')
-        print("Tour: " + os.path.basename(tour))
+        if 'shared' in alltours:
+            alltours.remove('shared')
+        if '.git' in alltours:
+            alltours.remove('.git')
+        if '.gitignore' in alltours:
+            alltours.remove('.custom')
 
     for tour in alltours:
+        print("Tour: " + os.path.basename(tour))
         # Find all XML files recursively
         xmlfiles = glob.glob(tour + "\\files\\**\\*.xml", recursive=True)
 
@@ -31,6 +38,7 @@ def main():
 
         # Merge files into tour.xml
         tourxml = tour + '\\files\\tour.xml'
+        # enxml = tour + '\\files\\en.xml'
         safeRm(tourxml)
         with open(tourxml, 'w') as outfile:
             outfile.writelines('<?xml version="1.0" encoding="UTF-8"?>\n<krpano version="1.19">\n')
@@ -38,7 +46,9 @@ def main():
                 if not any(bad_word in line for bad_word in bad_words):
                     outfile.write(line[1:])
             outfile.writelines("</krpano>")
-        print('[ OK ] tour.xml')
+        # shutil.copyfile(tourxml,enxml)
+        allxmlfiles = []
+        print('[ OK ] ' + tourxml)
 
     print("_EOF_")
 
