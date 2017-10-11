@@ -40,11 +40,12 @@ def main():
         tourxml = tour + '\\files\\tour.xml'
         # enxml = tour + '\\files\\en.xml'
         safeRm(tourxml)
-        with open(tourxml, 'w') as outfile:
+        with open(tourxml, 'w', encoding='utf-8') as outfile:
             outfile.writelines('<?xml version="1.0" encoding="UTF-8"?>\n<krpano version="1.19">\n')
-            for line in fileinput.input(allxmlfiles, mode="rU"):
+            for line in fileinput.input(allxmlfiles, mode="rU", openhook=fileinput.hook_encoded("utf-8-sig")):
                 if not any(bad_word in line for bad_word in bad_words):
-                    outfile.write(line[1:])
+                    if line.rstrip():
+                        outfile.write(line)
             outfile.writelines("</krpano>")
         # shutil.copyfile(tourxml,enxml)
         allxmlfiles = []
