@@ -20,8 +20,10 @@ def main():
             alltours.remove('shared')
         if '.git' in alltours:
             alltours.remove('.git')
-        if '.gitignore' in alltours:
+        if '.custom' in alltours:
             alltours.remove('.custom')
+        if '.gitignore' in alltours:
+            alltours.remove('.gitignore')
 
     for tour in alltours:
         print("Tour: " + os.path.basename(tour))
