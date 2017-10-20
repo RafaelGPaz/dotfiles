@@ -13,17 +13,8 @@ def main():
     bad_words = ['<krpano', '</krpano>', '<krpano version', 'coordfinder']
 
     for tour in os.listdir(os.getcwd()):
-        alltours.append(tour)
-        if '.src' in alltours:
-            alltours.remove('.src')
-        if 'shared' in alltours:
-            alltours.remove('shared')
-        if '.git' in alltours:
-            alltours.remove('.git')
-        if '.custom' in alltours:
-            alltours.remove('.custom')
-        if '.gitignore' in alltours:
-            alltours.remove('.gitignore')
+        if not tour.startswith('.'):
+            alltours.append(tour)
 
     for tour in alltours:
         print("Tour: " + os.path.basename(tour))
