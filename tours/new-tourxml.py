@@ -1,12 +1,28 @@
 #!/usr/bin/env python
 
-import os
-import glob
+import argparse
 import fileinput
+import glob
+import logging
+import os
 import shutil
+import colorlog
 from usefulfunctions import safeRm
 
 def main():
+    parser = argparse.ArgumentParser(description='Merges all the XML files into \
+    "tour.xm" and creates a new "en.xml" file if it already exists.')
+    args = parser.parse_args()
+
+    logger = colorlog.getLogger()
+    logger.setLevel(logging.DEBUG)
+    handler = logging.StreamHandler()
+    handler.setLevel(logging.DEBUG)
+    handler.setFormatter(
+        colorlog.ColoredFormatter('%(log_color)s%(levelname)s:%(message)s'))
+    logger.addHandler(handler)
+
+    logger.info("Started")
 
     alltours = []
     allxmlfiles = []
@@ -17,7 +33,7 @@ def main():
             alltours.append(tour)
 
     for tour in alltours:
-        print("Tour: " + os.path.basename(tour))
+        logger.info("Tour: " + os.path.basename(tour))
         # Find all XML files recursively
         xmlfiles = glob.glob(tour + "\\files\\**\\*.xml", recursive=True)
 
@@ -25,7 +41,7 @@ def main():
         for item in xmlfiles:
             if "devel.xml" not in item and "tour.xml" not in item and "_design_" not in item and "en.xml" not in item  and "ar" not in item:
                 allxmlfiles.append(item)
-                print(item)
+                logger.debug('[ -- ] ' + item)
                 # TO DO: Add line to apend vtourskin at first
         allxmlfiles.sort(reverse=False)
 
@@ -40,13 +56,13 @@ def main():
                     if line.rstrip():
                         outfile.write(line)
             outfile.writelines("</krpano>")
-        print('[ OK ] ' + tourxml)
+        logger.info('[ OK ] ' + tourxml)
         if os.path.isfile(enxml):
             shutil.copyfile(tourxml,enxml)
-            print('[ OK ] ' + enxml)
+            logging.info('[ OK ] ' + enxml)
         allxmlfiles = []
 
-    print("_EOF_")
+    logger.info("_EOF_")
 
 if __name__ == '__main__':
     main()
