@@ -14,16 +14,18 @@ def main():
     "tour.xm" and creates a new "en.xml" file if it already exists.')
     args = parser.parse_args()
 
+    handler = colorlog.StreamHandler()
+    handler.setFormatter(colorlog.ColoredFormatter(
+        '%(log_color)s%(levelname)s:%(name)s:%(message)s',
+        log_colors={
+            'DEBUG': 'green',
+            'INFO': 'cyan'
+        }))
     logger = colorlog.getLogger()
-    logger.setLevel(logging.DEBUG)
-    handler = logging.StreamHandler()
-    handler.setLevel(logging.DEBUG)
-    handler.setFormatter(
-        colorlog.ColoredFormatter('%(log_color)s%(levelname)s:%(message)s'))
     logger.addHandler(handler)
+    logger.setLevel(level=logging.INFO)
 
     logger.info("Started")
-
     alltours = []
     allxmlfiles = []
     bad_words = ['<krpano', '</krpano>', '<krpano version', 'coordfinder']
@@ -41,7 +43,7 @@ def main():
         for item in xmlfiles:
             if "devel.xml" not in item and "tour.xml" not in item and "_design_" not in item and "en.xml" not in item  and "ar" not in item:
                 allxmlfiles.append(item)
-                logger.debug('[ -- ] ' + item)
+                logger.info('[ -- ] ' + item)
                 # TO DO: Add line to apend vtourskin at first
         allxmlfiles.sort(reverse=False)
 
@@ -59,7 +61,7 @@ def main():
         logger.info('[ OK ] ' + tourxml)
         if os.path.isfile(enxml):
             shutil.copyfile(tourxml,enxml)
-            logging.info('[ OK ] ' + enxml)
+            logger.info('[ OK ] ' + enxml)
         allxmlfiles = []
 
     logger.info("_EOF_")
