@@ -8,6 +8,7 @@ import os
 import shutil
 import subprocess
 import sys
+import colorlog
 from usefulfunctions import mkdirif
 from usefulfunctions import query_yes_no
 
@@ -31,9 +32,19 @@ def main():
     parser.add_argument('-i', action='store_false', dest='ignoreunderscores', \
                               default=True, help='Skip checking 4 underscores')
     args = parser.parse_args()
-    logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
 
-    logging.info("Started")
+    handler = colorlog.StreamHandler()
+    handler.setFormatter(colorlog.ColoredFormatter(
+        '%(log_color)s%(levelname)s:%(name)s:%(message)s',
+        log_colors={
+            'DEBUG': 'green',
+            'INFO': 'cyan'
+        }))
+    logger = colorlog.getLogger()
+    logger.addHandler(handler)
+    logger.setLevel(level=logging.INFO)
+
+    logger.info("Started")
 
     if query_yes_no('Do you need WebVR support?'):
         webvr = "yes"
@@ -95,7 +106,7 @@ def main():
 
     # Check if tiles are needed
     for car in allitems:
-        # logging.info('car: ' + car)
+        # logger.info('car: ' + car)
         carbasename = os.path.basename(os.path.dirname(car))
         tourbasename = os.path.splitext(os.path.basename(car))[0]
         filesdir = os.path.join(tourbasename, 'files')
@@ -185,17 +196,17 @@ def main():
                 message = carbasename + '/' + tourbasename
 
         if not os.path.exists(tilesdir):
-            logging.info('Case: ' + case)
-            logging.info('[    ] Making tiles for: ' + message)
+            logger.info('Case: ' + case)
+            logger.info('[    ] Making tiles for: ' + message)
             # Create folder structure
-            # logging.info("carbasename: " + carbasename)
-            # logging.info("tourbasename: " + tourbasename)
-            # logging.info("filesdir: " + filesdir)
-            # logging.info("scenesdir: " + scenesdir)
-            # logging.info("tilesdir: " + tilesdir)
-            # logging.info("xmlfile: " + xmlfile)
-            # logging.info("outputxmlfile: " + outputxmlfile)
-            # logging.info("outputtilesdir: " + outputtilesdir)
+            logger.debug("carbasename: " + carbasename)
+            logger.debug("tourbasename: " + tourbasename)
+            logger.debug("filesdir: " + filesdir)
+            logger.debug("scenesdir: " + scenesdir)
+            logger.debug("tilesdir: " + tilesdir)
+            logger.debug("xmlfile: " + xmlfile)
+            logger.debug("outputxmlfile: " + outputxmlfile)
+            logger.debug("outputtilesdir: " + outputtilesdir)
             mkdirif(carbasename)
             mkdirif(filesdir)
             mkdirif(scenesdir)
@@ -252,7 +263,7 @@ def main():
             if os.path.exists(outputdir):
                 shutil.rmtree(outputdir)
 
-    logging.info('Finished')
+    logger.info('Finished')
 
 if __name__ == '__main__':
     main()
