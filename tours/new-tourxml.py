@@ -40,7 +40,7 @@ def main():
 
         # Merge files into tour.xml
         tourxml = tour + '\\files\\tour.xml'
-        # enxml = tour + '\\files\\en.xml'
+        enxml = tour + '\\files\\en.xml'
         safeRm(tourxml)
         with open(tourxml, 'w', encoding='utf-8') as outfile:
             outfile.writelines('<?xml version="1.0" encoding="UTF-8"?>\n<krpano version="1.19">\n')
@@ -49,9 +49,11 @@ def main():
                     if line.rstrip():
                         outfile.write(line)
             outfile.writelines("</krpano>")
-        # shutil.copyfile(tourxml,enxml)
-        allxmlfiles = []
         print('[ OK ] ' + tourxml)
+        if os.path.isfile(enxml):
+            shutil.copyfile(tourxml,enxml)
+            print('[ OK ] ' + enxml)
+        allxmlfiles = []
 
     print("_EOF_")
 
