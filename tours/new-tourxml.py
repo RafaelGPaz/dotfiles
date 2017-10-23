@@ -29,10 +29,12 @@ def main():
     alltours = []
     allxmlfiles = []
     bad_words = ['<krpano', '</krpano>', '<krpano version', 'coordfinder']
+    bad_folders = ['shared']
 
     for tour in os.listdir(os.getcwd()):
         if not tour.startswith('.'):
-            alltours.append(tour)
+            if not any(bad_folder in tour for bad_folder in bad_folders):
+                alltours.append(tour)
 
     for tour in alltours:
         logger.info("Tour: " + os.path.basename(tour))
