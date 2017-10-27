@@ -12,10 +12,7 @@ def getbasename(name):
     return ibasename
 
 def main():
-    # Use argparse to supply 'origin' and 'destination' of the car to rename
-    parser = argparse.ArgumentParser(description='Compares files in .src/panos/ and .src/masks/ to make sure each car has its corresponding mask file.')
-    # parser.add_argument('-o', '--origin', action=readable_dir, dest='origin', help='Name of the car to be renamed')
-    # parser.add_argument('-d', '--destination', dest='destination', help='New name')
+    parser = argparse.ArgumentParser(description='Compares files in .src/import/ and .src/masks/ to make sure each car has its corresponding mask file.')
     args = parser.parse_args()
 
     handler = colorlog.StreamHandler()
