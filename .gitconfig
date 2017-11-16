@@ -54,8 +54,8 @@
 	untracked = red
 [core]
 	editor = code --wait
-	autocrlf = True
-	whitespace = cr-at-eol
+	autocrlf = input
+	whitespace = fix
 [diff]
 	tool = diff3
 	guitool = kdiff3
