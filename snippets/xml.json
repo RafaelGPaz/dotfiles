@@ -1,0 +1,139 @@
+{
+/*
+	 // Place your snippets for XML here. Each snippet is defined under a snippet name and has a prefix, body and
+	 // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	 // $1, $2 for tab stops, ${id} and ${id:label} and ${1:label} for variables. Variables with the same id are connected.
+	 // Example:
+	 "Print to console": {
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	}
+*/
+	// Krpano elements
+    "Krpano version": {
+		"prefix": "krp",
+		"body": [
+			"<krpano version=\"1.19\">",
+			"$1",
+			"</krpano>"
+		],
+		"description": "Add Krpano version element"
+	},
+    "Layer element": {
+		"prefix": "lay",
+		"body": [
+			"<layer name=\"$1\"",
+			"       $2",
+			"       />"
+		],
+		"description": "Add Krpano loyer element"
+	},
+    "Style element": {
+		"prefix": "sty",
+		"body": [
+			"<style name=\"$1\"",
+			"       $2",
+			"       />"
+		],
+		"description": "Add Krpano style element"
+	},
+	"Action element": {
+		"prefix": "act",
+		"body": [
+			"<action name=\"$1\">",
+			"       $2",
+			"</action>"
+		],
+		"description": "Add Krpano action element"
+	},
+	// Krpano actions
+    "Trace element": {
+		"prefix": "tra",
+		"body": [
+			"trace($1); showlog();"
+		],
+		"description": "Add Krpano trace action"
+	},
+	"Get action": {
+		"prefix": "get",
+		"body": [
+			"get($1);"
+		],
+		"description": "Add Krpano get action"
+	},
+	"Get action for layers": {
+		"prefix": "getla",
+		"body": [
+			"get(layer[$1].$2);"
+		],
+		"description": "Add Krpano get action for layers"
+	},
+	"Get action for hotspots": {
+		"prefix": "geths",
+		"body": [
+			"get(hotspot[$1].$2);"
+		],
+		"description": "Add Krpano get action for hotspots"
+	},
+    "Set action for layers": {
+		"prefix": "setla",
+		"body": [
+			"set(layer[$1].$2,);"
+		],
+		"description": "Add Krpano set element for layers"
+	},
+    "Set action for hotspots": {
+		"prefix": "seths",
+		"body": [
+			"set(hotspot[$1].$2,);"
+		],
+		"description": "Add Krpano set element for hotspots"
+	},
+    "If conditional for layers": {
+		"prefix": "ifla",
+		"body": [
+			"if(layer[$1].$2 == \"$3\",",
+			"$4",
+			");"
+		],
+		"description": "Add Krpano if conditional for layers"
+	},
+    "If conditional for hotspots": {
+		"prefix": "ifhs",
+		"body": [
+			"if(hotspot[$1].$2 == \"$3\",",
+			"$4",
+			");"
+		],
+		"description": "Add Krpano if conditional for layers"
+	},
+    "Tween action for layers": {
+		"prefix": "twla",
+		"body": [
+			"tween(layer[$1].$2,$3);"
+		],
+		"description": "Add Krpano tween action for layers"
+	},
+    "Tween action for hotspots": {
+		"prefix": "twhs",
+		"body": [
+			"tween(hotspot[$1].$2,$3);"
+		],
+		"description": "Add Krpano tween action for hotspotss"
+	},
+	// GForces
+	"Car element": {
+		"prefix": "cart",
+		"body": "<car id=\"$1\" name=\"\" h=\"\" v=\"\" seat1=\"1\" seat2=\"2\" bg1=\"Studio\" bg2=\"Plaza\" bg3=\"Forest\" />",
+		"description": "Car element for Gforces config.xml"
+	},
+	"Hde attribute": {
+		"prefix": "hid",
+		"body": "hide=\"y\"",
+		"description": "Hide attribute for Gforces config.xml"
+	}
+}

@@ -1,0 +1,69 @@
+// Place your settings in this file to overwrite the default settings
+{
+// Editor
+    "editor.fontFamily": "'Hack', 'LiberationMono'",
+    "editor.cursorBlinking": "solid",
+    "editor.wordBasedSuggestions": true,
+// Files
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/*.jpg": true,
+        "**/*.png": true,
+        "**/*.gif": true,
+        "**/*.tif": true,
+        "**/*.psd": true,
+        "**/*.psb": true,
+        "**/*.swf": true
+    },
+    "files.trimTrailingWhitespace": true,
+// Git,
+    "git.path": "C:\\Users\\Rafael\\AppData\\Roaming\\cmder\\vendor\\git-for-windows\\bin\\git.exe",
+// Automatically update extensions
+    "extensions.autoUpdate": true,
+// Integrated Terminal
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\system32\\WindowsPowershell\\v1.0\\powershell.exe",
+// Auto Close Tag configuration
+    "auto-close-tag.SublimeText3Mode": true,
+// Numbered Bookmarks Configuration
+    "numberedBookmarks.saveBookmarksBetweenSessions": true,
+// Code Ace Jumper
+    "aceJump.placeholder.backgroundColor": "#1E1E1E",
+    "aceJump.placeholder.color": "yellow",
+    "aceJump.placeholder.fontSize": 15,
+    "aceJump.placeholder.fontWeight": "500",
+    "aceJump.placeholder.height": 12,
+    "aceJump.placeholder.textPosX": 1,
+    "aceJump.placeholder.textPosY": 12,
+    "aceJump.placeholder.upperCase": "true",
+    "aceJump.placeholder.width": 10,
+    "sync.gist": "263ed5bd181da4597695b2106bd1ffd9",
+    "sync.lastUpload": "2017-10-25T12:57:48.130Z",
+    "sync.autoDownload": false,
+    "sync.autoUpload": false,
+    "sync.lastDownload": "2017-07-18T16:12:01.783Z",
+    "sync.version": 262,
+    "sync.showSummary": true,
+    "sync.forceDownload": true,
+    "sync.workspaceSync": false,
+    "sync.anonymousGist": false,
+// Project Manager Configuration
+    "projectManager.openInNewWindow": false,
+    "window.zoomLevel": 0,
+    "workbench.iconTheme": "vs-seti",
+    "sync.host": "",
+    "sync.pathPrefix": "",
+    "editor.wordSeparators": "`~!@#$%^&*()-_=+[{]}\\|;:'\",.<>/?",
+    "powershell.integratedConsole.showOnStartup": false,
+    "editor.minimap.enabled": false,
+    "sync.quietSync": false,
+    "sync.askGistName": false,
+// MataGo
+    "metaGo.decoration.backgroundColor": "#1E1E1E",
+    "metaGo.decoration.color": "yellow",
+    "metaGo.decoration.fontSize": 17,
+    "metaGo.decoration.fontWeight": 400,
+    "git.confirmSync": false
+}

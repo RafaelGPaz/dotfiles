@@ -1,0 +1,65 @@
+{
+/*
+	 // Place your snippets for Markdown here. Each snippet is defined under a snippet name and has a prefix, body and
+	 // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	 // $1, $2 for tab stops, ${id} and ${id:label} and ${1:label} for variables. Variables with the same id are connected.
+	 // Example:
+	 "Print to console": {
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	}
+*/
+    "Link Blank": {
+		"prefix": "link",
+		"body": [
+			"[$1]($2){target=\"blank_\"}$0"
+		],
+		"description": "Insert link blank"
+	},
+	"Image in Parallax Server": {
+
+		"prefix": "image parallax",
+		"body": [
+			"[$1]({$2https://parallaxvirtualtours.co.uk/images/blog/)$0"
+		],
+		"description": "Insert image hosted in parallax server"
+	},
+	"New Post": {
+		"prefix": "post",
+		"body": [
+			"status:published",
+			"slug:${2:url}",
+			"title:${3:title}",
+			"date:2017-${4:1-1}",
+			"category:${5:Category}",
+			"tags:${6:tag1,tag2}",
+			"summary:${7:summary}",
+			"description:${8:140 chars}",
+			"social_image:${2:url}.png",
+			"",
+			"## ${9:sumary}",
+			"",
+			"### ${10:section}"
+			],
+		"description": "Insert all the necessary tags for a new post using Pelican"
+	},
+	"New Portfolio": {
+		"prefix": "portfolio",
+		"body": [
+			"status:published",
+			"slug:portfolio/${1}",
+			"sitemap:${2|virtualtour,360video,streetview|}",
+			"template:portfolio",
+			"title:${3}",
+			"subtitle:${4}",
+			"iframeurl:${5}",
+			"projectinfo:${6}",
+			"testimonial:${7}"
+			],
+		"description": "Insert all the necessary tags for a new post using Pelican"
+	}
+}

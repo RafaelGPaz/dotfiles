@@ -1,0 +1,176 @@
+[
+	{
+		"name": "Bin directory",
+		"rootPath": "C:\\Users\\Rafael\\AppData\\Roaming\\bin\\",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Parallax Website",
+		"rootPath": "E:\\Parallax\\parallaxvirtualtours.co.uk\\",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Parallax Virtual Tours",
+		"rootPath": "E:\\Parallax\\virtual_tours\\",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Parallax Virtual Tours Examples",
+		"rootPath": "E:\\Parallax\\virtual_tours\\examples\\",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Pelican Blog",
+		"rootPath": "E:\\Parallax\\parallaxvirtualtours.co.uk\\pelican\\",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Clarendon Apartments",
+		"rootPath": "E:\\virtual_tours\\clarendon_apartments\\",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Chevrolet Manufacturer",
+		"rootPath": "E:\\virtual_tours\\gforces\\manufacturers\\chevrolet_manufacturer\\",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Lexus Manufacturer",
+		"rootPath": "E:\\virtual_tours\\gforces\\manufacturers\\lexus_manufacturer\\",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Toyota Manufacturer",
+		"rootPath": "E:\\virtual_tours\\gforces\\manufacturers\\toyota_manufacturer\\",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Powershell",
+		"rootPath": "C:\\Users\\Rafael\\Documents\\WindowsPowerShell\\",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "New-GforcesTour",
+		"rootPath": "C:\\Users\\Rafael\\Documents\\WindowsPowerShell\\Scripts\\gforces\\New-GforcesTour\\",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "HROwen New Interface",
+		"rootPath": "E:\\virtual_tours\\hr_owen\\new_interface\\",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "VScode Config",
+		"rootPath": "C:\\Users\\Rafael\\AppData\\Roaming\\Code\\User\\",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "AFrame-Project1",
+		"rootPath": "E:\\projects\\AFrame\\AFrame-Project1",
+		"paths": [],
+		"group": "A-Frame"
+	},
+	{
+		"name": "TourVista Website",
+		"rootPath": "e:\\websites\\tourvista\\tourvista.co.uk\\pelican",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Maplewell Hall School",
+		"rootPath": "e:\\virtual_tours\\maplewell_hall_school",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Henley Business School",
+		"rootPath": "e:\\virtual_tours\\henley_business_school",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Gforces - Advanced hs v2",
+		"rootPath": "e:\\virtual_tours\\gforces\\examples\\projects\\examples\\advanced_hs\\advanced_hs_v2",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "GForces - Mazda Manufacturer",
+		"rootPath": "e:\\virtual_tours\\gforces\\manufacturers\\mazda_manufacturer",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Health and Safety",
+		"rootPath": "e:\\virtual_tours\\health_and_safety",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "HROwen - Examples",
+		"rootPath": "e:\\virtual_tours\\hr_owen\\examples",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Gforces - Examples - Lexus IS 2017",
+		"rootPath": "e:\\virtual_tours\\gforces\\examples\\projects\\examples\\lexus_is_2017",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "HROwen - Second hand cars",
+		"rootPath": "e:\\virtual_tours\\hr_owen\\second_hand_cars",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Gforces - LEVC Manufacturer",
+		"rootPath": "e:\\virtual_tours\\gforces\\manufacturers\\levc_manufacturer",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Arsenal - Twitter",
+		"rootPath": "e:\\virtual_tours\\arsenal\\twitter",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "GForces - Cars V10",
+		"rootPath": "e:\\virtual_tours\\gforces\\cars\\.src",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Stirling - Student Accommodation",
+		"rootPath": "e:\\virtual_tours\\stirling_university\\student-accommodation",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "GForces GMC Manufacturer",
+		"rootPath": "e:\\virtual_tours\\gforces\\manufacturers\\gmc_manufacturer",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "GForces - Example - V10 Experience",
+		"rootPath": "e:\\virtual_tours\\gforces\\examples\\projects\\examples\\V10-experience",
+		"paths": [],
+		"group": ""
+	}
+]
