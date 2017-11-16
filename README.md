@@ -1,4 +1,1 @@
-.gitconfig
-==========
-
 git configuration file
