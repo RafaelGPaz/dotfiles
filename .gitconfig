@@ -53,7 +53,7 @@
 	changed = green
 	untracked = red
 [core]
-	editor = vim
+	editor = code --wait
 	autocrlf = True
 	whitespace = cr-at-eol
 [diff]
@@ -71,10 +71,13 @@
 [web]
 	browser = firefox
 [merge]
-	tool = kdiff3
-[mergetool "kdiff3"]
-	path = C:/Program Files/KDiff3/kdiff3.exe
-[difftool "kdiff3"]
-	path = C:/Program Files/KDiff3/kdiff3.exe
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
 [credential]
 	helper = store
