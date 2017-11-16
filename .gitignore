@@ -2,4 +2,5 @@
 *
 !.gitconfig
 !.gitignore
+!.gitexcludes
 !README.md
