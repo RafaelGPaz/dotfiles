@@ -56,6 +56,7 @@
 	editor = code --wait
 	autocrlf = input
 	whitespace = fix
+	excludesfile = ~/.gitignore.global
 [diff]
 	tool = diff3
 	guitool = kdiff3
