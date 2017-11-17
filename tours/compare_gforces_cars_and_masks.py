@@ -24,8 +24,8 @@ def main():
 
     logger.info("Started")
 
-    importFolder = '//media//e//virtual_tours//gforces//cars//.src//import'
-    masksFolder = '//media//e//virtual_tours//gforces//cars//.src//masks'
+    importFolder = 'E://virtual_tours//gforces//cars//.src//import'
+    masksFolder = 'E://virtual_tours//gforces//cars//.src//masks'
 
     allimports = []
     imports = glob.glob(importFolder + '/*.jpg')
