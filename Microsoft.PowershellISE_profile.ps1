@@ -1,0 +1,1 @@
+# Load ConsoleHost profile. "$(split-path $PROFILE)\Microsoft.Powershell_profile.ps1"
