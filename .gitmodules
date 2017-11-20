@@ -1,0 +1,12 @@
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+[submodule "bin/newvt"]
+	path = bin/newvt
+	url = https://github.com/RafaelGPaz/newvt
+[submodule "bin/clustergit"]
+	path = bin/clustergit
+	url = https://github.com/mnagel/clustergit
+[submodule "powershell/Scripts/New-GforcesTour"]
+	path = powershell/Scripts/New-GforcesTour
+	url = https://github.com/RafaelGPaz/New-GforcesTour

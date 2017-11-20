@@ -1,0 +1,17 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~', '~/.config']
+
+- link:
+    ~/.bash_profile:
+    ~/.config/powershell: powershell
+    ~/.dotfiles: ''
+    ~/.gitconfig:
+    ~/.gitignore.global:
+    ~/.ssh/config: ssh/config
+    ~/.zshrc:
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+    - if [[ ! -a $HOME/.hushlogin ]]; then touch "$HOME/.hushlogin"; fi # Prevent last login message in terminal
