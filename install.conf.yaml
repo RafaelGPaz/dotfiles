@@ -14,4 +14,4 @@
     ~/.zshrc:
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - if [[ ! -a $HOME/.hushlogin ]]; then touch "$HOME/.hushlogin"; fi # Prevent last login message in terminal
+    - if [[ ! -a $HOME/.hushlogin ]]; then touch "$HOME/.hushlogin"; fi # Prevent last ∏login message in terminal
