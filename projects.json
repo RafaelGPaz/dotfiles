@@ -172,5 +172,23 @@
 		"rootPath": "/Users/rafael/virtual-tours/gforces/examples/projects/examples/V10-experience",
 		"paths": [],
 		"group": ""
+	},
+	{
+		"name": "Oh-my-zsh Config",
+		"rootPath": "$home/.oh-my-zsh/custom",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "GForces - Ford Manufacturer",
+		"rootPath": "$home/virtual-tours/gforces/manufacturers/ford_manufacturer",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "GForces - Lincoln Manufacturer",
+		"rootPath": "$home/virtual-tours/gforces/manufacturers/lincoln_manufacturer",
+		"paths": [],
+		"group": ""
 	}
 ]
