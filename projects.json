@@ -1,7 +1,7 @@
 [
 	{
-		"name": "Bin directory",
-		"rootPath": "/Users/rafael/bin/",
+		"name": "Dot files directory",
+		"rootPath": "/Users/rafael/dotfiles/",
 		"paths": [],
 		"group": ""
 	},
