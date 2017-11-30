@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
-source /usr/local/share/antigen/antigen.zsh
+export PATH="$PATH:/usr/local/sbin:$HOME/dotfiles/bin/misc:$HOME/dotfiles/bin/newvt:$HOME/dotfiles/bin/tours"
+setopt correct
 
 ######################################################
 # Pyt
