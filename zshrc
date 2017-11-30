@@ -2,9 +2,14 @@
 
 source /usr/local/share/antigen/antigen.zsh
 
+######################################################
+# Pyt
+######################################################
+# Antigen                                            #
+######################################################
+source /usr/local/share/antigen/antigen.zsh
 # Load the oh-my-zsh's library
 antigen use oh-my-zsh
-
 antigen bundles <<EOBUNDLES
 command-not-found
 common-aliases
@@ -15,21 +20,14 @@ z
 zsh-users/zsh-autosuggestions # Fish-like auto suggestions
 zsh-users/zsh-completions # Extra zsh completions
 EOBUNDLES
-
 # Syntax highlighting bundle (Load last)
 antigen bundle zsh-users/zsh-syntax-highlighting
-
 # Load the theme
 antigen theme robbyrussell
-
 # Tell antigen that you're done
 antigen apply
-
 # Set Zsh option
-setopt correct
-
-######################################################
-# Python                                             #
+hon                                             #
 ######################################################
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -45,7 +43,9 @@ export VIRTUALENVWRAPPER_PYTHON=`which python`
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 source /usr/local/bin/virtualenvwrapper_lazy.sh
 
-# Aliases
+######################################################
+# Aliases                                            #
+######################################################
 alias off="sudo poweroff"
 alias reboot_and_sfck="sudo shutdown -rF now"
 alias lsb="ls -1 | sed -e 's/\..*$//'"
