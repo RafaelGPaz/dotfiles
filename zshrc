@@ -36,18 +36,22 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 source $PYENV_ROOT/completions/pyenv.zsh
 
+######################################################
+# Python                                             #
+######################################################
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
 # Fix 'pyenv install' bug by telling the compiler where the openssl package is located
 # https://github.com/pyenv/pyenv/wiki/Common-build-problems
 export CFLAGS="-I$(brew --prefix openssl)/include"
 export LDFLAGS="-L$(brew --prefix openssl)/lib"
-# Show the name of the env in the prompt
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-
-# Configuration for Virtualenv and Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+export VIRTUALENVWRAPPER_PYTHON=`which python`
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-source /usr/local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper_lazy.sh
 
 # Aliases
 alias off="sudo poweroff"
