@@ -12,7 +12,6 @@ from usefulfunctions import safeRm
 def main():
     parser = argparse.ArgumentParser(description='Merges all the XML files into \
     "tour.xm" and creates a new "en.xml" file if it already exists.')
-    args = parser.parse_args()
 
     handler = colorlog.StreamHandler()
     handler.setFormatter(colorlog.ColoredFormatter(
