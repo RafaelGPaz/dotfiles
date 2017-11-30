@@ -29,8 +29,8 @@ def main():
     allxmlfiles = []
     bad_words = ['<krpano', '</krpano>', '<krpano version', 'coordfinder']
     bad_folders = ['shared']
-
     for tour in os.listdir(os.getcwd()):
+        if os.path.isdir(os.path.join(os.getcwd(), tour)):
         if not tour.startswith('.'):
             if not any(bad_folder in tour for bad_folder in bad_folders):
                 alltours.append(tour)
