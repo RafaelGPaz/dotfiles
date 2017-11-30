@@ -1,10 +1,7 @@
 #!/usr/bin/env zsh
 
 export PATH="$PATH:/usr/local/sbin:$HOME/dotfiles/bin/misc:$HOME/dotfiles/bin/newvt:$HOME/dotfiles/bin/tours"
-setopt correct
 
-######################################################
-# Pyt
 ######################################################
 # Antigen                                            #
 ######################################################
@@ -28,7 +25,10 @@ antigen theme robbyrussell
 # Tell antigen that you're done
 antigen apply
 # Set Zsh option
-hon                                             #
+setopt correct
+
+######################################################
+# Python                                             #
 ######################################################
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -61,3 +61,4 @@ alias backup_all='backup_img && backup_plus'
 
 alias clustergit='~/bin/clustergit/clustergit --recursive -e .cache/ -e .config/ -e .local/'
 alias code='code-insiders'
+alias powershell='pwsh'
