@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 source /usr/local/share/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library
