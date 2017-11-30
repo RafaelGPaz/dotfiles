@@ -31,14 +31,14 @@ def main():
     bad_folders = ['shared']
     for tour in os.listdir(os.getcwd()):
         if os.path.isdir(os.path.join(os.getcwd(), tour)):
-        if not tour.startswith('.'):
-            if not any(bad_folder in tour for bad_folder in bad_folders):
-                alltours.append(tour)
+            if not tour.startswith('.'):
+                if not any(bad_folder in tour for bad_folder in bad_folders):
+                    alltours.append(tour)
 
     for tour in alltours:
         logger.info("Tour: " + os.path.basename(tour))
         # Find all XML files recursively
-        xmlfiles = glob.glob(tour + "\\files\\**\\*.xml", recursive=True)
+        xmlfiles = glob.glob(tour + "/files/**/*.xml", recursive=True)
 
         # Remove unwanted XML files
         for item in xmlfiles:
@@ -49,8 +49,8 @@ def main():
         allxmlfiles.sort(reverse=False)
 
         # Merge files into tour.xml
-        tourxml = tour + '\\files\\tour.xml'
-        enxml = tour + '\\files\\en.xml'
+        tourxml = os.path.join(tour, 'files', 'tour.xml')
+        enxml = os.path.join(tour, 'files' ,'en.xml')
         safeRm(tourxml)
         with open(tourxml, 'w', encoding='utf-8') as outfile:
             outfile.writelines('<?xml version="1.0" encoding="UTF-8"?>\n<krpano version="1.19">\n')
