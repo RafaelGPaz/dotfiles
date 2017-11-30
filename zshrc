@@ -32,6 +32,11 @@ export PATH="$PATH:/usr/local/sbin:$HOME/dotfiles/bin/misc:$HOME/dotfiles/bin/ne
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# Fix 'pyenv install' bug by telling the compiler where the openssl package is located
+# https://github.com/pyenv/pyenv/wiki/Common-build-problems
+export CFLAGS="-I$(brew --prefix openssl)/include"
+export LDFLAGS="-L$(brew --prefix openssl)/lib"
 # Configuration for Virtualenv and Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
