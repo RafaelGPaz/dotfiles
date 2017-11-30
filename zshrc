@@ -34,6 +34,7 @@ export PATH="$PATH:/usr/local/sbin:$HOME/dotfiles/bin/misc:$HOME/dotfiles/bin/ne
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+source $PYENV_ROOT/completions/pyenv.zsh
 
 # Fix 'pyenv install' bug by telling the compiler where the openssl package is located
 # https://github.com/pyenv/pyenv/wiki/Common-build-problems
