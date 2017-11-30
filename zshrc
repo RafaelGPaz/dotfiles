@@ -37,6 +37,9 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 # https://github.com/pyenv/pyenv/wiki/Common-build-problems
 export CFLAGS="-I$(brew --prefix openssl)/include"
 export LDFLAGS="-L$(brew --prefix openssl)/lib"
+# Show the name of the env in the prompt
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+
 # Configuration for Virtualenv and Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
