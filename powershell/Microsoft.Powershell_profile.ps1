@@ -2,11 +2,10 @@
 # PATH                       #
 ##############################
 
-$poshScripts="$HOME/dotfiles/powershell/Scripts/"
-$env:PATH += ":$(split-path $poshScripts)/"
-$env:PATH += ":$(split-path $poshScripts)/gforces/"
-$env:PATH += ":$(split-path $poshScripts)/New-GforcesTour/"
-$env:PATH += ":$(split-path $poshScripts)/tours/"
+$env:PATH += ":$HOME/dotfiles/powershell/Scripts/"
+$env:PATH += ":$HOME/dotfiles/powershell/Scripts/gforces/"
+$env:PATH += ":$HOME/dotfiles/powershell/Scripts/New-GforcesTour/"
+$env:PATH += ":$HOME/dotfiles/powershell/Scripts/tours/"
 
 ##############################
 # Functions                  #
