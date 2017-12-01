@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import argparse
 import collections
 import fileinput
@@ -53,7 +53,7 @@ def main():
         preview1024 = "no"
 
     # Delete any residual files or folders
-    panosdir = '.src\\panos\\'
+    panosdir = os.path.join('.src', 'panos')
     for root, _, _ in os.walk(panosdir):
         for filepath in glob.glob(os.path.join(root, "*.kro")):
             if os.path.isfile(filepath):
