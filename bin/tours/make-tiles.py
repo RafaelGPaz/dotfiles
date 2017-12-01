@@ -53,7 +53,7 @@ def main():
         preview1024 = "no"
 
     # Delete any residual files or folders
-    panosdir = os.path.join('.src', 'panos')
+    panosdir = os.path.join(os.path.expanduser('~'), 'virtual-tours', 'gforces', 'cars', '.src', 'panos')
     for root, _, _ in os.walk(panosdir):
         for filepath in glob.glob(os.path.join(root, "*.kro")):
             if os.path.isfile(filepath):
@@ -66,18 +66,23 @@ def main():
     if not os.listdir(panosdir):
         sys.exit('ERROR: Panos directory is empty')
 
-    # Build list 'allitems' with ALL the items inside .src/panos excluding 'output'
+    # Build list 'allitems' with ALL the items inside .src/panos and all subdirectories excluding 'output'
+    # Build list 'allitemnames' to check that they have only 3 underscores
     allitems = []
+    allitemsname = []
     tours = glob.glob(panosdir + '/*')
     for item in tours:
         if os.path.isfile(item):
             allitems.append(item)
+            allitemsname.append(item)
         if os.path.isdir(item):
+            allitemsname.append(item)
             subtours = glob.glob(item + "/*")
             for subitem in subtours:
                 allitems.append(subitem)
         if 'output' in item:
             allitems.remove('output')
+            allitemsname.remove('output')
 
     # Check there aren't duplicated items
     duplicates = []
@@ -91,11 +96,11 @@ def main():
         sys.exit('ERROR: The following cars are repeated: ' + str(repeatedcar))
 
     # Check panorama names has 3 underscores. It can be ignored with the switch '-ignoreunderscores'
-    for tourname in allitems:
+    for tourname in allitemsname:
         if args.ignoreunderscores != False:
-            tourname = os.path.basename(i)
-            tourbasename = os.path.splitext(iname)[0]
-            underscores = len(tourbasename.split('_'))
+            tourbasename = os.path.basename(tourname)
+            splitbasename = os.path.splitext(tourbasename)[0]
+            underscores = len(splitbasename.split('_'))
             if underscores != 4:
                 sys.exit('ERROR: File ' + tourbasename +  ' contains ' + str(underscores) \
                          + ' underscores instead of 4. Please rename it.')
