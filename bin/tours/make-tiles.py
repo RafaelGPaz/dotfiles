@@ -20,10 +20,6 @@ def extract_content(xmlfile, xmlfilebck):
                 newfile.write(line[:-1])
 
 def main():
-    # Script only for Windows
-    if sys.platform != 'win32':
-        sys.exit('Script is only for Windows')
-
     # Script only for python3
     if sys.version_info[0] < 3:
         sys.exit('Must be using Python 3')
