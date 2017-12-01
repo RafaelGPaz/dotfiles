@@ -12,8 +12,8 @@
 // Then the script will move 'btn.jpg' to the corresponding folder and rename as 'btn_1.jpg' and 'btn_2.jpg'
 
 function move_btn(btn_path,btn_number){
-    var originFile = new File('/c/Users/Rafael/AppData/Local/temp/btn.jpg');
-    var destFile = '/e/virtual_tours/gforces/cars/' + btn_path + '/files/btn_' + btn_number + '.jpg'  
+    var originFile = new File('/Users/rafael/Temp/btn.jpg');
+    var destFile = '/Users/rafael/virtual-tours/gforces/cars/' + btn_path + '/files/btn_' + btn_number + '.jpg'
     //$.writeln(originFile);
     //$.writeln("Visualiser button: ", destFile);
     originFile.copy(destFile);
@@ -21,13 +21,13 @@ function move_btn(btn_path,btn_number){
 }
 function main(){
     $.writeln("Processing...");
-    var root = "E:/virtual_tours/gforces/cars/.src/";
-    var root2 = "E:/virtual_tours/gforces/cars/";
+    var root = "Users/rafael/virtual-tours/gforces/cars/.src/";
+    var root2 = "Users/rafael/virtual-tours/gforces/cars/";
     var panosDir = Folder(root + "panos/");
     var layersDir = Folder(root + "layers/");
     var psbFile = layersDir.getFiles("*.psb");
-    
-    if(psbFile.length == 0){  
+
+    if(psbFile.length == 0){
         alert("No files to import");
     }
     //$.writeln(psbFile);
@@ -39,7 +39,7 @@ function main(){
         var layerFile =  File(root + "layers/" + carBasename + ".psb");
         var panoFolderPath = panosDir + "/" + carBasename;
         var panoFolder = new Folder(panoFolderPath);
-        
+
         // Check if there is a folder in 'panos'with the same name as the PSB file
         // If there isn't create it and export all panos
         if (panoFolder.exists == false) {
@@ -50,10 +50,10 @@ function main(){
             var seatsGroup = doc.layers[0];
             var seatColors = seatsGroup.layers;
             var bgGroup = doc.layers[1];
-            var bgs = bgGroup.layers; 
+            var bgs = bgGroup.layers;
             //$.writeln(seatColors);
             //$.writeln(bgs);
-           
+
             // Create folder
             var carFolder = Folder(root + "panos/" + carBasename);
             //$.writeln(carFolder);
@@ -64,7 +64,7 @@ function main(){
             var filesFolderPath = new Folder (root2 + "/" + carBasename + "/files");
             tourFolderPath.create();
             filesFolderPath.create();
-            
+
             hide_all_layers(group);
             // Make sure 'btn' layer is hidden
             // bgGroup.artLayers.getByName("btn").visible = false;
@@ -110,7 +110,7 @@ function main(){
                     app.doAction("v10visualiser_mirror", "photoshop_actions");
                     // Save
                     var saveFile = new File(carFolder + "/" + "scene_" + [seatNo] + "_" + bgLet + ".jpg");
-                    //$.writeln("path: ", saveFile);                
+                    //$.writeln("path: ", saveFile);
                     SaveJPEG(saveFile,10);
                     bg.visible = false;
                     // Delete first layer at the top (mirror reflection)
@@ -124,7 +124,7 @@ function main(){
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }
     }
-    
+
     $.writeln("_EOF_");
 }
 
