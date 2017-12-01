@@ -1,50 +1,38 @@
-# Set variable for PowerShell directory
-$posh_dir = "$ENV:USERPROFILE\Documents\WindowsPowerShell"
+##############################
+# PATH                       #
+##############################
 
-#--------
-# PATH
-#--------
-$pathArray = @(
-    # Apps
-    "$env:ProgramW6432\KiTTY\",
-    "$env:ProgramW6432\PuTTY\",
-    "$($env:HOME)youtube-dl\"
-    # Posh
-    "$(split-path $PROFILE)\Scripts\",
-    "$(split-path $PROFILE)\Scripts\gforces\",
-    "$(split-path $PROFILE)\Scripts\gforces\New-GforcesTour\",
-    "$(split-path $PROFILE)\Scripts\tours\",
-    "$(split-path $PROFILE)\Scripts\tours\New-Tour\"
-    # Bin
-    "$($env:HOME)bin\clustergit\",
-    "$($env:HOME)bin\misc\",
-    "$($env:HOME)bin\newvt\",
-    "$($env:HOME)bin\tours\"
-    )
+$poshScripts="$HOME/dotfiles/powershell/Scripts/"
+$env:PATH += ":$(split-path $poshScripts)/"
+$env:PATH += ":$(split-path $poshScripts)/gforces/"
+$env:PATH += ":$(split-path $poshScripts)/New-GforcesTour/"
+$env:PATH += ":$(split-path $poshScripts)/tours/"
 
-foreach ($item in $pathArray) { $env:path += ';' + $item }
+##############################
+# Functions                  #
+##############################
 
-# Staff only for Terminal
-if ( $Host.Name -eq "ConsoleHost" ) {
-    Set-PSReadlineOption -EditMode Emacs
-}
+function Global:prompt {"PS $($pwd.ProviderPath) `n> "}
+function .. {Set-Location  ..}
+function ... {Set-Location ../..}
+function List-DirectoryAll {Get-ChildItem -Force | Format-Table -AutoSize}
+function List-DirectoriesOnly {Get-ChildItem -Directory | Format-Table -AutoSize}
+function List-FilesOnly {Get-ChildItem -File | Format-Table -AutoSize}
+function List-DotFilesOnly {Get-ChildItem -File -Filter .* | Format-Table -AutoSize}
+function Go-CarsDirectory {cd $HOME/virtual-tours/gforces/cars/}
 
-#Staff only for ISE Console
-#if ( $Host.Name -eq "Windows PowerShell ISE Host")
-#{
-#}
+##############################
+# Alias                      #
+##############################
 
-# Start in my Home directory
-cd C:\Users\Rafael
-
-# Appearance
-. "$(split-path $PROFILE)\Conf\posh_appearance.ps1"
-# Aliases
-. "$(split-path $PROFILE)\Conf\posh_aliases.ps1"
-# Funtions
-. "$(split-path $PROFILE)\Conf\posh_defun.ps1"
-# Chocolatey profile
-$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
-if (Test-Path($ChocolateyProfile)) {
-  Import-Module "$ChocolateyProfile"
-}
+Set-Alias ll Get-ChildItem
+Set-Alias la List-DirectoryAll
+Set-Alias ld List-DirectoriesOnly
+Set-Alias lf List-FilesOnly
+Set-Alias ldf List-DotFilesOnly
+Set-Alias cc Clear-Host
+Set-Alias sls Select-String
+Set-Alias pro Reload-Profile
+Set-Alias nf New-File
+Set-Alias nd New-Directory
+Set-Alias cars Go-CarsDirectory
