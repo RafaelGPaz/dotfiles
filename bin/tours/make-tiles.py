@@ -113,8 +113,8 @@ def main():
         filesdir = os.path.join(tourbasename, 'files')
         scenesdir = os.path.join(tourbasename, 'files', 'scenes')
         parentdir = os.path.basename(os.path.abspath('..'))
-        krdir = os.path.join(os.path.expanduser('~'), 'documents', 'software', 'virtual-tours', 'krpano')
-        krpath = os.path.join(krdir, 'bin', 'krpanotools64.exe')
+        krdir = os.path.join(os.path.expanduser('~'), 'Documents', 'software', 'virtual-tours', 'krpano')
+        krpath = os.path.join(krdir, 'bin', 'krpanotools')
         krtemplates = os.path.join(krdir, 'krpano_conf', 'templates')
         if webvr == "yes":
             if preview1024 == "yes":
