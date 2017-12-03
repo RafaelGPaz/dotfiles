@@ -51,41 +51,38 @@ def main():
     name1 = args.origin
     name2 = args.destination
 
-    if os.name == 'nt':
-        rootdir = os.path.join('E:\\', 'virtual_tours', 'gforces')
-    else:
-        rootdir = os.path.join('/media', 'e', 'virtual_tours', 'gforces')
+    rootdir = os.path.join('/', 'Users', 'rafael', 'virtual-tours', 'gforces')
 
     # File .src/import/###.jpg
     path = os.path.join(rootdir, 'cars', '.src', 'import')
-    item = path + '\\' + name2 + '.jpg'
+    item = path + '/' + name2 + '.jpg'
     new_file(item)
 
     # File .src/layers/###.psb
     path = os.path.join(rootdir, 'cars', '.src', 'layers')
-    item = path + '\\' + name2 + '.psb'
+    item = path + '/' + name2 + '.psb'
     new_file(item)
 
     # File .src/masks/###.psb
     path = os.path.join(rootdir, 'cars', '.src', 'masks')
-    item = path + '\\' + name2 + '.psb'
+    item = path + '/' + name2 + '.psb'
     new_file(item)
 
     # Folder .src/panos/###
     path = os.path.join(rootdir, 'cars', '.src', 'panos')
-    item = path + '\\' + name2
+    item = path + '/' + name2
     logging.info('New Folder ->' + item)
 
     if not os.path.exists(item):
         os.makedirs(item)
 
     # Folder .src/panos/scene_#_#.jpg
-    item1 = path + '\\' + name2 + '\\scene_1_a.jpg'
-    item2 = path + '\\' + name2 + '\\scene_1_b.jpg'
-    item3 = path + '\\' + name2 + '\\scene_1_c.jpg'
-    item4 = path + '\\' + name2 + '\\scene_2_a.jpg'
-    item5 = path + '\\' + name2 + '\\scene_2_b.jpg'
-    item6 = path + '\\' + name2 + '\\scene_2_c.jpg'
+    item1 = path + '/' + name2 + '/scene_1_a.jpg'
+    item2 = path + '/' + name2 + '/scene_1_b.jpg'
+    item3 = path + '/' + name2 + '/scene_1_c.jpg'
+    item4 = path + '/' + name2 + '/scene_2_a.jpg'
+    item5 = path + '/' + name2 + '/scene_2_b.jpg'
+    item6 = path + '/' + name2 + '/scene_2_c.jpg'
     new_file(item1)
     new_file(item2)
     new_file(item3)
@@ -132,7 +129,7 @@ def main():
     filepath = os.path.join(rootdir, 'cars', name2, 'files', 'scenes')
     str1 = name1
     str2 = name2
-    scenesdir = glob.glob(filepath + '\\*.xml')
+    scenesdir = glob.glob(filepath + '/*.xml')
     for xmlfile in scenesdir:
         filepath = xmlfile
         replace_str(filepath, str1, str2)
