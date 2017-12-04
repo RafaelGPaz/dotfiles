@@ -21,12 +21,12 @@ EOBUNDLES
 antigen bundle zsh-users/zsh-autosuggestions # Fish-like auto suggestions
 antigen bundle zsh-users/zsh-completions # Extra zsh completions
 antigen bundle zsh-users/zsh-syntax-highlighting
-# Load the theme
-antigen theme robbyrussell
+# Theme. Don't use 'antigen theme'
+antigen bundle mafredri/zsh-async
+antigen bundle sindresorhus/pure
 # Tell antigen that you're done
 antigen apply
-# Set Zsh option
-setopt correct
+
 
 ######################################################
 # Python                                             #
