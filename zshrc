@@ -10,6 +10,7 @@ source /usr/local/share/antigen/antigen.zsh
 antigen use oh-my-zsh
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundles <<EOBUNDLES
+brew
 command-not-found
 common-aliases
 git
