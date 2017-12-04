@@ -8,6 +8,7 @@ export PATH="$PATH:/usr/local/sbin:$HOME/dotfiles/bin/misc:$HOME/dotfiles/bin/ne
 source /usr/local/share/antigen/antigen.zsh
 # Load the oh-my-zsh's library
 antigen use oh-my-zsh
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundles <<EOBUNDLES
 command-not-found
 common-aliases
@@ -15,10 +16,10 @@ git
 rsync
 virtualenvwrapper
 z
-zsh-users/zsh-autosuggestions # Fish-like auto suggestions
-zsh-users/zsh-completions # Extra zsh completions
 EOBUNDLES
-# Syntax highlighting bundle (Load last)
+# Syntax highlighting bundle
+antigen bundle zsh-users/zsh-autosuggestions # Fish-like auto suggestions
+antigen bundle zsh-users/zsh-completions # Extra zsh completions
 antigen bundle zsh-users/zsh-syntax-highlighting
 # Load the theme
 antigen theme robbyrussell
