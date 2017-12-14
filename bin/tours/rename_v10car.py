@@ -5,6 +5,7 @@ import fileinput
 import glob
 import logging
 import os
+from os.path import expanduser
 import colorlog
 
 class readabledir(argparse.Action):
@@ -53,7 +54,7 @@ def main():
     if os.name == 'nt':
         rootdir = os.path.join('E:\\', 'virtual_tours', 'gforces')
     else:
-        rootdir = os.path.join('/media', 'e', 'virtual_tours', 'gforces')
+        rootdir = os.path.join(os.path.join(expanduser('~')), 'virtual-tours', 'gforces')
 
     # Folder .src/import/###.jpg
     path = os.path.join(rootdir, 'cars', '.src', 'import')
