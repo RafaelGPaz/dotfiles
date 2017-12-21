@@ -52,8 +52,13 @@ def main():
     else:
         preview1024 = "no"
 
+    parentdir = os.path.basename(os.path.abspath('..'))
+    if parentdir == 'gforces':
+        panosdir = os.path.join(os.path.expanduser('~'), 'virtual-tours', 'gforces', 'cars', '.src', 'panos')
+    else:
+        panosdir = os.path.join(os.getcwd(),'.src', 'panos')
+
     # Delete any residual files or folders
-    panosdir = os.path.join(os.path.expanduser('~'), 'virtual-tours', 'gforces', 'cars', '.src', 'panos')
     for root, _, _ in os.walk(panosdir):
         for filepath in glob.glob(os.path.join(root, "*.kro")):
             if os.path.isfile(filepath):
@@ -178,8 +183,8 @@ def main():
                 case = 'Normal'
                 filesdir = os.path.join(carbasename, 'files')
                 scenesdir = os.path.join(carbasename, 'files', 'scenes')
-                tilesdir = carbasename + '\\files\\scenes\\' + tourbasename
-                outputdir = panosdir + '\\' + carbasename + '\\output'
+                tilesdir = os.path.join(carbasename, 'files', 'scenes', tourbasename)
+                outputdir = os.path.join(panosdir, carbasename, 'output')
                 outputtilesdir = os.path.join(outputdir, 'scenes', tourbasename)
                 outputxmlfile = os.path.join(outputdir, tourbasename) + '.xml'
                 replaceorigin = 'scenes/' + tourbasename
