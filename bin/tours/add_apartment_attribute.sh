@@ -28,8 +28,8 @@ for eachdirectory in $(find ./* -maxdepth 0 -type d ); do
 
         first_line='<scene name="'$each_xml_file'" apartment="'$eachdirectory'">'
 
-        sed -i -e "1c $first_line" $each_xml_file_path
-        sed -e 's/\%SWFPATH\%\/scenes/\%SWFPATH\%\/..\/..\/'$eachdirectory'\/files\/scenes/g' $each_xml_file_path > $each_xml_file_path_bck
+        gsed -i -e "1c $first_line" $each_xml_file_path
+        gsed -e 's/\%SWFPATH\%\/scenes/\%SWFPATH\%\/..\/..\/'$eachdirectory'\/files\/scenes/g' $each_xml_file_path > $each_xml_file_path_bck
         mv $each_xml_file_path_bck $each_xml_file_path
 
         echo "Edited $each_xml_file"
