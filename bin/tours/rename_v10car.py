@@ -108,7 +108,7 @@ def main():
     filepath = os.path.join(rootdir, 'cars', name2, 'files', 'scenes')
     str1 = name1
     str2 = name2
-    scenesdir = glob.glob(filepath + '\\*.xml')
+    scenesdir = glob.glob(os.path.join(filepath, '*.xml'))
     for xmlfile in scenesdir:
         filepath = xmlfile
         replace_str(filepath, str1, str2)
