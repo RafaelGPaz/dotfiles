@@ -17,7 +17,7 @@ def rename_item(path, item1, item2):
     if not os.path.exists(os.path.join(path, item1)):
         logging.warning(os.path.join(path, item1) + ' cannot be found')
     else:
-        logging.info(path + item1 + ' -> ' + item2)
+        logging.info(path + '/' + item1 + ' -> ' + item2)
         os.rename(os.path.join(path, item1), os.path.join(path, item2))
 
 def replace_str(filepath, str1, str2):
