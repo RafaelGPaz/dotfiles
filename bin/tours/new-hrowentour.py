@@ -193,13 +193,13 @@ def main():
         tourNumber = len(panorama)
         if tourNumber > 1:
             for panoFile in panorama:
-                panoFile = os.path.basename(panoFile)
-                panoFile = os.path.splitext(panoFile)[0]
-                thumbs = panoFile + '.jpg'
-                thumbsPath = os.path.join(contentPath,thumbs)
+                panoFileName = os.path.basename(panoFile)
+                panoFileName = os.path.splitext(panoFileName)[0]
+                thumbs = panoFileName + '.jpg'
+                thumbsPath = os.path.join(contentPath, thumbs)
                 # print(thumbsPath)
                 if not os.path.exists(thumbsPath):
-                    logger.warn('Thumbnail "' + thumbsPath + '" is missing.')
+                    subprocess.call('convert ' + panoFile + ' -resize 420x210^ -gravity center -extent 200x120 ' + thumbsPath, shell=True)
 
         # files/include/
         includePath = os.path.join(filesPath, 'include/')
