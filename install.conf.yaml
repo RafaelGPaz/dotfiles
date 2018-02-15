@@ -12,8 +12,8 @@
     ~/.gitignore.global:
     ~/.ssh/config: ssh/config
     ~/.zshrc:
-    #/Users/rafael/Library/Application Support/Code - Insiders/User: vscode
     ~/Documents/'Adobe Scripts': bin/adobe-extendscript
+    ~/Library/Application Support/Code - Insiders/User: vscode
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
     - if [[ ! -a $HOME/.hushlogin ]]; then touch "$HOME/.hushlogin"; fi # Prevent last login message in terminal
