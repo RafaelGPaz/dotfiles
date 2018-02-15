@@ -2,8 +2,16 @@
 {
 // Editor
     "editor.fontFamily": "'Hack', 'LiberationMono'",
+    "editor.fontSize": 12,
     "editor.cursorBlinking": "solid",
+    "editor.minimap.enabled": false,
+    "editor.multiCursorModifier": "alt",
     "editor.wordBasedSuggestions": true,
+    "editor.wordSeparators": "`~!@#$%^&*()-_=+[{]}\\|;:'\",.<>/?",
+// Explorer
+    "explorer.confirmDelete": false,
+// Extensions
+    "extensions.autoUpdate": true,
 // Files
     "files.exclude": {
         "**/.git": true,
@@ -20,50 +28,40 @@
     },
     "files.trimTrailingWhitespace": true,
 // Git,
-    "git.path": "C:\\Users\\Rafael\\AppData\\Roaming\\cmder\\vendor\\git-for-windows\\bin\\git.exe",
-// Automatically update extensions
-    "extensions.autoUpdate": true,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.path": "/usr/bin/git",
 // Integrated Terminal
     "terminal.integrated.shell.windows": "C:\\WINDOWS\\system32\\WindowsPowershell\\v1.0\\powershell.exe",
-// Auto Close Tag configuration
-    "auto-close-tag.SublimeText3Mode": true,
-// Numbered Bookmarks Configuration
-    "numberedBookmarks.saveBookmarksBetweenSessions": true,
-// Code Ace Jumper
-    "aceJump.placeholder.backgroundColor": "#1E1E1E",
-    "aceJump.placeholder.color": "yellow",
-    "aceJump.placeholder.fontSize": 15,
-    "aceJump.placeholder.fontWeight": "500",
-    "aceJump.placeholder.height": 12,
-    "aceJump.placeholder.textPosX": 1,
-    "aceJump.placeholder.textPosY": 12,
-    "aceJump.placeholder.upperCase": "true",
-    "aceJump.placeholder.width": 10,
-    "sync.gist": "263ed5bd181da4597695b2106bd1ffd9",
-    "sync.lastUpload": "2017-10-25T12:57:48.130Z",
-    "sync.autoDownload": false,
-    "sync.autoUpload": false,
-    "sync.lastDownload": "2017-07-18T16:12:01.783Z",
-    "sync.version": 262,
-    "sync.showSummary": true,
-    "sync.forceDownload": true,
-    "sync.workspaceSync": false,
-    "sync.anonymousGist": false,
-// Project Manager Configuration
-    "projectManager.openInNewWindow": false,
-    "window.zoomLevel": 0,
-    "workbench.iconTheme": "vs-seti",
-    "sync.host": "",
-    "sync.pathPrefix": "",
-    "editor.wordSeparators": "`~!@#$%^&*()-_=+[{]}\\|;:'\",.<>/?",
+// Powershell
     "powershell.integratedConsole.showOnStartup": false,
-    "editor.minimap.enabled": false,
-    "sync.quietSync": false,
-    "sync.askGistName": false,
-// MataGo
-    "metaGo.decoration.backgroundColor": "#1E1E1E",
-    "metaGo.decoration.color": "yellow",
-    "metaGo.decoration.fontSize": 17,
-    "metaGo.decoration.fontWeight": 400,
-    "git.confirmSync": false
+// Workbench
+    "workbench.colorTheme": "One Monokai",
+    "workbench.colorCustomizations": {
+        "editor.selectionBackground": "#5e1f39",
+        "editor.selectionHighlightBackground": "#5a5e1f",
+        "statusBar.background": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f"
+    },
+// Vim
+    "vim.easymotion": true,
+    "vim.easymotionMarkerFontSize": "15",
+    "vim.easymotionMarkerBackgroundColor": "#1e1e1e",
+    "vim.easymotionMarkerForegroundColorOneChar": "yellow",
+    "vim.enableNeovim": true,
+    "vim.hlsearch": true,
+    "vim.leader": "<space>",
+    "vim.neovimPath": "/usr/local/bin/nvim",
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors": {
+        "normal": "#005f5f",
+        "insert": "#5f0000",
+        "visual": "#5f00af",
+        "visualline": "#005f87",
+        "visualblock": "#86592d",
+        "replace": "#000000"
+    },
+    "vim.useSystemClipboard": true,
+// Inbox
 }
