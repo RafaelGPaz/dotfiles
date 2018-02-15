@@ -55,8 +55,8 @@
 { "key": "ctrl+alt+s",            "command": "actions.find", "when": "editorTextFocus" }, // Find
 { "key": "ctrl+z",                "command": "undo", "when": "editorTextFocus && !editorReadonly" }, // Undo
 { "key": "shift+ctrl+z",          "command": "redo", "when": "editorTextFocus && !editorReadonly" }, // Redo
-// { "key": "shift+ctrl+up",         "command": "editor.action.copyLinesUpAction", "when": "editorTextFocus && !editorReadonly" }, // Duplicate Line Up
-// { "key": "shift+ctrl+down",       "command": "editor.action.copyLinesDownAction", "when": "editorTextFocus && !editorReadonly" }, // Duplicate Line Down
+{ "key": "shift+ctrl+up",         "command": "editor.action.copyLinesUpAction", "when": "editorTextFocus && !editorReadonly" }, // Duplicate Line Up
+{ "key": "shift+ctrl+down",       "command": "editor.action.copyLinesDownAction", "when": "editorTextFocus && !editorReadonly" }, // Duplicate Line Down
 { "key": "ctrl+enter",            "command": "editor.action.insertLineAfter", "when": "editorTextFocus && !editorReadonly" }, // Open Line Below
 { "key": "ctrl+shift+enter",      "command": "editor.action.insertLineBefore", "when": "editorTextFocus && !editorReadonly" }, // Open Line Above
 { "key": "shift+alt+f",           "command": "editor.action.formatDocument", "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly" }, // Format Document
@@ -69,8 +69,8 @@
  // Selection & Multiple Cursors
 { "key": "ctrl+x h",              "command": "editor.action.selectAll", "when": "editorTextFocus" }, // Select All
 { "key": "ctrl+i",                "command": "expandLineSelection", "when": "editorTextFocus" }, // Select Current Line
-// { "key": "alt+shift+up",          "command": "editor.action.insertCursorAbove", "when": "editorTextFocus" }, // Multiple Cursor Up
-// { "key": "alt+shift+down",        "command": "editor.action.insertCursorBelow", "when": "editorTextFocus" }, // Multiple Cursor Down
+{ "key": "alt+shift+up",          "command": "editor.action.insertCursorAbove", "when": "editorTextFocus" }, // Multiple Cursor Up
+{ "key": "alt+shift+down",        "command": "editor.action.insertCursorBelow", "when": "editorTextFocus" }, // Multiple Cursor Down
 // { "key": "shift+alt+right",       "command": "editor.action.smartSelect.grow", "when": "editorTextFocus" }, // Expand Selection
 // { "key": "shift+alt+leftt",       "command": "editor.action.smartSelect.shrink", "when": "editorTextFocus" }, // Contract Selection
 { "key": "shift+alt+right",       "command": "expand_region", "when": "editorTextFocus" }, // Expand Selection
