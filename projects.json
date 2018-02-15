@@ -61,7 +61,7 @@
 	},
 	{
 		"name": "New-GforcesTour",
-		"rootPath": "/Users/rafael/.config/powershell/Scripts/gforces/New-GforcesTour/",
+		"rootPath": "/Users/rafael/dotfiles/powershell/Scripts/New-GforcesTour/",
 		"paths": [],
 		"group": ""
 	},
