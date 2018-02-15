@@ -73,7 +73,7 @@
 	},
 	{
 		"name": "VScode Config",
-		"rootPath": "Users/rafael/Library/Application Support/Code - Insiders/",
+		"rootPath": "Users/rafael/dotfiles/vscode/",
 		"paths": [],
 		"group": ""
 	},
