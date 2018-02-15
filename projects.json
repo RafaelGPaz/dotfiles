@@ -190,5 +190,11 @@
 		"rootPath": "$home/virtual-tours/gforces/manufacturers/lincoln_manufacturer",
 		"paths": [],
 		"group": ""
+	},
+	{
+		"name": "Clarendon - Covent Garden Safari",
+		"rootPath": "$home/virtual-tours/clarendon-covent-garden-safari",
+		"paths": [],
+		"group": ""
 	}
 ]
