@@ -1,0 +1,67 @@
+// Place your settings in this file to overwrite the default settings
+{
+// Editor
+    "editor.fontFamily": "'Hack', 'LiberationMono'",
+    "editor.fontSize": 12,
+    "editor.cursorBlinking": "solid",
+    "editor.minimap.enabled": false,
+    "editor.multiCursorModifier": "alt",
+    "editor.wordBasedSuggestions": true,
+    "editor.wordSeparators": "`~!@#$%^&*()-_=+[{]}\\|;:'\",.<>/?",
+// Explorer
+    "explorer.confirmDelete": false,
+// Extensions
+    "extensions.autoUpdate": true,
+// Files
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/*.jpg": true,
+        "**/*.png": true,
+        "**/*.gif": true,
+        "**/*.tif": true,
+        "**/*.psd": true,
+        "**/*.psb": true,
+        "**/*.swf": true
+    },
+    "files.trimTrailingWhitespace": true,
+// Git,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.path": "/usr/bin/git",
+// Integrated Terminal
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\system32\\WindowsPowershell\\v1.0\\powershell.exe",
+// Powershell
+    "powershell.integratedConsole.showOnStartup": false,
+// Workbench
+    "workbench.colorTheme": "One Monokai",
+    "workbench.colorCustomizations": {
+        "editor.selectionBackground": "#5e1f39",
+        "editor.selectionHighlightBackground": "#5a5e1f",
+        "statusBar.background": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f"
+    },
+// Vim
+    "vim.easymotion": true,
+    "vim.easymotionMarkerFontSize": "15",
+    "vim.easymotionMarkerBackgroundColor": "#1e1e1e",
+    "vim.easymotionMarkerForegroundColorOneChar": "yellow",
+    "vim.enableNeovim": true,
+    "vim.hlsearch": true,
+    "vim.leader": "<space>",
+    "vim.neovimPath": "/usr/local/bin/nvim",
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors": {
+        "normal": "#005f5f",
+        "insert": "#5f0000",
+        "visual": "#5f00af",
+        "visualline": "#005f87",
+        "visualblock": "#86592d",
+        "replace": "#000000"
+    },
+    "vim.useSystemClipboard": true,
+// Inbox
+}
