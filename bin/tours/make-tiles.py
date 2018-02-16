@@ -75,14 +75,14 @@ def main():
     # Build list 'allitemnames' to check that they have only 3 underscores
     allitems = []
     allitemsname = []
-    tours = glob.glob(panosdir + '/*')
+    tours = sorted(glob.glob(panosdir + '/*'))
     for item in tours:
         if os.path.isfile(item):
             allitems.append(item)
             allitemsname.append(item)
         if os.path.isdir(item):
             allitemsname.append(item)
-            subtours = glob.glob(item + "/*")
+            subtours = sorted(glob.glob(item + "/*"))
             for subitem in subtours:
                 allitems.append(subitem)
         if 'output' in item:
