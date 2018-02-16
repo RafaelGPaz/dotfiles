@@ -75,8 +75,8 @@
 // { "key": "shift+alt+leftt",       "command": "editor.action.smartSelect.shrink", "when": "editorTextFocus" }, // Contract Selection
 { "key": "shift+alt+right",       "command": "expand_region", "when": "editorTextFocus" }, // Expand Selection
 { "key": "shift+alt+left",        "command": "undo_expand_region", "when": "editorTextFocus" }, // Contract Selection
-{ "key": "ctrl+d",                "command": "editor.action.addSelectionToNextFindMatch", "when": "editorFocus" }, // Repeat Selection Down
-{ "key": "ctrl+shift+d",          "command": "editor.action.addSelectionToPreviousFindMatch", "when": "editorFocus" }, // Repeat Selection Up
+// { "key": "ctrl+d",                "command": "editor.action.addSelectionToNextFindMatch", "when": "editorFocus" }, // Repeat Selection Down
+// { "key": "ctrl+shift+d",          "command": "editor.action.addSelectionToPreviousFindMatch", "when": "editorFocus" }, // Repeat Selection Up
 // Show
 { "key": "ctrl+shift+p",          "command": "workbench.action.showCommands", "when": "editorTextFocus" }, // Show Commands
 { "key": "ctrl+x b",              "command": "workbench.action.showAllEditors", "when": "editorTextFocus" }, // Show Buffers
