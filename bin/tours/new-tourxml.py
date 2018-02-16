@@ -38,7 +38,7 @@ def main():
     for tour in alltours:
         logger.info("Tour: " + os.path.basename(tour))
         # Find all XML files recursively
-        xmlfiles = glob.glob(tour + "/files/**/*.xml", recursive=True)
+        xmlfiles = sorted(glob.glob(tour + "/files/**/*.xml", recursive=True))
 
         # Remove unwanted XML files
         for item in xmlfiles:
