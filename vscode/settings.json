@@ -64,5 +64,5 @@
         "replace": "#000000"
     },
     "vim.useSystemClipboard": true,
-// Inbox
+    "vim.visualstar": true,
 }
