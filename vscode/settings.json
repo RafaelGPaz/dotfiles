@@ -45,6 +45,7 @@
         "statusBar.noFolderBackground": "#005f5f"
     },
 // Vim
+    "vim.cmdLineInitialColon": true,
     "vim.easymotion": true,
     "vim.easymotionMarkerFontSize": "15",
     "vim.easymotionMarkerBackgroundColor": "#1e1e1e",
@@ -63,5 +64,5 @@
         "replace": "#000000"
     },
     "vim.useSystemClipboard": true,
-    "vim.visualstar": true,
+// Inbox
 }
