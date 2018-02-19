@@ -66,4 +66,61 @@
     },
     "vim.useSystemClipboard": true,
     "vim.visualstar": true,
+    "vim.insertModeKeyBindings": [
+        // Bind jj to <Esc> in insert mode:
+        {
+            "before": ["j","j"],
+            "after": ["<Esc>"]
+        },
+    ],
+    "vim.otherModesKeyBindingsNonRecursive": [
+        // Open VSCode Palette with colon
+        {
+            "before": [":"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.showCommands",
+                    "args": []
+                }
+            ]
+        },
+        // Open Vim Palette with <SPACE> colon
+        {
+            "before": ["<leader>", ":"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "extension.showCmdLine",
+                    "args": []
+                }
+            ]
+        },
+        // Delete line last character
+        {
+            "before": ["<leader>", "x"],
+            "after": [],
+            "commands": [
+                {
+                    "command":"macros.deleteLastChar"
+                }
+            ]
+        },
+        // Toggle comment
+		{
+            "before": ["<leader>","c","c"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.commentLine"
+                }
+            ]
+        },
+    ],
+    "macros": {
+        "deleteLastChar": [
+            "extension.vim_end",
+            "extension.vim_delete"
+        ]
+    },
 }
