@@ -8,7 +8,8 @@
     "editor.multiCursorModifier": "alt",
     "editor.wordBasedSuggestions": true,
     "editor.wordSeparators": "`~!@#$%^&*()-_=+[{]}\\|;:'\",.<>/?",
-// Explorer
+// Empty Indent
+    "emptyIndent.removeIndent": false,// Explorer
     "explorer.confirmDelete": false,
 // Extensions
     "extensions.autoUpdate": true,
