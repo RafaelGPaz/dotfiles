@@ -196,5 +196,11 @@
 		"rootPath": "$home/virtual-tours/clarendon-covent-garden-safari",
 		"paths": [],
 		"group": ""
+	},
+	{
+		"name": "Gforces - Cadillac Manufacturer - v1",
+		"rootPath": "$home/virtual-tours/gforces/manufacturers/cadillac_manufacturer/v1",
+		"paths": [],
+		"group": ""
 	}
 ]
