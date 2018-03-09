@@ -36,6 +36,8 @@
     "terminal.integrated.shell.windows": "C:\\WINDOWS\\system32\\WindowsPowershell\\v1.0\\powershell.exe",
 // Powershell
     "powershell.integratedConsole.showOnStartup": false,
+// Window
+    "window.zoomLevel": 0,
 // Workbench
     "workbench.colorTheme": "One Monokai",
     "workbench.colorCustomizations": {
