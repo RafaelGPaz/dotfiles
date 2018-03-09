@@ -49,7 +49,7 @@
 	},
 	{
 		"name": "Toyota Manufacturer",
-		"rootPath": "/Users/rafael/virtual-tours/gforces/manufacturers/toyota_manufacturer/",
+		"rootPath": "/Users/rafael/virtual-tours/gforces/manufacturers/toyota_manufacturer/v2",
 		"paths": [],
 		"group": ""
 	},
@@ -180,14 +180,14 @@
 		"group": ""
 	},
 	{
-		"name": "GForces - Ford Manufacturer",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/ford_manufacturer",
+		"name": "Gforces - Ford Manufacturer",
+		"rootPath": "$home/virtual-tours/gforces/manufacturers/ford_manufacturer/v2",
 		"paths": [],
 		"group": ""
 	},
 	{
 		"name": "GForces - Lincoln Manufacturer",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/lincoln_manufacturer",
+		"rootPath": "$home/virtual-tours/gforces/manufacturers/lincoln_manufacturer/v2",
 		"paths": [],
 		"group": ""
 	},
@@ -198,8 +198,8 @@
 		"group": ""
 	},
 	{
-		"name": "Gforces - Cadillac Manufacturer - v1",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/cadillac_manufacturer/v1",
+		"name": "Gforces - Cadillac Manufacturer",
+		"rootPath": "$home/virtual-tours/gforces/manufacturers/cadillac_manufacturer/v2",
 		"paths": [],
 		"group": ""
 	}
