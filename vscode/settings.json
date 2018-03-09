@@ -49,6 +49,7 @@
     },
 // Vim
     "vim.cmdLineInitialColon": true,
+    "vim.disableExtension": true,
     "vim.easymotion": true,
     "vim.easymotionMarkerFontSize": "15",
     "vim.easymotionMarkerBackgroundColor": "#1e1e1e",
