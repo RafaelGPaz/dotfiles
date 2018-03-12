@@ -134,7 +134,7 @@ def main():
 
         krcall = [krpath, "makepano", krconfig, car]
 
-        if parentdir == 'gforces':
+        if (parentdir == 'gforces') or ("manufacturer" in parentdir):
             if 'scene' in tourbasename:
                 case = 'GForces - Visualiser'
                 carbasename = os.path.basename(os.path.dirname(car))
