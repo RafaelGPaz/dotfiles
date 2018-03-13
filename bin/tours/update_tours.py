@@ -62,8 +62,8 @@ def main():
         with open(index_html_orig, "rt") as fin:
             with open(index_html_dest, "wt") as fout:
                 for line in fin:
+                    fout.write(line.replace(first_tour, item))
                     if first_tour in line:
-                        fout.write(line.replace(first_tour, item))
                         testing = "1"
 
         if(testing == "0"):
