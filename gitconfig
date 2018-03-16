@@ -35,6 +35,8 @@
 	this = !git init && git add . && git commmit -m \"Initial commit.\"
 	# Thin out older metadata within the repository, reduceses filesystem footprint
 	trim = !git reflog expire --expire=now --all && git gc --prune=now
+	# Remove files from after adding/updating .gitignore
+	upd = !git rm -r --cached . && git add -A && git commit -am 'Removing ignored files'
 [color]
 	ui = true
 [color "branch"]
