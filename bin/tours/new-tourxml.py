@@ -8,6 +8,7 @@ import os
 import shutil
 import colorlog
 from usefulfunctions import safeRm
+from usefulfunctions import numericalSort
 
 def main():
     parser = argparse.ArgumentParser(description='Merges all the XML files into \
@@ -29,27 +30,41 @@ def main():
 
     logger.info("Started")
     alltours = []
-    allxmlfiles = []
     bad_words = ['<krpano', '</krpano>', '<krpano version', 'coordfinder']
     bad_folders = ['shared']
+    bad_files = ['coordfinder', 'editor_and_options']
+    shared_dir = ''.join(glob.glob(os.path.join(os.getcwd(), "shared*")))
     for tour in os.listdir(os.getcwd()):
         if os.path.isdir(os.path.join(os.getcwd(), tour)):
             if not tour.startswith('.'):
                 if not any(bad_folder in tour for bad_folder in bad_folders):
                     alltours.append(tour)
+    alltours.sort(reverse=False)
 
     for tour in alltours:
         logger.info("Tour: " + os.path.basename(tour))
-        # Find all XML files recursively
-        xmlfiles = sorted(glob.glob(tour + "/files/**/*.xml", recursive=True))
+        allxmlfiles = []
+        # XML files inside content/ folder
+        contentxmlfiles = sorted(glob.glob(tour + "/files/content/*.xml", recursive=True))
+        for item in contentxmlfiles:
+            allxmlfiles.append(item)
+            logger.info('[ -- ] ' + os.path.relpath(item,os.getcwd()))
 
-        # Remove unwanted XML files
-        for item in xmlfiles:
-            if "devel.xml" not in item and "tour.xml" not in item and "_design_" not in item and "en.xml" not in item  and "ar" not in item:
+        # XML files inside include/ folder
+        if os.path.exists(shared_dir):
+            sharedxmlfiles = sorted(glob.glob(shared_dir + "/include/**/*.xml", recursive=True))
+        else:
+            sharedxmlfiles = sorted(glob.glob(tour + "/files/include/**/*.xml", recursive=True))
+        for item in sharedxmlfiles:
+            if not any(bad_file in item for bad_file in bad_files):
                 allxmlfiles.append(item)
-                logger.info('[ -- ] ' + item)
-                # TO DO: Add line to apend vtourskin at first
-        allxmlfiles.sort(reverse=False)
+                logger.info('[ -- ] ' + os.path.relpath(item,os.getcwd()))
+
+        # XML files inside scenes/ folder
+        scenesxmlfiles = sorted(glob.glob(tour + "/files/scenes/*.xml", recursive=True), key=numericalSort)
+        for item in scenesxmlfiles:
+            allxmlfiles.append(item)
+            logger.info('[ -- ] ' + os.path.relpath(item,os.getcwd()))
 
         # Merge files into tour.xml
         tourxml = os.path.join(tour, 'files', 'tour.xml')

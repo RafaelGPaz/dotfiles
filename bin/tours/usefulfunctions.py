@@ -2,6 +2,7 @@
 
 import sys
 import os
+import re
 
 def mkdirif(tourdir):
     if not os.path.exists(tourdir):
@@ -43,3 +44,9 @@ def query_yes_no(question, default="yes"):
         else:
             sys.stdout.write("Please respond with 'yes' or 'no' "
                              "(or 'y' or 'n').\n")
+
+numbers = re.compile(r'(\d+)')
+def numericalSort(value):
+    parts = numbers.split(value)
+    parts[1::2] = map(int, parts[1::2])
+    return parts
