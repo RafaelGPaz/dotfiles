@@ -208,5 +208,17 @@
 		"rootPath": "$home/virtual-tours/gforces/cars/shared",
 		"paths": [],
 		"group": ""
+	},
+	{
+		"name": "Gforces - Dodge Manufacturer",
+		"rootPath": "$home/virtual-tours/gforces/manufacturers/dodge_manufacturer",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Gforces - Chrysler Manufacturer",
+		"rootPath": "$home/virtual-tours/gforces/manufacturers/chrysler_manufacturer",
+		"paths": [],
+		"group": ""
 	}
 ]
