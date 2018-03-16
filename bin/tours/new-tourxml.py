@@ -12,6 +12,9 @@ from usefulfunctions import safeRm
 def main():
     parser = argparse.ArgumentParser(description='Merges all the XML files into \
     "tour.xm" and creates a new "en.xml" file if it already exists.')
+    parser.add_argument('-e', action='store_false', dest='enxmlfile', \
+                              default=False, help='Create en.xml file')
+    args = parser.parse_args()
 
     handler = colorlog.StreamHandler()
     handler.setFormatter(colorlog.ColoredFormatter(
@@ -60,7 +63,7 @@ def main():
                         outfile.write(line)
             outfile.writelines("</krpano>")
         logger.info('[ OK ] ' + tourxml)
-        if os.path.isfile(enxml):
+        if (os.path.isfile(enxml)) or (args.enxmlfile == True):
             shutil.copyfile(tourxml,enxml)
             logger.info('[ OK ] ' + enxml)
         allxmlfiles = []
