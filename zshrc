@@ -60,8 +60,8 @@ alias backup_img='rsync -zvra --delete /home/rafael/ /media/rafael/Life/life_img
 alias backup_plus='rsync -zvra /home/rafael/ /media/rafael/Life/life_plus/'
 alias backup_virtualbox='rsync -zvra --delete --exclude .cache --exclude .emacs.d /home/rafael/ /media/rafael/Elements/home_debian/'
 alias backup_all='backup_img && backup_plus'
-
-alias clustergit='~/bin/clustergit/clustergit --recursive -e .cache/ -e .config/ -e .local/'
+alias clustergit='dotfiles/bin/clustergit/clustergit'
+alias gitrecursive='clustergit --recursive --skip-symlinks -e "./\..*" -e virtual-tours -e Local -e Library && clustergit --recursive -d ~/virtual-tours/ -e gforces  && clustergit --recursive -d ~/virtual-tours/gforces -e cars && clustergit -d ~/virtual-tours/gforces/cars/'
 alias code='code-insiders'
 alias powershell='pwsh'
 alias brew='~/dotfiles/bin/misc/brew'
