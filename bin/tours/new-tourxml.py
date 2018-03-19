@@ -33,7 +33,9 @@ def main():
     bad_words = ['<krpano', '</krpano>', '<krpano version', 'coordfinder']
     bad_folders = ['shared']
     bad_files = ['coordfinder', 'editor_and_options']
-    shared_dir = ''.join(glob.glob(os.path.join(os.getcwd(), "shared*")))
+    shared_dir = os.path.join(os.getcwd(), "shared")
+    plugins_dir = os.path.join(shared_dir, "plugins")
+    include_dir = ''.join(glob.glob(os.path.join(shared_dir, "include*")))
     for tour in os.listdir(os.getcwd()):
         if os.path.isdir(os.path.join(os.getcwd(), tour)):
             if not tour.startswith('.'):
@@ -50,9 +52,18 @@ def main():
             allxmlfiles.append(item)
             logger.info('[ -- ] ' + os.path.relpath(item,os.getcwd()))
 
+        # XML files inside plugins/ folder
+        if os.path.exists(shared_dir):
+            pluginsxmlfiles = sorted(glob.glob(plugins_dir + "/*.xml", recursive=True))
+        else:
+            pluginsxmlfiles = sorted(glob.glob(tour + "/files/plugins/*.xml", recursive=True))
+        for item in pluginsxmlfiles:
+                allxmlfiles.append(item)
+                logger.info('[ -- ] ' + os.path.relpath(item,os.getcwd()))
+
         # XML files inside include/ folder
         if os.path.exists(shared_dir):
-            sharedxmlfiles = sorted(glob.glob(shared_dir + "/include/**/*.xml", recursive=True))
+            sharedxmlfiles = sorted(glob.glob(include_dir + "/**/*.xml", recursive=True))
         else:
             sharedxmlfiles = sorted(glob.glob(tour + "/files/include/**/*.xml", recursive=True))
         for item in sharedxmlfiles:
