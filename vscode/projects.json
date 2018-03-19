@@ -220,5 +220,11 @@
 		"rootPath": "$home/virtual-tours/gforces/manufacturers/chrysler_manufacturer",
 		"paths": [],
 		"group": ""
+	},
+	{
+		"name": "Website Tours",
+		"rootPath": "/Volumes/Extra/virtual-tours/website-tours",
+		"paths": [],
+		"group": ""
 	}
 ]
