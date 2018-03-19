@@ -62,13 +62,13 @@ def main():
         with open(index_html_orig, "rt") as fin:
             with open(index_html_dest, "wt") as fout:
                 for line in fin:
-                    fout.write(line.replace(first_tour, item))
-                    if first_tour in line:
+                    if (first_tour in line) and (testing == "0"):
                         testing = "1"
+                    fout.write(line.replace(first_tour, item))
 
         if(testing == "0"):
             logger.critical("ERROR")
-            sys.exit("Tour name in index.html doesn't match with folder name")
+            sys.exit("Tour name doesn't match. Check 'index.html' and 'content/index.xml' files")
         else:
             logger.info("[ -- ] index.html")
 
