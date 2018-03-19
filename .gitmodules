@@ -6,7 +6,7 @@
 	url = https://github.com/RafaelGPaz/newvt
 [submodule "bin/clustergit"]
 	path = bin/clustergit
-	url = https://github.com/mnagel/clustergit
+	url = https://github.com/RafaelGPaz/clustergit
 [submodule "powershell/Scripts/New-GforcesTour"]
 	path = powershell/Scripts/New-GforcesTour
 	url = https://github.com/RafaelGPaz/New-GforcesTour
