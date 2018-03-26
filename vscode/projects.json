@@ -222,6 +222,18 @@
 		"group": ""
 	},
 	{
+		"name": "Gforces - Jeep Manufacturer",
+		"rootPath": "$home/virtual-tours/gforces/manufacturers/jeep_manufacturer",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "GForces - Volvo Manufacturer",
+		"rootPath": "$home/virtual-tours/gforces/manufacturers/volvo_manufacturer",
+		"paths": [],
+		"group": ""
+	},
+	{
 		"name": "Stirling University - Graduation Day",
 		"rootPath": "$home/virtual-tours/stirling-university/graduation-day",
 		"paths": [],
