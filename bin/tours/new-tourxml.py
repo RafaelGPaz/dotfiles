@@ -62,7 +62,7 @@ def main():
                 logger.info('[ -- ] ' + os.path.relpath(item,os.getcwd()))
 
         # XML files inside include/ folder
-        if os.path.exists(shared_dir):
+        if (os.path.exists(shared_dir)) and (os.path.exists(include_dir)):
             sharedxmlfiles = sorted(glob.glob(include_dir + "/**/*.xml", recursive=True))
         else:
             sharedxmlfiles = sorted(glob.glob(tour + "/files/include/**/*.xml", recursive=True))
