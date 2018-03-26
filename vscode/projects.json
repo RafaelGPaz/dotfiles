@@ -156,12 +156,6 @@
 		"group": ""
 	},
 	{
-		"name": "Stirling - Student Accommodation",
-		"rootPath": "/Users/rafael/virtual-tours/stirling_university/student-accommodation",
-		"paths": [],
-		"group": ""
-	},
-	{
 		"name": "GForces GMC Manufacturer",
 		"rootPath": "/Users/rafael/virtual-tours/gforces/manufacturers/gmc_manufacturer",
 		"paths": [],
@@ -227,6 +221,27 @@
 		"paths": [],
 		"group": ""
 	},
+	{
+		"name": "Stirling University - Graduation Day",
+		"rootPath": "$home/virtual-tours/stirling-university/graduation-day",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Stirling University - Stirling Court Hotel",
+		"rootPath": "$home/virtual-tours/stirling-university/stirling-court-hotel",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Stirling University - Student Accommodation",
+		"rootPath": "$home/virtual-tours/stirling-university/student-accommodation",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Stirling University - Virtual Tour",
+		"rootPath": "$home/virtual-tours/stirling-university/virtual-tour",
 		"paths": [],
 		"group": ""
 	}
