@@ -256,5 +256,11 @@
 		"rootPath": "$home/virtual-tours/stirling-university/virtual-tour",
 		"paths": [],
 		"group": ""
+	},
+	{
+		"name": "GForces - Ram  Manufacturer",
+		"rootPath": "$home/virtual-tours/gforces/manufacturers/ram_manufacturer",
+		"paths": [],
+		"group": ""
 	}
 ]
