@@ -49,6 +49,7 @@ def main():
     devel_html_orig = os.path.join(root, first_tour, "devel.html")
     index_html_orig = os.path.join(root, first_tour, "index.html")
     devel_xml_orig = os.path.join(root, first_tour, "files" ,"devel.xml")
+    en_xml_orig = os.path.join(root, first_tour, "files" ,"en.xml")
     content_dir_orig = os.path.join(root, first_tour, "files", "content")
 
     logger.info('First Tour: ' + first_tour)
@@ -81,6 +82,13 @@ def main():
         devel_xml_dest = os.path.join(root, item, "files", "devel.xml")
         shutil.copyfile(devel_xml_orig, devel_xml_dest)
         logger.info("[ -- ] files/devel.xml")
+
+        # en.xml
+        if os.path.exists(en_xml_orig):
+           tour_xml_dest = os.path.join(root, item, "files","tour.xml")
+           en_xml_dest = os.path.join(root, item, "files","en.xml")
+           shutil.copyfile(tour_xml_dest, en_xml_dest)
+           logger.info("[ -- ] files/en.xml")
 
         # content/ directory if it doesn't exists
         content_dir_dest = os.path.join(root, item, "files", "content")
