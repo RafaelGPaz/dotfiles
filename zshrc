@@ -55,6 +55,7 @@ alias lsb="ls -1 | sed -e 's/\..*$//'"
 alias rmgf="rm -fv '/media/c/Users/Rafael/Downloads/Assets-GForces 360 Makes and Models (Responses).xlsx'"
 alias sz="source ~/.zshrc && echo '.zshrc sourced'"
 
+alias update_pip="python -m pip install -U pip"
 alias findallbutjpg='find . -type f ! -iname *jpg'
 alias backup_img='rsync -zvra --delete /home/rafael/ /media/rafael/Life/life_img/'
 alias backup_plus='rsync -zvra /home/rafael/ /media/rafael/Life/life_plus/'
