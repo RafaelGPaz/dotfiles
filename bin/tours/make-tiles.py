@@ -13,10 +13,12 @@ from usefulfunctions import mkdirif
 from usefulfunctions import query_yes_no
 
 def extract_content(xmlfile, xmlfilebck):
-    bad_words = ['<preview', '<cube', '<level', '</level', '<mobile', '</mobile' ,'<image', '</image', '</scene']
-    with open(xmlfile) as oldfile, open(xmlfilebck, 'w') as newfile:
+    bad_words = ['<krpano', '<preview', '<cube', '<level', '</level', '<mobile', '</mobile' ,'<image', '</image', '</scene', '</krpano']
+    with open(xmlfile, encoding='utf-8-sig') as oldfile, open(xmlfilebck, 'w', encoding='utf-8') as newfile:
+        newfile.writelines('<krpano>\n')
         for line in oldfile:
             if not any(bad_word in line for bad_word in bad_words):
+                # [:-1] rsemove newline character at the end of the lines
                 newfile.write(line[:-1])
 
 def main():
@@ -234,18 +236,20 @@ def main():
                         shutil.move(outputxmlfile, xmlfile)
                     extract_content(xmlfile, xmlfilebck)
 
-                # Remove first line from scene.xml file (<scene) and empty lines (by using [1:])
+                # Remove first 2 lines from scene.xml file (<krpano and <scene)
+                # and the last one (</krpano>)
                 with open(xmlfile, 'r') as fin:
                     data = fin.read().splitlines(True)
                 with open(xmlfile, 'w') as fout:
-                    fout.writelines(data[1:])
+                    fout.writelines(data[2:-1])
 
                 # Copy scene.xml file content to scene_bck.xml
-                with open(xmlfile) as oldfile, open(xmlfilebck, 'a') as newfile:
+                with open(xmlfile, encoding='utf-8') as oldfile, open(xmlfilebck, 'a', encoding='utf-8') as newfile:
                     # Add content in the second line
                     newfile.write("\n")
                     for line in oldfile:
                         newfile.write(line)
+                    newfile.writelines("</krpano>")
 
                 # Delete scene.xml
                 if os.path.exists(xmlfile):
