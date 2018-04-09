@@ -262,5 +262,11 @@
 		"rootPath": "$home/virtual-tours/gforces/manufacturers/ram_manufacturer",
 		"paths": [],
 		"group": ""
+	},
+	{
+		"name": "Gforces - Honda Manufacturer",
+		"rootPath": "$home/virtual-tours/gforces/manufacturers/honda_manufacturer",
+		"paths": [],
+		"group": ""
 	}
 ]
