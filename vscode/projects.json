@@ -268,5 +268,17 @@
 		"rootPath": "$home/virtual-tours/gforces/manufacturers/honda_manufacturer",
 		"paths": [],
 		"group": ""
+	},
+	{
+		"name": "Gforces - Mazda Manufacturer v2",
+		"rootPath": "$home/virtual-tours/gforces/manufacturers/mazda_manufacturer/v2",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "GForces - Mazda Manufacturer v3",
+		"rootPath": "$home/virtual-tours/gforces/manufacturers/mazda_manufacturer/v3",
+		"paths": [],
+		"group": ""
 	}
 ]
