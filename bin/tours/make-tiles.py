@@ -13,7 +13,7 @@ from usefulfunctions import mkdirif
 from usefulfunctions import query_yes_no
 
 def extract_content(xmlfile, xmlfilebck):
-    bad_words = ['<krpano', '<preview', '<cube', '<level', '</level', '<mobile', '</mobile' ,'<image', '</image', '</scene', '</krpano']
+    bad_words = ['<preview', '<cube', '<level', '</level', '<mobile', '</mobile' ,'<image', '</image', '</scene']
     with open(xmlfile, encoding='utf-8-sig') as oldfile, open(xmlfilebck, 'w', encoding='utf-8') as newfile:
         newfile.writelines('<krpano>\n')
         for line in oldfile:
