@@ -8,9 +8,11 @@ import os
 import shutil
 import subprocess
 import sys
+
 import colorlog
-from usefulfunctions import mkdirif
-from usefulfunctions import query_yes_no
+
+from usefulfunctions import mkdirif, query_yes_no
+
 
 def extract_content(xmlfile, xmlfilebck):
     bad_words = ['<preview', '<cube', '<level', '</level', '<mobile', '</mobile' ,'<image', '</image', '</scene']
