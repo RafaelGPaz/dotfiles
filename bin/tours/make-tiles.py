@@ -13,15 +13,56 @@ import colorlog
 
 from usefulfunctions import mkdirif, query_yes_no
 
-
 def extract_content(xmlfile, xmlfilebck):
-    bad_words = ['<preview', '<cube', '<level', '</level', '<mobile', '</mobile' ,'<image', '</image', '</scene']
+    # 'xmlfilebck' after extraction is applied:
+    # <krpano>
+    # <scene...>
+    bad_words = ['<krpano', '<preview', '<cube', '<level', '</level', '<mobile', '</mobile' ,'<image', '</image', '</scene', '</krpano']
     with open(xmlfile, encoding='utf-8-sig') as oldfile, open(xmlfilebck, 'w', encoding='utf-8') as newfile:
         newfile.writelines('<krpano>\n')
         for line in oldfile:
             if not any(bad_word in line for bad_word in bad_words):
                 # [:-1] rsemove newline character at the end of the lines
                 newfile.write(line[:-1])
+
+    # 'xmlfile' after the extraction below:
+    #    <preview>
+    #    <image>
+    #        <level>
+    #            <cube>
+    #        </level>
+    #        <mobile>
+    #            <cube>
+    #        </mobile>
+    #    </image>
+    # </scene>
+
+    # Remove <krpano> and <scene> tags from scene.xml and save it as scene_bck.xml
+    bad_words = ['<krpano', '<scene', '</krpano']
+    xmlfilebck2 = xmlfilebck + '2'
+    with open(xmlfile, encoding='utf-8-sig') as oldfile, open(xmlfilebck2, 'w', encoding='utf-8') as newfile:
+        for line in oldfile:
+            if not any(bad_word in line for bad_word in bad_words):
+                newfile.write(line)
+
+    # Rename scene_bck2.xml as scene.xml
+    os.rename(xmlfilebck2, xmlfile)
+
+    # Copy scene.xml file content to scene_bck.xml
+    with open(xmlfile, encoding='utf-8') as oldfile, open(xmlfilebck, 'a', encoding='utf-8') as newfile:
+        # Add content in the second line
+        newfile.write("\n")
+        # newfile.writelines("<krpano>")
+        for line in oldfile:
+            newfile.write(line)
+        newfile.writelines("</krpano>")
+
+    # Delete scene.xml
+    if os.path.exists(xmlfile):
+        os.remove(xmlfile)
+
+    # Rename scene_bck.xml as scene.xml
+    os.rename(xmlfilebck, xmlfile)
 
 def main():
     # Script only for python3
@@ -238,33 +279,12 @@ def main():
                         shutil.move(outputxmlfile, xmlfile)
                     extract_content(xmlfile, xmlfilebck)
 
-                # Remove first 2 lines from scene.xml file (<krpano and <scene)
-                # and the last one (</krpano>)
-                with open(xmlfile, 'r') as fin:
-                    data = fin.read().splitlines(True)
-                with open(xmlfile, 'w') as fout:
-                    fout.writelines(data[2:-1])
-
-                # Copy scene.xml file content to scene_bck.xml
-                with open(xmlfile, encoding='utf-8') as oldfile, open(xmlfilebck, 'a', encoding='utf-8') as newfile:
-                    # Add content in the second line
-                    newfile.write("\n")
-                    for line in oldfile:
-                        newfile.write(line)
-                    newfile.writelines("</krpano>")
-
-                # Delete scene.xml
-                if os.path.exists(xmlfile):
-                    os.remove(xmlfile)
-
-                # Rename scene_bck.xml as scene.xml
-                os.rename(xmlfilebck, xmlfile)
-
             # Only for the V10 Visualiser cars
             if case == 'GForces - Visualiser':
                 # Move the scene.xml file
                 if os.path.exists(outputxmlfile):
                     shutil.move(outputxmlfile, xmlfile)
+                    extract_content(xmlfile, xmlfilebck)
 
             # Delete output folder
             if os.path.exists(outputdir):
