@@ -10,6 +10,7 @@ brew 'betterzipql'
 brew 'caffeine'
 brew 'ccleaner
 brew 'dos2unix'
+brew 'exiftool'
 brew 'ffmpeg --with-libvpx --with-libvorbis --with-fdk-aac --with-opus'
 brew 'filezilla'
 brew 'firefox'
