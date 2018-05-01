@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-export PATH="$PATH:/usr/local/sbin:$HOME/dotfiles/bin/misc:$HOME/dotfiles/bin/newvt:$HOME/dotfiles/bin/tours"
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH:$HOME/dotfiles/bin/misc:$HOME/dotfiles/bin/newvt:$HOME/dotfiles/bin/tours"
 
 ######################################################
 # Antigen                                            #
@@ -32,19 +32,44 @@ antigen apply
 ######################################################
 # Python                                             #
 ######################################################
+# pyenv: to install python interpreters
+# Usage:
+# pyenv install 3.6.0
+# pyenv shell 3.6.0
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
 # Fix 'pyenv install' bug by telling the compiler where the openssl package is located
 # https://github.com/pyenv/pyenv/wiki/Common-build-problems
 export CFLAGS="-I$(brew --prefix openssl)/include"
 export LDFLAGS="-L$(brew --prefix openssl)/lib"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
+# ---
+# pyenv-virtualenv: to configure a global environment
+# Usage:
+# pyenv virtualenv 3.6.0 pelican
+# pyenv virtualenvs
+# pyenv activate pelican
+# pyenv deactivate pelican
+# pyenv uninstall pelican
+# ---
+# virtualenv-wrapper: to keep all virtualenvs in the same directory and managethem
+# Usage:
+# mktmpenv
+# lsvirtualenv
+# showvirtualenv pelican
+# rmvirtualenv pelicon
+# cpvirtualenv pelicon pelicon2
+# allvirtualenv pip install -U pip
+# workon pelican
+# deactivote
+# cdvirtualenv
+# lssitepackages
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="false" # Use virtualenv instead of pyenv
 export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=`which python`
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-source /usr/local/bin/virtualenvwrapper_lazy.sh
+pyenv virtualenvwrapper_lazy
 
 ######################################################
 # Aliases                                            #
