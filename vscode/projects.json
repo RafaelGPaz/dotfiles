@@ -280,5 +280,11 @@
 		"rootPath": "$home/virtual-tours/gforces/manufacturers/mazda_manufacturer/v3",
 		"paths": [],
 		"group": ""
+	},
+	{
+		"name": "Gforces - Suzuki Manufacturer",
+		"rootPath": "$home/virtual-tours/gforces/manufacturers/suzuki_manufacturer",
+		"paths": [],
+		"group": ""
 	}
 ]
