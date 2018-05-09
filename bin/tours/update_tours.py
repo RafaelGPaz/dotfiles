@@ -57,6 +57,16 @@ def main():
     for item in alltours:
         logger.info("[TOUR] " + item)
 
+        # interior.html
+        # This script expects that 'index.html' is a virtual tour.
+        # In tours that support languages, 'index.html' is a list, not a tour.
+        # This will create wrong 'index.html' files in the rest of the tours, so the script needs to be stoped.
+        # TODO: Find a workorund to use interior.html instead of index.html if it exists
+        interior_html = os.path.join(root, item, "interior.html")
+        if os.path.exists(interior_html):
+            logger.critical("ERROR")
+            sys.exit("The first tour contains a file name 'interior.html' which brakes this script")
+
         # index.html
         index_html_dest = os.path.join(root, item, "index.html")
         testing = "0"
