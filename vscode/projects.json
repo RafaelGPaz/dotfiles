@@ -192,8 +192,14 @@
 		"group": ""
 	},
 	{
-		"name": "Gforces - Cadillac Manufacturer",
+		"name": "Gforces - Cadillac Manufacturer V2",
 		"rootPath": "$home/virtual-tours/gforces/manufacturers/cadillac_manufacturer/v2",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Gforces - Cadillac Manufacturer V3",
+		"rootPath": "$home/virtual-tours/gforces/manufacturers/cadillac_manufacturer/v3",
 		"paths": [],
 		"group": ""
 	},
