@@ -90,3 +90,4 @@ alias gitrecursive='clusterg --recursive --skip-symlinks -e "./\..*" -e virtual-
 alias code='code-insiders'
 alias powershell='pwsh'
 alias brew='~/dotfiles/bin/misc/brew'
+alias remove_-min_string='for file in *; do mv "${file}" "${file//\-min/}"; done'
