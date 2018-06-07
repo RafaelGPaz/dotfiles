@@ -1,15 +1,19 @@
 #!/usr/bin/env python3
 
 import argparse
+import fileinput
 import logging
-import colorlog
 import os
 import shutil
-import fileinput
 import sys
 from distutils.dir_util import copy_tree
 
+import colorlog
+
+from bs4 import BeautifulSoup
+
 def main():
+
     # Add description
     parser = argparse.ArgumentParser(description='It copies all the files from the first virtual tour folder to the others')
     # parser = argparse.ArgumentParser(description='Description')
@@ -31,6 +35,30 @@ def main():
 
     logger.info("Started")
 
+    def replace_tourname(file_orig, file_dest):
+        soup = BeautifulSoup(open(file_orig), "html.parser")
+        # <h4>Chevrolet Tahoe Midnight Editon 2017</h4>
+        titleorig = soup.find('h4')
+        # <h4>ae_chevrolet_traverse-3lt-awd_2018</h4>
+        titledest = '<h4>' + os.path.basename(os.path.dirname(file_dest)) + '</h4>'
+        # Name of the dest HTML file
+        filename = os.path.basename(file_dest)
+
+        testing = "0"
+        with open(file_orig, "rt") as fin:
+            with open(file_dest, "wt") as fout:
+                for line in fin:
+                    if (first_tour in line) and (testing == "0"):
+                        testing = "1"
+                    fout.write(line.replace(first_tour, item).replace(str(titleorig), str(titledest)))
+
+        if(filename == 'index.html'):
+            if(testing == "0"):
+                logger.critical("ERROR")
+                sys.exit("Tour name doesn't match. Check 'index.html' and 'content/index.xml' files")
+
+        logger.info("[ -- ] " + filename)
+
     # List all directories excluding files starting with '.' or 'shared'
     alltours = []
     bad_folders = ['shared']
@@ -45,20 +73,12 @@ def main():
 
     first_tour = alltours[0]
 
-    # interior.html
-    # This script expects that 'index.html' is a virtual tour.
-    # In tours that support languages, 'index.html' is a list, not a tour.
-    # This will create wrong 'index.html' files in the rest of the tours, so the script needs to be stoped.
-    # TODO: Find a workorund to use interior.html instead of index.html if it exists
-    interior_html = os.path.join(root, first_tour, "interior.html")
-    if os.path.exists(interior_html):
-        logger.critical("ERROR")
-        sys.exit("The first tour contains a file name 'interior.html' which brakes this script")
-
     alltours.remove(first_tour)
 
     devel_html_orig = os.path.join(root, first_tour, "devel.html")
     index_html_orig = os.path.join(root, first_tour, "index.html")
+    interior_html_orig = os.path.join(root, first_tour, "interior.html")
+    interiordevel_html_orig = os.path.join(root, first_tour, "interiordevel.html")
     devel_xml_orig = os.path.join(root, first_tour, "files" ,"devel.xml")
     en_xml_orig = os.path.join(root, first_tour, "files" ,"en.xml")
     content_dir_orig = os.path.join(root, first_tour, "files", "content")
@@ -70,24 +90,21 @@ def main():
 
         # index.html
         index_html_dest = os.path.join(root, item, "index.html")
-        testing = "0"
-        with open(index_html_orig, "rt") as fin:
-            with open(index_html_dest, "wt") as fout:
-                for line in fin:
-                    if (first_tour in line) and (testing == "0"):
-                        testing = "1"
-                    fout.write(line.replace(first_tour, item))
-
-        if(testing == "0"):
-            logger.critical("ERROR")
-            sys.exit("Tour name doesn't match. Check 'index.html' and 'content/index.xml' files")
-        else:
-            logger.info("[ -- ] index.html")
+        replace_tourname(index_html_orig,index_html_dest)
 
          # devel.html
         devel_html_dest = os.path.join(root, item, "devel.html")
-        shutil.copyfile(devel_html_orig, devel_html_dest)
-        logger.info("[ -- ] devel.html")
+        replace_tourname(devel_html_orig,devel_html_dest)
+
+         # interior.html
+        if os.path.exists(interior_html_orig):
+            interior_html_dest = os.path.join(root, item, "interior.html")
+            replace_tourname(interior_html_orig,interior_html_dest)
+
+         # interiordevel.html
+        if os.path.exists(interiordevel_html_orig):
+            interiordevel_html_dest = os.path.join(root, item, "interiordevel.html")
+            replace_tourname(interiordevel_html_orig,interiordevel_html_dest)
 
          # devel.xml
         devel_xml_dest = os.path.join(root, item, "files", "devel.xml")
