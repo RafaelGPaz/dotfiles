@@ -298,5 +298,11 @@
 		"rootPath": "$home/virtual-tours/gforces/manufacturers/chevrolet_manufacturer/v2",
 		"paths": [],
 		"group": ""
+	},
+	{
+		"name": "GForces - Example V10 New Backgrounds - Mac",
+		"rootPath": "$home/virtual-tours/gforces/examples/projects/examples/v10_backgrounds",
+		"paths": [],
+		"group": ""
 	}
 ]
