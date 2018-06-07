@@ -12,7 +12,7 @@
     ~/.gitignore.global:
     ~/.ssh/config: ssh/config
     ~/.zshrc:
-    ~/Documents/'Adobe Scripts': bin/adobe-extendscript
+    ~/Documents/Adobe Scripts: bin/adobe-extendscript
     ~/Library/Application Support/Code - Insiders/User: vscode
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
