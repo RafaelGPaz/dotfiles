@@ -292,5 +292,11 @@
 		"rootPath": "$home/virtual-tours/gforces/manufacturers/suzuki_manufacturer",
 		"paths": [],
 		"group": ""
+	},
+	{
+		"name": "GForces - Chevrolet Manufacturer v2 - Mac",
+		"rootPath": "$home/virtual-tours/gforces/manufacturers/chevrolet_manufacturer/v2",
+		"paths": [],
+		"group": ""
 	}
 ]
