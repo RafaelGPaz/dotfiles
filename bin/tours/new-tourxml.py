@@ -6,9 +6,11 @@ import glob
 import logging
 import os
 import shutil
+
 import colorlog
-from usefulfunctions import safeRm
-from usefulfunctions import numericalSort
+
+from usefulfunctions import numericalSort, safeRm
+
 
 def main():
     parser = argparse.ArgumentParser(description='Merges all the XML files into \
