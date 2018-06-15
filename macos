@@ -59,15 +59,10 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 # SSD-specific tweaks                                                         #
 ###############################################################################
 
-# Disable hibernation (speeds up entering sleep mode)
-sudo pmset -a hibernatemode 0
-
-# Remove the sleep image file to save disk space
-sudo rm /private/var/vm/sleepimage
-# Create a zero-byte file instead…
-sudo touch /private/var/vm/sleepimage
-# …and make sure it can’t be rewritten
-sudo chflags uchg /private/var/vm/sleepimage
+# hibernatemode 25: Upon sleep the system stores the contents of RAM to disk and removes all power
+# standby 0: Disable Mac to enter a lower power state after a certain period of regular sleep
+# autopoweroff 0:  similar to standby but will only come into affect if the Mac is connected to AC power
+sudo pmset -a hibernatemode 25 standby 0 autopoweroff 0
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
