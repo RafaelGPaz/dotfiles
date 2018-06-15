@@ -42,14 +42,26 @@
 		"group": ""
 	},
 	{
-		"name": "Lexus Manufacturer",
-		"rootPath": "/Users/rafael/virtual-tours/gforces/manufacturers/lexus_manufacturer/v2",
+		"name": "Lexus Manufacturer - Mac",
+		"rootPath": "~/virtual-tours/gforces/manufacturers/lexus_manufacturer/v2",
 		"paths": [],
 		"group": ""
 	},
 	{
-		"name": "Toyota Manufacturer",
+		"name": "Lexus Manufacturer - Extra",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/lexus_manufacturer/v2",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Toyota Manufacturer - Mac",
 		"rootPath": "/Users/rafael/virtual-tours/gforces/manufacturers/toyota_manufacturer/v2",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Toyota Manufacturer - Extra",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/toyota_manufacturer/v2",
 		"paths": [],
 		"group": ""
 	},
@@ -104,12 +116,6 @@
 	{
 		"name": "Gforces - Advanced hs v2",
 		"rootPath": "/Users/rafael/virtual-tours/gforces/examples/projects/examples/advanced_hs/advanced_hs_v2",
-		"paths": [],
-		"group": ""
-	},
-	{
-		"name": "GForces - Mazda Manufacturer",
-		"rootPath": "/Users/rafael/virtual-tours/gforces/manufacturers/mazda_manufacturer",
 		"paths": [],
 		"group": ""
 	},
@@ -174,8 +180,14 @@
 		"group": ""
 	},
 	{
-		"name": "Gforces - Ford Manufacturer",
+		"name": "Gforces - Ford Manufacturer - Mac",
 		"rootPath": "$home/virtual-tours/gforces/manufacturers/ford_manufacturer/v2",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Gforces - Ford Manufacturer - Extra",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/ford_manufacturer/v2",
 		"paths": [],
 		"group": ""
 	},
@@ -210,14 +222,26 @@
 		"group": ""
 	},
 	{
-		"name": "Gforces - Dodge Manufacturer",
+		"name": "Gforces - Dodge Manufacturer - Mac",
 		"rootPath": "$home/virtual-tours/gforces/manufacturers/dodge_manufacturer",
 		"paths": [],
 		"group": ""
 	},
 	{
-		"name": "Gforces - Chrysler Manufacturer",
+		"name": "Gforces - Dodge Manufacturer - Extra",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/dodge_manufacturer",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Gforces - Chrysler Manufacturer - Mac",
 		"rootPath": "$home/virtual-tours/gforces/manufacturers/chrysler_manufacturer",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Gforces - Chrysler Manufacturer - Extra",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/chrysler_manufacturer",
 		"paths": [],
 		"group": ""
 	},
@@ -228,14 +252,26 @@
 		"group": ""
 	},
 	{
-		"name": "Gforces - Jeep Manufacturer",
+		"name": "Gforces - Jeep Manufacturer - Mac",
 		"rootPath": "$home/virtual-tours/gforces/manufacturers/jeep_manufacturer",
 		"paths": [],
 		"group": ""
 	},
 	{
-		"name": "GForces - Volvo Manufacturer",
+		"name": "Gforces - Jeep Manufacturer - Extra",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/jeep_manufacturer",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "GForces - Volvo Manufacturer - Mac",
 		"rootPath": "$home/virtual-tours/gforces/manufacturers/volvo_manufacturer",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "GForces - Volvo Manufacturer - Extra",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/volvo_manufacturer",
 		"paths": [],
 		"group": ""
 	},
@@ -264,32 +300,86 @@
 		"group": ""
 	},
 	{
-		"name": "GForces - Ram  Manufacturer",
+		"name": "GForces - Ram  Manufacturer - Mac",
 		"rootPath": "$home/virtual-tours/gforces/manufacturers/ram_manufacturer",
 		"paths": [],
 		"group": ""
 	},
 	{
-		"name": "Gforces - Honda Manufacturer",
+		"name": "GForces - Ram  Manufacturer - Extra",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/ram_manufacturer",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Gforces - Honda Manufacturer - Mac",
 		"rootPath": "$home/virtual-tours/gforces/manufacturers/honda_manufacturer",
 		"paths": [],
 		"group": ""
 	},
 	{
-		"name": "Gforces - Mazda Manufacturer v2",
+		"name": "Gforces - Honda Manufacturer - Extra",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/honda_manufacturer",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "GForces - Mazda Manufacturer v1 - Mac",
+		"rootPath": "$home/virtual-tours/gforces/manufacturers/mazda_manufacturer/v1",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Gforces - Mazda Manufacturer v2 - Mac",
 		"rootPath": "$home/virtual-tours/gforces/manufacturers/mazda_manufacturer/v2",
 		"paths": [],
 		"group": ""
 	},
 	{
-		"name": "GForces - Mazda Manufacturer v3",
+		"name": "GForces - Mazda Manufacturer v3 - Mac",
 		"rootPath": "$home/virtual-tours/gforces/manufacturers/mazda_manufacturer/v3",
 		"paths": [],
 		"group": ""
 	},
 	{
-		"name": "Gforces - Suzuki Manufacturer",
+		"name": "GForces - Mazda Manufacturer v4 - Mac",
+		"rootPath": "$home/virtual-tours/gforces/manufacturers/mazda_manufacturer/v4",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "GForces - Mazda Manufacturer v1 - Extra",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/mazda_manufacturer/v1",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Gforces - Mazda Manufacturer v2 - Extra",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/mazda_manufacturer/v2",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "GForces - Mazda Manufacturer v3 - Extra",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/mazda_manufacturer/v3",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "GForces - Mazda Manufacturer v4 - Extra",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/mazda_manufacturer/v4",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Gforces - Suzuki Manufacturer - Mac",
 		"rootPath": "$home/virtual-tours/gforces/manufacturers/suzuki_manufacturer",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Gforces - Suzuki Manufacturer - Extra",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/suzuki_manufacturer",
 		"paths": [],
 		"group": ""
 	},
