@@ -6,15 +6,20 @@ import glob
 import logging
 import os
 import shutil
+
 import colorlog
-from usefulfunctions import safeRm
-from usefulfunctions import numericalSort
+
+from usefulfunctions import numericalSort, safeRm
+
 
 def main():
     parser = argparse.ArgumentParser(description='Merges all the XML files into \
     "tour.xm" and creates a new "en.xml" file if it already exists.')
-    parser.add_argument('-e', action='store_false', dest='enxmlfile', \
+    parser.add_argument('-e', action='store_true', dest='enxmlfile', \
                               default=False, help='Create en.xml file')
+    parser.add_argument('-a', action='store_true', dest='arxmlfile', \
+                              default=False, help='Create ar.xml file')
+
     args = parser.parse_args()
 
     handler = colorlog.StreamHandler()
@@ -80,6 +85,7 @@ def main():
         # Merge files into tour.xml
         tourxml = os.path.join(tour, 'files', 'tour.xml')
         enxml = os.path.join(tour, 'files' ,'en.xml')
+        arxml = os.path.join(tour, 'files' ,'ar.xml')
         safeRm(tourxml)
         with open(tourxml, 'w', encoding='utf-8') as outfile:
             outfile.writelines('<?xml version="1.0" encoding="UTF-8"?>\n<krpano version="1.19">\n')
@@ -92,6 +98,16 @@ def main():
         if (os.path.isfile(enxml)) or (args.enxmlfile == True):
             shutil.copyfile(tourxml,enxml)
             logger.info('[ OK ] ' + enxml)
+        if (os.path.isfile(arxml)) or (args.arxmlfile == True):
+            shutil.copyfile(tourxml,arxml)
+            for linenum,line in enumerate( fileinput.FileInput(arxml,inplace=1) ):
+                if linenum==2 :
+                    print('    <config arab="true" />')
+                    print(line.rstrip())
+                else:
+                    print(line.rstrip())
+            logger.info('[ OK ] ' + arxml)
+
         allxmlfiles = []
 
     logger.info("_EOF_")
