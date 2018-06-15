@@ -162,6 +162,7 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 # For VS Code Insider
 defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
 # If necessary, reset global default
-defaults delete -g ApplePressAndHoldEnabled
+defaults delete com.microsoft.VSCode ApplePressAndHoldEnabled
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."
