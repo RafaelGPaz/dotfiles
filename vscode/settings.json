@@ -127,4 +127,9 @@
             "extension.vim_delete"
         ]
     },
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "gitlens.historyExplorer.enabled": false,
+    "gitlens.resultsExplorer.files.layout": "list",
 }
