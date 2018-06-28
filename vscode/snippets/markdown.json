@@ -20,13 +20,21 @@
 		],
 		"description": "Insert link blank"
 	},
-	"Image in Parallax Server": {
+	"Image TourVista Server": {
 
-		"prefix": "image parallax",
+		"prefix": "image tourvista server",
 		"body": [
-			"[$1]({$2https://parallaxvirtualtours.co.uk/images/blog/)$0"
+			"![$1]({$2https://tourvista.co.uk/images/blog/)$0"
 		],
-		"description": "Insert image hosted in parallax server"
+		"description": "Insert image hosted in TourVista server"
+	},
+	"Image TourVista Local": {
+
+		"prefix": "image tourvista local",
+		"body": [
+			"![$1]({$2../images/blog/)$0"
+		],
+		"description": "Insert image hosted in TourVista local"
 	},
 	"New Post": {
 		"prefix": "post",
