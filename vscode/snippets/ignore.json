@@ -1,0 +1,16 @@
+{
+	"Gitignore file for a virtual tour": {
+		"prefix": "givt",
+		"body": [
+			".src/",
+			"*/files/scenes/*/",
+			"*.js",
+			"*.swf",
+			"plugins",
+			"ar.xml",
+			"en.xml",
+			"tour.xml$1"
+		],
+		"description": "Gitignore file for a virtual tour"
+	}
+}
