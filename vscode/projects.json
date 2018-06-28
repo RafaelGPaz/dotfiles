@@ -394,5 +394,11 @@
 		"rootPath": "$home/virtual-tours/gforces/examples/projects/examples/v10_backgrounds",
 		"paths": [],
 		"group": ""
+	},
+	{
+		"name": "TourVista Website V2",
+		"rootPath": "$home/websites/tourvista-v2",
+		"paths": [],
+		"group": ""
 	}
 ]
