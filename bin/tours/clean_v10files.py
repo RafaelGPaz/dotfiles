@@ -99,9 +99,34 @@ def main():
         if not os.path.exists(dest):
             shutil.copy2(pano, dest)
             os.remove(pano)
+            open(pano, 'w').close()  # Create empty file to substitute original one
             num_all += 1
 
     logger.info('[----] NL panos moved: ' + str(num_all))
+
+    # ---------------------
+    # import cars
+    # ---------------------
+
+    importfolder = os.path.join(os.path.expanduser('~'), 'virtual-tours', 'gforces', 'cars', '.src', 'import')
+    importfolderdrive = os.path.join(drive, 'virtual-tours', 'gforces', 'cars', '.src', 'import')
+    years = ('*2011.jpg', '*2012.jpg', '*2013.jpg', '*2014.jpg', '*2015.jpg', '*2016.jpg')
+    allimportpanos = []
+    for files in years:
+        allimportpanos.extend(glob.glob(os.path.join(importfolder,files)))
+    num_all = 0
+    if not os.path.exists(importfolderdrive):
+        os.makedirs(importfolderdrive)
+    for pano in allimportpanos:
+        basename = os.path.basename(pano)
+        dest = os.path.join(importfolderdrive, basename)
+        if not os.path.exists(dest):
+            shutil.copy2(pano, dest)
+            os.remove(pano)
+            open(pano, 'w').close()  # Create empty file to substitute original one
+            num_all += 1
+
+    logger.info('[----] import panos moved: ' + str(num_all))
 
     logger.info('EOL')
 
