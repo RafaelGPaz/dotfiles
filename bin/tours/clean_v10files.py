@@ -152,6 +152,43 @@ def main():
 
     logger.info('[----] masks panos moved: ' + str(num_all))
 
+    # ---------------------
+    # panos cars
+    # ---------------------
+
+    panosfolder = os.path.join(os.path.expanduser('~'), 'virtual-tours', 'gforces', 'cars', '.src', 'panos')
+    panosfolderdrive = os.path.join(drive, 'virtual-tours', 'gforces', 'cars', '.src', 'panos')
+    years = ('*generic*', '*2008*', '*2009*', '*2010*', '*2011*', '*2012*', '*2013*', '*2014*', '*2015*', '*2016*')
+    allpanos = []
+    for panofiles in years:
+        allpanos.extend(sorted(glob.glob(os.path.join(panosfolder,panofiles))))
+    num_all = 0
+    if not os.path.exists(panosfolderdrive):
+        os.makedirs(panosfolderdrive)
+    for pano in allpanos:
+        basename = os.path.basename(pano)
+        dest = os.path.join(panosfolderdrive, basename)
+        if os.path.isfile(pano):
+            if not os.path.exists(dest):
+                shutil.copy2(pano, dest)
+                os.remove(pano)
+                open(pano, 'w').close()  # Create empty file to substitute original one
+                num_all += 1
+        if os.path.isdir(pano):
+            if not os.path.exists(dest):
+                shutil.copytree(pano, dest) # Copy preserving metadata
+                shutil.rmtree(pano) # Delete original copy
+                os.makedirs(pano)
+                open(os.path.join(panosfolder, basename, 'scene_1_a.jpg'), 'w').close()
+                open(os.path.join(panosfolder, basename, 'scene_1_b.jpg'), 'w').close()
+                open(os.path.join(panosfolder, basename, 'scene_1_c.jpg'), 'w').close()
+                open(os.path.join(panosfolder, basename, 'scene_2_a.jpg'), 'w').close()
+                open(os.path.join(panosfolder, basename, 'scene_2_b.jpg'), 'w').close()
+                open(os.path.join(panosfolder, basename, 'scene_2_c.jpg'), 'w').close()
+                num_all += 1
+
+    logger.info('[----] masks panos moved: ' + str(num_all))
+
     logger.info('EOL')
 
 if __name__ == '__main__':
