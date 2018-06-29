@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
 
 import argparse
-import logging
 import glob
+import logging
 import os
+import shutil
+import sys
 import time
+
 import colorlog
+
 
 def main():
     # Add description
@@ -24,6 +28,10 @@ def main():
     logger.setLevel(level=logging.NOTSET)
 
     logger.info("Started")
+
+    # ---------------------
+    # PSB layers
+    # ---------------------
 
     folder = os.path.join(os.path.expanduser('~'), 'virtual-tours', 'gforces', 'cars', '.src', 'layers')
     limit = (1 * 30 * 24 * 60 * 60) # 1 month in seconds
@@ -51,6 +59,33 @@ def main():
     logger.info('[----] PSB: ' + str(len(allpsb)))
     logger.info('[----] Real: ' + str(num_real))
     logger.info('[----] Empty: ' + str(len(allpsb) - num_real))
+
+    # ---------------------
+    # NL cars
+    # ---------------------
+
+    # First of all make sure external drive (H:) is plugged
+    drive = '/Volumes/Extra/'
+    if not os.path.ismount(drive):
+        logger.critical(drive + ': volume is not mounted')
+        sys.exit(0)
+
+    toursfolder = os.path.join(os.path.expanduser('~'), 'virtual-tours', 'gforces', 'cars')
+    allnltours = glob.glob(os.path.join(toursfolder, "nl_*"))
+    num_all = 0
+    for tour in allnltours:
+        basename = os.path.basename(tour)
+        dest = os.path.join(drive, 'virtual-tours', 'gforces', 'cars', basename)
+        if not os.path.exists(dest):
+            shutil.copytree(tour, dest) # Copy preserving metadata
+            shutil.rmtree(tour) # Delete original copy
+            os.makedirs(tour)
+            os.makedirs(os.path.join(tour, 'files' ))
+            os.makedirs(os.path.join(tour, 'files', 'scenes' ))
+            os.makedirs(os.path.join(tour, 'files', 'scenes', 'tiles' ))
+            num_all += 1
+
+    logger.info('[----] NL virtual tour folders moved: ' + str(num_all))
 
     logger.info('EOL')
 
