@@ -128,6 +128,30 @@ def main():
 
     logger.info('[----] import panos moved: ' + str(num_all))
 
+    # ---------------------
+    # masks cars
+    # ---------------------
+
+    masksfolder = os.path.join(os.path.expanduser('~'), 'virtual-tours', 'gforces', 'cars', '.src', 'masks')
+    masksfolderdrive = os.path.join(drive, 'virtual-tours', 'gforces', 'cars', '.src', 'masks')
+    years = ('*2011.psb', '*2012.psb', '*2013.psb', '*2014.psb', '*2015.psb', '*2016.psb')
+    allmaskspanos = []
+    for files in years:
+        allmaskspanos.extend(glob.glob(os.path.join(masksfolder,files)))
+    num_all = 0
+    if not os.path.exists(masksfolderdrive):
+        os.makedirs(masksfolderdrive)
+    for mask in allmaskspanos:
+        basename = os.path.basename(mask)
+        dest = os.path.join(masksfolderdrive, basename)
+        if not os.path.exists(dest):
+            shutil.copy2(mask, dest)
+            os.remove(mask)
+            open(mask, 'w').close()  # Create empty file to substitute original one
+            num_all += 1
+
+    logger.info('[----] masks panos moved: ' + str(num_all))
+
     logger.info('EOL')
 
 if __name__ == '__main__':
