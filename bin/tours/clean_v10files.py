@@ -87,6 +87,22 @@ def main():
 
     logger.info('[----] NL virtual tour folders moved: ' + str(num_all))
 
+    panosfolder = os.path.join(os.path.expanduser('~'), 'virtual-tours', 'gforces', 'cars', '.src', 'panos')
+    panosfolderdrive = os.path.join(drive, 'virtual-tours', 'gforces', 'cars', '.src', 'panos')
+    allnlpanos = glob.glob(os.path.join(panosfolder, "nl_*"))
+    num_all = 0
+    if not os.path.exists(panosfolderdrive):
+        os.makedirs(panosfolderdrive)
+    for pano in allnlpanos:
+        basename = os.path.basename(pano)
+        dest = os.path.join(panosfolderdrive, basename)
+        if not os.path.exists(dest):
+            shutil.copy2(pano, dest)
+            os.remove(pano)
+            num_all += 1
+
+    logger.info('[----] NL panos moved: ' + str(num_all))
+
     logger.info('EOL')
 
 if __name__ == '__main__':
