@@ -10,7 +10,6 @@ import time
 
 import colorlog
 
-
 def main():
     # Add description
     parser = argparse.ArgumentParser(
@@ -39,7 +38,7 @@ def main():
     num_all = 0 # number of cars older than the limet
     num_real = 0
 
-    allpsb = glob.glob(os.path.join(folder, "*.psb"))
+    allpsb = sorted(glob.glob(os.path.join(folder, "*.psb")))
 
     for psb in allpsb:
         psb_age = os.path.getmtime(psb)
@@ -71,7 +70,7 @@ def main():
         sys.exit(0)
 
     toursfolder = os.path.join(os.path.expanduser('~'), 'virtual-tours', 'gforces', 'cars')
-    allnltours = glob.glob(os.path.join(toursfolder, "nl_*"))
+    allnltours = sorted(glob.glob(os.path.join(toursfolder, "nl_*")))
     num_all = 0
     for tour in allnltours:
         basename = os.path.basename(tour)
@@ -89,7 +88,7 @@ def main():
 
     panosfolder = os.path.join(os.path.expanduser('~'), 'virtual-tours', 'gforces', 'cars', '.src', 'panos')
     panosfolderdrive = os.path.join(drive, 'virtual-tours', 'gforces', 'cars', '.src', 'panos')
-    allnlpanos = glob.glob(os.path.join(panosfolder, "nl_*"))
+    allnlpanos = sorted(glob.glob(os.path.join(panosfolder, "nl_*")))
     num_all = 0
     if not os.path.exists(panosfolderdrive):
         os.makedirs(panosfolderdrive)
@@ -112,8 +111,8 @@ def main():
     importfolderdrive = os.path.join(drive, 'virtual-tours', 'gforces', 'cars', '.src', 'import')
     years = ('*2011.jpg', '*2012.jpg', '*2013.jpg', '*2014.jpg', '*2015.jpg', '*2016.jpg')
     allimportpanos = []
-    for files in years:
-        allimportpanos.extend(glob.glob(os.path.join(importfolder,files)))
+    for importfiles in years:
+        allimportpanos.extend(sorted(glob.glob(os.path.join(importfolder,importfiles))))
     num_all = 0
     if not os.path.exists(importfolderdrive):
         os.makedirs(importfolderdrive)
@@ -136,8 +135,8 @@ def main():
     masksfolderdrive = os.path.join(drive, 'virtual-tours', 'gforces', 'cars', '.src', 'masks')
     years = ('*2011.psb', '*2012.psb', '*2013.psb', '*2014.psb', '*2015.psb', '*2016.psb')
     allmaskspanos = []
-    for files in years:
-        allmaskspanos.extend(glob.glob(os.path.join(masksfolder,files)))
+    for maskfiles in years:
+        allmaskspanos.extend(sorted(glob.glob(os.path.join(masksfolder,maskfiles))))
     num_all = 0
     if not os.path.exists(masksfolderdrive):
         os.makedirs(masksfolderdrive)
