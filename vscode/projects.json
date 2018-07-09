@@ -400,5 +400,11 @@
 		"rootPath": "$home/websites/tourvista-v2",
 		"paths": [],
 		"group": ""
+	},
+	{
+		"name": "Krpano markup language for VS Code",
+		"rootPath": "$home/Documents/projects/vscode-krpano",
+		"paths": [],
+		"group": ""
 	}
 ]
