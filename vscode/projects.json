@@ -406,5 +406,11 @@
 		"rootPath": "$home/Documents/projects/vscode-krpano",
 		"paths": [],
 		"group": ""
+	},
+	{
+		"name": "GForces Example Multiview",
+		"rootPath": "$home/virtual-tours/gforces/examples/projects/examples/multi-view",
+		"paths": [],
+		"group": ""
 	}
 ]
