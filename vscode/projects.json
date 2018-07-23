@@ -42,8 +42,14 @@
 		"group": ""
 	},
 	{
-		"name": "Lexus Manufacturer - Mac",
-		"rootPath": "~/virtual-tours/gforces/manufacturers/lexus_manufacturer/v2",
+		"name": "Lexus Manufacturer v2 - Mac",
+		"rootPath": "/Users/rafael/virtual-tours/gforces/manufacturers/lexus_manufacturer/v2",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Lexus Manufacturer v3 - Mac",
+		"rootPath": "/Users/rafael/virtual-tours/gforces/manufacturers/lexus_manufacturer/v3",
 		"paths": [],
 		"group": ""
 	},
