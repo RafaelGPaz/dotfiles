@@ -29,5 +29,10 @@
 			"<\/li>"
 		],
 		"description": "Portfolio item"
+	},
+	"GForces CDN URL": {
+		"prefix": "cdn",
+		"body": "https://cdn.gforceslivelink.co.uk/",
+		"description": "GForces URL to use CDN server. It replaces 'https://s3-eu-west-1.amazonaws.com/autofs/'"
 	}
 }
