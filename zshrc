@@ -36,7 +36,7 @@ antigen apply
 # Usage:
 # pyenv install 3.6.0
 # pyenv shell 3.6.0
-# pyev global 3.6.0
+# pyenv global 3.6.0
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 # Fix 'pyenv install' bug by telling the compiler where the openssl package is located
@@ -54,7 +54,7 @@ if which pyenv-virtualenv-init > /dev/null; then  eval "$(pyenv virtualenv-init 
 # pyenv deactivate pelican
 # pyenv uninstall pelican
 # ---
-# virtualenv-wrapper: to keep all virtualenvs in the same directory and managethem
+# virtualenv-wrapper: to keep all virtualenvs in the same directory and manage them
 # Usage:
 # mktmpenv
 # lsvirtualenv
