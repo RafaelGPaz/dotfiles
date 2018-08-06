@@ -436,5 +436,11 @@
 		"rootPath": "$home/virtual-tours/tractors/new-holland-t6080",
 		"paths": [],
 		"group": ""
+	},
+	{
+		"name": "Adobe Extendscript Folder",
+		"rootPath": "$home/dotfiles/bin/adobe-extendscript",
+		"paths": [],
+		"group": ""
 	}
 ]
