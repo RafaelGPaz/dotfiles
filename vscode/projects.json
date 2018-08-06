@@ -36,8 +36,26 @@
 		"group": ""
 	},
 	{
-		"name": "Chevrolet Manufacturer",
-		"rootPath": "/Users/rafael/virtual-tours/gforces/manufacturers/chevrolet_manufacturer/",
+		"name": "Chevrolet Manufacturer v1 - Mac",
+		"rootPath": "/Users/rafael/virtual-tours/gforces/manufacturers/chevrolet_manufacturer/v1",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "GForces - Chevrolet Manufacturer v2 - Mac",
+		"rootPath": "/Users/rafael/virtual-tours/gforces/manufacturers/chevrolet_manufacturer/v2",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Chevrolet Manufacturer v1 - Extra",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/chevrolet_manufacturer/v1",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "GForces - Chevrolet Manufacturer v2 - Extra",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/chevrolet_manufacturer/v2",
 		"paths": [],
 		"group": ""
 	},
@@ -386,12 +404,6 @@
 	{
 		"name": "Gforces - Suzuki Manufacturer - Extra",
 		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/suzuki_manufacturer",
-		"paths": [],
-		"group": ""
-	},
-	{
-		"name": "GForces - Chevrolet Manufacturer v2 - Mac",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/chevrolet_manufacturer/v2",
 		"paths": [],
 		"group": ""
 	},
