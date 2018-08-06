@@ -430,5 +430,11 @@
 		"rootPath": "$home/virtual-tours/gforces/examples/projects/examples/multi-view",
 		"paths": [],
 		"group": ""
+	},
+	{
+		"name": "Tractor New Holland T6080",
+		"rootPath": "$home/virtual-tours/tractors/new-holland-t6080",
+		"paths": [],
+		"group": ""
 	}
 ]
