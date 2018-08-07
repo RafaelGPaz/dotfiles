@@ -101,7 +101,7 @@ def main():
             open(pano, 'w').close()  # Create empty file to substitute original one
             num_all += 1
 
-    logger.info('[----] NL panos moved: ' + str(num_all))
+    logger.info('[----] NL folders in .src/panos/ moved: ' + str(num_all))
 
     # ---------------------
     # import cars
@@ -125,7 +125,7 @@ def main():
             open(pano, 'w').close()  # Create empty file to substitute original one
             num_all += 1
 
-    logger.info('[----] import panos moved: ' + str(num_all))
+    logger.info('[----] files in .src/import/ moved: ' + str(num_all))
 
     # ---------------------
     # masks cars
@@ -149,7 +149,7 @@ def main():
             open(mask, 'w').close()  # Create empty file to substitute original one
             num_all += 1
 
-    logger.info('[----] masks panos moved: ' + str(num_all))
+    logger.info('[----] files in .srrc/masks/ moved: ' + str(num_all))
 
     # ---------------------
     # panos cars
@@ -186,7 +186,7 @@ def main():
                 open(os.path.join(panosfolder, basename, 'scene_2_c.jpg'), 'w').close()
                 num_all += 1
 
-    logger.info('[----] masks panos moved: ' + str(num_all))
+    logger.info('[----] folders in .src/panos/ moved: ' + str(num_all))
 
     logger.info('EOL')
 
