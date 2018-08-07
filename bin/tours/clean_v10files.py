@@ -79,9 +79,13 @@ def main():
             shutil.copytree(tour, dest) # Copy preserving metadata
             shutil.rmtree(tour) # Delete original copy
             os.makedirs(tour)
+            open(os.path.join(tour, 'index.html'), 'w').close()
             os.makedirs(os.path.join(tour, 'files' ))
+            os.makedirs(os.path.join(tour, 'files', 'content' ))
+            open(os.path.join(tour, 'files', 'content', 'index.xml'), 'w').close()
             os.makedirs(os.path.join(tour, 'files', 'scenes' ))
             os.makedirs(os.path.join(tour, 'files', 'scenes', 'tiles' ))
+            open(os.path.join(tour, 'files', 'scenes', 'scene.xml'), 'w').close()
             num_all += 1
 
     logger.info('[----] NL virtual tour folders moved: ' + str(num_all))
