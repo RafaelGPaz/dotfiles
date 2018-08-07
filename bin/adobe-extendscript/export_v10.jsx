@@ -21,8 +21,8 @@ function move_btn(btn_path,btn_number){
 }
 function main(){
     $.writeln("Processing...");
-    var root = "Users/rafael/virtual-tours/gforces/cars/.src/";
-    var root2 = "Users/rafael/virtual-tours/gforces/cars/";
+    var root = "/Users/rafael/virtual-tours/gforces/cars/.src/";
+    var root2 = "/Users/rafael/virtual-tours/gforces/cars/";
     var panosDir = Folder(root + "panos/");
     var layersDir = Folder(root + "layers/");
     var psbFile = layersDir.getFiles("*.psb");
@@ -47,79 +47,137 @@ function main(){
             var doc = app.open(layerFile);
             var layer = doc.activeLayer;
             var group = doc.layers;
-            var seatsGroup = doc.layers[0];
-            var seatColors = seatsGroup.layers;
-            var bgGroup = doc.layers[1];
-            var bgs = bgGroup.layers;
-            //$.writeln(seatColors);
-            //$.writeln(bgs);
 
             // Create folder
             var carFolder = Folder(root + "panos/" + carBasename);
-            //$.writeln(carFolder);
             carFolder.create();
 
-            // I need to create 2 folders to move the colour seats buttons inside them
-            var tourFolderPath = new Folder (root2 + "/" + carBasename);
-            var filesFolderPath = new Folder (root2 + "/" + carBasename + "/files");
-            tourFolderPath.create();
-            filesFolderPath.create();
+            // Check number of layers in maskGroup
+            if (group.length == '2') {
+                // No seat colour, just 3 backgrounds
+                var version = '3';
+                $.writeln("[    ] Version: ", version);
 
-            hide_all_layers(group);
-            // Make sure 'btn' layer is hidden
-            // bgGroup.artLayers.getByName("btn").visible = false;
-            // Show last layer (car interior in Studio)
-            doc.layers[2].visible = true;
-            // Show 'Seats' layer
-            seatsGroup.visible = true;
-            // Hide all the seat colors
-            for (var ii = 0; ii < (seatColors.length); ii = ii + 1) {
-                var seat = seatColors[ii];
-                seat.visible = false;
-            }
-            // Cycle through all seat colors
-            var seatNo = 1;
-            for (var ii = 0; ii < (seatColors.length); ii = ii + 1) {
-                var seat = seatColors[ii];
-                seat.visible = true;
-                // Create seat colour btn
-                app.doAction("v10visualiser_btn", "photoshop_actions");
-                move_btn (carBasename, seatNo);
-                // Hide all the backgrounds
-                for (var iii = 0; iii < (bgs.length); iii = iii + 1) {
-                    var bg = bgs[iii];
-                    bg.visible = false;
-                }
+                var seatsGroup = doc.layers[0];
+                var seatColors = seatsGroup.layers;
+                var bgGroup = doc.layers[0];
+                var bgs = bgGroup.layers;
+
+                hide_all_layers(group);
+                // Show last layer (car interior in Studio)
+                doc.layers[1].visible = true;
                 // Create mirror reflection
-                app.doAction("v10visualiser_mirror", "photoshop_actions");
+                var mirrorAction = "v10visualiser_mirror v" + version
+                app.doAction(mirrorAction, "photoshop_actions");
                 // Save
-                var saveFile = new File(carFolder + "/" + "scene_" + [seatNo] + "_a.jpg");
+                var saveFile = new File(carFolder + "/" + "scene_1_a.jpg");
                 SaveJPEG(saveFile,10);
-                //$.writeln("path: ", saveFile);
+                $.writeln("[    ] Pano: scene_1_a.jpg");
                 // Delete first layer at the top (mirror reflection)
                 doc.layers[0].remove();
                 // Cicle through all the backgrounds
                 bgGroup.visible = true;
-                for (var iii = 0; iii < (bgs.length); iii = iii + 1) {
+                for (var iii = 0; iii < (group.length); iii = iii + 1) {
                     if (iii == 0) { var bgLet = "b"; }
                     if (iii == 1) { var bgLet = "c"; }
                     var bg = bgs[iii];
                     //$.writeln(bg);
                     bg.visible = true;
                     // Create mirror reflection
-                    app.doAction("v10visualiser_mirror", "photoshop_actions");
+                    app.doAction(mirrorAction, "photoshop_actions");
                     // Save
-                    var saveFile = new File(carFolder + "/" + "scene_" + [seatNo] + "_" + bgLet + ".jpg");
-                    //$.writeln("path: ", saveFile);
+                    var saveFile = new File(carFolder + "/" + "scene_1" + "_" + bgLet + ".jpg");
+                    $.writeln("[    ] Pano: ", "scene_1_" + bgLet + ".jpg");
                     SaveJPEG(saveFile,10);
                     bg.visible = false;
                     // Delete first layer at the top (mirror reflection)
                     doc.layers[0].remove();
                 }
                 bgGroup.visible = false;
-                seat.visible = false;
-                var seatNo = seatNo + 1;
+
             }
+            else if (group.length == '3') {
+                // 2 seat colours (light and dark) and 3 backgrousds
+                var version = '2';
+                $.writeln("[    ] Version: ", version);
+
+                var seatsGroup = doc.layers[0];
+                var seatColors = seatsGroup.layers;
+                var bgGroup = doc.layers[1];
+                var bgs = bgGroup.layers;
+
+                // Create folder
+                var carFolder = Folder(root + "panos/" + carBasename);
+                //$.writeln(carFolder);
+                carFolder.create();
+
+                // I need to create 2 folders to move the colour seats buttons inside them
+                var tourFolderPath = new Folder (root2 + "/" + carBasename);
+                var filesFolderPath = new Folder (root2 + "/" + carBasename + "/files");
+                tourFolderPath.create();
+                filesFolderPath.create();
+
+                hide_all_layers(group);
+                // Make sure 'btn' layer is hidden
+                // bgGroup.artLayers.getByName("btn").visible = false;
+                // Show last layer (car interior in Studio)
+                doc.layers[2].visible = true;
+                // Show 'Seats' layer
+                seatsGroup.visible = true;
+                // Hide all the seat colors
+                for (var ii = 0; ii < (seatColors.length); ii = ii + 1) {
+                    var seat = seatColors[ii];
+                    seat.visible = false;
+                }
+                // Cycle through all seat colors
+                var seatNo = 1;
+                for (var ii = 0; ii < (seatColors.length); ii = ii + 1) {
+                    var seat = seatColors[ii];
+                    seat.visible = true;
+                    // Create seat colour btn
+                    app.doAction("v10visualiser_btn", "photoshop_actions");
+                    move_btn (carBasename, seatNo);
+                    // Hide all the backgrounds
+                    for (var iii = 0; iii < (bgs.length); iii = iii + 1) {
+                        var bg = bgs[iii];
+                        bg.visible = false;
+                    }
+                    // Create mirror reflection
+                    var mirrorAction = "v10visualiser_mirror v" + version
+                    app.doAction(mirrorAction, "photoshop_actions");
+                    // Save
+                    var saveFile = new File(carFolder + "/" + "scene_" + [seatNo] + "_a.jpg");
+                    SaveJPEG(saveFile,10);
+                    //$.writeln("path: ", saveFile);
+                    // Delete first layer at the top (mirror reflection)
+                    doc.layers[0].remove();
+                    // Cicle through all the backgrounds
+                    bgGroup.visible = true;
+                    for (var iii = 0; iii < (bgs.length); iii = iii + 1) {
+                        if (iii == 0) { var bgLet = "b"; }
+                        if (iii == 1) { var bgLet = "c"; }
+                        var bg = bgs[iii];
+                        //$.writeln(bg);
+                        bg.visible = true;
+                        // Create mirror reflection
+                        app.doAction(mirrorAction, "photoshop_actions");
+                        // Save
+                        var saveFile = new File(carFolder + "/" + "scene_" + [seatNo] + "_" + bgLet + ".jpg");
+                        //$.writeln("path: ", saveFile);
+                        SaveJPEG(saveFile,10);
+                        bg.visible = false;
+                        // Delete first layer at the top (mirror reflection)
+                        doc.layers[0].remove();
+                    }
+                    bgGroup.visible = false;
+                    seat.visible = false;
+                    var seatNo = seatNo + 1;
+                }
+            }
+            else {
+                alert('Wrong number of Layers in the mask file.')
+            }
+
             hide_all_layers(group);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }
