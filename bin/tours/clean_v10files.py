@@ -185,9 +185,12 @@ def main():
                 open(os.path.join(panosfolder, basename, 'scene_1_a.jpg'), 'w').close()
                 open(os.path.join(panosfolder, basename, 'scene_1_b.jpg'), 'w').close()
                 open(os.path.join(panosfolder, basename, 'scene_1_c.jpg'), 'w').close()
-                open(os.path.join(panosfolder, basename, 'scene_2_a.jpg'), 'w').close()
-                open(os.path.join(panosfolder, basename, 'scene_2_b.jpg'), 'w').close()
-                open(os.path.join(panosfolder, basename, 'scene_2_c.jpg'), 'w').close()
+                # Count the number of jpg files inside the folder .src/panos/carname/
+                scenesNumber = len([name for name in os.listdir(pano) if os.path.isfile(os.path.join(pano, name))])
+                if scenesNumber == '6':
+                    open(os.path.join(panosfolder, basename, 'scene_2_a.jpg'), 'w').close()
+                    open(os.path.join(panosfolder, basename, 'scene_2_b.jpg'), 'w').close()
+                    open(os.path.join(panosfolder, basename, 'scene_2_c.jpg'), 'w').close()
                 num_all += 1
 
     logger.info('[----] folders in .src/panos/ moved: ' + str(num_all))
