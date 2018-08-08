@@ -456,10 +456,15 @@
 	// GFORCES
 	// ===================================================================
 
-	"Car element": {
-		"prefix": "cart",
-		"body": "<car id=\"$1\" name=\"\" h=\"\" v=\"\" seat1=\"1\" seat2=\"2\" bg1=\"Studio\" bg2=\"Plaza\" bg3=\"Forest\" />",
+	"Car element with backgrounds": {
+		"prefix": "carbg",
+		"body": "<car id=\"$1\" name=\"\" h=\"\" v=\"\" bg1=\"Studio\" bg2=\"Plaza\" bg3=\"Forest\" />",
 		"description": "Car element for Gforces config.xml"
+	},
+	"Car element with seats": {
+		"prefix": "carseat",
+		"body": "<car id=\"$1\" name=\"\" h=\"\" v=\"\" seat1=\"1\" seat2=\"2\" bg1=\"Studio\" bg2=\"Plaza\" bg3=\"Forest\" />",
+		"description": "Car element for Gforces config.xml with seats attributes"
 	},
 	"Hde attribute": {
 		"prefix": "hid",
