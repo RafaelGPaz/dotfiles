@@ -78,13 +78,25 @@
 		"group": ""
 	},
 	{
-		"name": "Toyota Manufacturer - Mac",
+		"name": "Toyota Manufacturer v1 - Mac",
+		"rootPath": "/Users/rafael/virtual-tours/gforces/manufacturers/toyota_manufacturer/v1",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Toyota Manufacturer v1 - Extra",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/toyota_manufacturer/v2",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Toyota Manufacturer v2 - Mac",
 		"rootPath": "/Users/rafael/virtual-tours/gforces/manufacturers/toyota_manufacturer/v2",
 		"paths": [],
 		"group": ""
 	},
 	{
-		"name": "Toyota Manufacturer - Extra",
+		"name": "Toyota Manufacturer v2 - Extra",
 		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/toyota_manufacturer/v2",
 		"paths": [],
 		"group": ""
@@ -440,6 +452,12 @@
 	{
 		"name": "Adobe Extendscript Folder",
 		"rootPath": "$home/dotfiles/bin/adobe-extendscript",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "Yachts - Mac",
+		"rootPath": "$home/virtual-tours/yachts",
 		"paths": [],
 		"group": ""
 	}
