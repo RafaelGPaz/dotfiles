@@ -5,30 +5,7 @@
 		"paths": [],
 		"group": ""
 	},
-	{
-		"name": "Parallax Website",
-		"rootPath": "/Users/rafael/Parallax/parallaxvirtualtours.co.uk/",
-		"paths": [],
-		"group": ""
-	},
-	{
-		"name": "Parallax Virtual Tours",
-		"rootPath": "/Users/rafael/Parallax/virtual-tours/",
-		"paths": [],
-		"group": ""
-	},
-	{
-		"name": "Parallax Virtual Tours Examples",
-		"rootPath": "/Users/rafael/Parallax/virtual-tours/examples/",
-		"paths": [],
-		"group": ""
-	},
-	{
-		"name": "Pelican Blog",
-		"rootPath": "/Users/rafael/Parallax/parallaxvirtualtours.co.uk/pelican/",
-		"paths": [],
-		"group": ""
-	},
+
 	{
 		"name": "Clarendon Apartments",
 		"rootPath": "/Volumes/Extra/virtual-tours/clarendon_apartments/",
