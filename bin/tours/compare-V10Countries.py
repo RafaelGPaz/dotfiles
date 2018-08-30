@@ -8,7 +8,7 @@ import xml.etree.ElementTree as ET
 
 def main():
     parser = argparse.ArgumentParser(
-        description='This script makes sure all the duplicated cars has its corresponding intries in config.xml. It compares: 1. gb and ie (Audi, Seat and Volkswagen 2. gb and ae (Lexus)',
+        description='This script IS OBSOLETE. It used to make sure all the duplicated cars has its corresponding entries in config.xml, by comparing: 1. gb and ie (Audi, Seat and Volkswagen 2. gb and ae (Lexus). But there are no ie_ items in config.xml anymore,
         usage='compare-V10Countries.py (Run form any directory)')
     args = parser.parse_args()
 
@@ -21,10 +21,7 @@ def main():
 
     logger.info("Started")
 
-    if os.name == 'nt':
-        tree = ET.parse('E:\\virtual_tours\\gforces\\cars\\.src\\config.xml')
-    else:
-        tree = ET.parse('/media/e/virtual_tours/gforces/cars/.src/config.xml')
+    tree = ET.parse('/Users/rafael/virtual-tours/gforces/cars/.src/config.xml')
 
     root = tree.getroot()
 
