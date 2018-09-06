@@ -6,7 +6,6 @@ tap 'puma/puma'
 brew 'alfred'
 brew 'android-file-transfer'
 brew 'appcleaner'
-brew 'betterzip'
 brew 'betterzipql'
 brew 'caffeine'
 brew 'ccleaner
