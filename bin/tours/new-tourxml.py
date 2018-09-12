@@ -14,11 +14,14 @@ from usefulfunctions import numericalSort, safeRm
 
 def main():
     parser = argparse.ArgumentParser(description='Merges all the XML files into \
-    "tour.xm" and creates a new "en.xml" file if it already exists.')
+    "tour.xm". It also creates languages XML files if they already exists, or if \
+    it is secified in the arguments')
     parser.add_argument('-e', action='store_true', dest='enxmlfile', \
                               default=False, help='Create en.xml file')
     parser.add_argument('-a', action='store_true', dest='arxmlfile', \
                               default=False, help='Create ar.xml file')
+    parser.add_argument('-n', action='store_true', dest='nlxmlfile', \
+                              default=False, help='Create nl.xml file')
 
     args = parser.parse_args()
 
@@ -85,7 +88,9 @@ def main():
         # Merge files into tour.xml
         tourxml = os.path.join(tour, 'files', 'tour.xml')
         enxml = os.path.join(tour, 'files' ,'en.xml')
+        enusxml = os.path.join(tour, 'files' ,'en_us.xml')
         arxml = os.path.join(tour, 'files' ,'ar.xml')
+        nlxml = os.path.join(tour, 'files' ,'nl.xml')
         safeRm(tourxml)
         with open(tourxml, 'w', encoding='utf-8') as outfile:
             outfile.writelines('<?xml version="1.0" encoding="UTF-8"?>\n<krpano version="1.19">\n')
@@ -95,9 +100,11 @@ def main():
                         outfile.write(line)
             outfile.writelines("</krpano>")
         logger.info('[ OK ] ' + tourxml)
-        if (os.path.isfile(enxml)) or (args.enxmlfile == True):
+        if (os.path.isfile(enxml)) or (os.path.isfile(enusxml)) or (args.enxmlfile == True):
             shutil.copyfile(tourxml,enxml)
+            shutil.copyfile(tourxml,enusxml)
             logger.info('[ OK ] ' + enxml)
+            logger.info('[ OK ] ' + enusxml)
         if (os.path.isfile(arxml)) or (args.arxmlfile == True):
             shutil.copyfile(tourxml,arxml)
             for linenum,line in enumerate( fileinput.FileInput(arxml,inplace=1) ):
@@ -107,6 +114,15 @@ def main():
                 else:
                     print(line.rstrip())
             logger.info('[ OK ] ' + arxml)
+        if (os.path.isfile(nlxml)) or (args.nlxmlfile == True):
+            shutil.copyfile(tourxml,nlxml)
+            for linenum,line in enumerate( fileinput.FileInput(nlxml,inplace=1) ):
+                if linenum==2 :
+                    print('    <config duch="true" />')
+                    print(line.rstrip())
+                else:
+                    print(line.rstrip())
+            logger.info('[ OK ] ' + nlxml)
 
         allxmlfiles = []
 
