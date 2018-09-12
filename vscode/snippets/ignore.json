@@ -7,9 +7,8 @@
 			"*.js",
 			"*.swf",
 			"plugins",
-			"ar.xml",
-			"en.xml",
-			"tour.xml$1"
+			"*/files/*.xml",
+			"!*/files/devel.xml$1",
 		],
 		"description": "Gitignore file for a virtual tour"
 	}
