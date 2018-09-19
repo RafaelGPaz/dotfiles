@@ -6,12 +6,18 @@
     "editor.fontFamily": "'Hack', 'LiberationMono'",
     "editor.fontSize": 13,
     "editor.cursorBlinking": "solid",
+    "editor.letterSpacing": 0.5,
+    "editor.matchBrackets": false,
     "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "alt",
+    "editor.tokenColorCustomizations": {
+        "[Material Theme Darker High Contrast]": {
+            "comments": "#777"
+        },
+    },
     "editor.wordBasedSuggestions": true,
     "editor.wordSeparators": "`~!@#$%^&*()-_=+[{]}\\|;:'\",.<>/?",
     "editor.wordWrap": "on",
-    "editor.letterSpacing": 0.5,
 // Empty Indent
     "emptyIndent.removeIndent": false,// Explorer
     "explorer.confirmDelete": false,
