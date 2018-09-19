@@ -2,13 +2,14 @@
 {
 // Editor
     "editor.fontFamily": "'Hack', 'LiberationMono'",
-    "editor.fontSize": 12,
+    "editor.fontSize": 13,
     "editor.cursorBlinking": "solid",
     "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "alt",
     "editor.wordBasedSuggestions": true,
     "editor.wordSeparators": "`~!@#$%^&*()-_=+[{]}\\|;:'\",.<>/?",
     "editor.wordWrap": "on",
+    "editor.letterSpacing": 0.5,
 // Empty Indent
     "emptyIndent.removeIndent": false,// Explorer
     "explorer.confirmDelete": false,
