@@ -1,4 +1,4 @@
-// Place your settings in this file to overwrite the default settings
+    // Place your settings in this file to overwrite the default settings
 {
 // Breadcrumbs
     "breadcrumbs.enabled": true,
@@ -7,8 +7,8 @@
     "editor.fontSize": 13,
     "editor.cursorBlinking": "solid",
     "editor.letterSpacing": 0.5,
-    "editor.matchBrackets": false,
     "editor.minimap.enabled": false,
+    "editor.matchBrackets": false,
     "editor.multiCursorModifier": "alt",
     "editor.tokenColorCustomizations": {
         "[Material Theme Darker High Contrast]": {
@@ -95,9 +95,83 @@
         "tab.activeBorder": "#C6FF00",
         "textLink.foreground": "#C6FF00",
     },
-    "gitlens.advanced.messages": {
-        "suppressShowKeyBindingsNotice": true
+// Vim
+    "vim.cmdLineInitialColon": true,
+    "vim.disableExtension": true,
+    "vim.easymotion": true,
+    "vim.easymotionMarkerFontSize": "15",
+    "vim.easymotionMarkerBackgroundColor": "#1e1e1e",
+    "vim.easymotionMarkerForegroundColorOneChar": "yellow",
+    "vim.enableNeovim": true,
+    "vim.hlsearch": true,
+    "vim.leader": "<space>",
+    "vim.neovimPath": "/usr/local/bin/nvim",
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors": {
+        "normal": "#005f5f",
+        "insert": "#5f0000",
+        "visual": "#5f00af",
+        "visualline": "#005f87",
+        "visualblock": "#86592d",
+        "replace": "#000000"
     },
-    "gitlens.historyExplorer.enabled": false,
-    "gitlens.resultsExplorer.files.layout": "list",
+    "vim.useSystemClipboard": true,
+    "vim.visualstar": true,
+    "vim.insertModeKeyBindings": [
+        // Bind jj to <Esc> in insert mode:
+        {
+            "before": ["j","j"],
+            "after": ["<Esc>"]
+        },
+    ],
+    "vim.otherModesKeyBindingsNonRecursive": [
+        // Open VSCode Palette with colon
+        {
+            "before": [":"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.showCommands",
+                    "args": []
+                }
+            ]
+        },
+        // Open Vim Palette with <SPACE> colon
+        {
+            "before": ["<leader>", ":"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "extension.showCmdLine",
+                    "args": []
+                }
+            ]
+        },
+        // Delete line last character
+        {
+            "before": ["<leader>", "x"],
+            "after": [],
+            "commands": [
+                {
+                    "command":"macros.deleteLastChar"
+                }
+            ]
+        },
+        // Toggle comment
+		{
+            "before": ["<leader>","c","c"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.commentLine"
+                }
+            ]
+        },
+    ],
+    "macros": {
+        "deleteLastChar": [
+            "extension.vim_end",
+            "extension.vim_delete"
+        ]
+    },
 }
