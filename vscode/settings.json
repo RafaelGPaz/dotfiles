@@ -1,5 +1,7 @@
 // Place your settings in this file to overwrite the default settings
 {
+// Breadcrumbs
+    "breadcrumbs.enabled": true,
 // Editor
     "editor.fontFamily": "'Hack', 'LiberationMono'",
     "editor.fontSize": 13,
