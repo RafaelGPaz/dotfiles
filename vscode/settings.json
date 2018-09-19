@@ -63,6 +63,7 @@
 // Powershell
     "powershell.integratedConsole.showOnStartup": false,
 // Window
+    "window.titleBarStyle": "custom",
     "window.zoomLevel": 0,
 // Workbench
     "workbench.colorTheme": "Material Theme Darker High Contrast",
