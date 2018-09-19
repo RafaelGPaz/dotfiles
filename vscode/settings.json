@@ -44,92 +44,34 @@
 // Window
     "window.zoomLevel": 0,
 // Workbench
+    "workbench.colorTheme": "Material Theme Darker High Contrast",
     "workbench.colorTheme": "One Monokai",
     "workbench.colorCustomizations": {
+        "activityBarBadge.background": "#C6FF00",
+        "editor.lineHighlightBackground": "#393939",
         "editor.selectionBackground": "#5e1f39",
         "editor.selectionHighlightBackground": "#5a5e1f",
-        "statusBar.background": "#005f5f",
+        "editorSuggestWidget.highlightForeground": "#C6FF00",
+        "editorWidget.border": "#C6FF00",
+        "editorWidget.resizeBorder": "#C6FF00",
+        "list.activeSelectionForeground": "#C6FF00",
+        "list.highlightForeground": "#C6FF00",
+        "list.inactiveSelectionForeground": "#C6FF00",
+        "editorSuggestWidget.selectedBackground": "#5a5e1f",
+        "editorSuggestWidget.foreground": "#ccc",
+        "notificationLink.foreground": "#C6FF00",
+        "panelTitle.activeBorder": "#C6FF00",
+        "pickerGroup.foreground": "#C6FF00",
+        "progressBar.background": "#C6FF00",
+        "scrollbarSlider.activeBackground": "#C6FF0050",
+        "settings.modifiedItemForeground": "#C6FF00",
+        "sideBar.foreground": "#ccc",
+        "statusBar.background": "#111",
         "statusBar.debuggingBackground": "#005f5f",
-        "statusBar.noFolderBackground": "#005f5f"
-    },
-// Vim
-    "vim.cmdLineInitialColon": true,
-    "vim.disableExtension": true,
-    "vim.easymotion": true,
-    "vim.easymotionMarkerFontSize": "15",
-    "vim.easymotionMarkerBackgroundColor": "#1e1e1e",
-    "vim.easymotionMarkerForegroundColorOneChar": "yellow",
-    "vim.enableNeovim": true,
-    "vim.hlsearch": true,
-    "vim.leader": "<space>",
-    "vim.neovimPath": "/usr/local/bin/nvim",
-    "vim.statusBarColorControl": true,
-    "vim.statusBarColors": {
-        "normal": "#005f5f",
-        "insert": "#5f0000",
-        "visual": "#5f00af",
-        "visualline": "#005f87",
-        "visualblock": "#86592d",
-        "replace": "#000000"
-    },
-    "vim.useSystemClipboard": true,
-    "vim.visualstar": true,
-    "vim.insertModeKeyBindings": [
-        // Bind jj to <Esc> in insert mode:
-        {
-            "before": ["j","j"],
-            "after": ["<Esc>"]
-        },
-    ],
-    "vim.otherModesKeyBindingsNonRecursive": [
-        // Open VSCode Palette with colon
-        {
-            "before": [":"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "workbench.action.showCommands",
-                    "args": []
-                }
-            ]
-        },
-        // Open Vim Palette with <SPACE> colon
-        {
-            "before": ["<leader>", ":"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "extension.showCmdLine",
-                    "args": []
-                }
-            ]
-        },
-        // Delete line last character
-        {
-            "before": ["<leader>", "x"],
-            "after": [],
-            "commands": [
-                {
-                    "command":"macros.deleteLastChar"
-                }
-            ]
-        },
-        // Toggle comment
-		{
-            "before": ["<leader>","c","c"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "editor.action.commentLine"
-                }
-            ]
-        },
-    ],
-    "macros": {
-        "deleteLastChar": [
-            "extension.vim_end",
-            "extension.vim_delete"
-        ]
+        "statusBar.foreground": "#ccc",
+        "statusBar.noFolderBackground": "#005f5f",
+        "tab.activeBorder": "#C6FF00",
+        "textLink.foreground": "#C6FF00",
     },
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
