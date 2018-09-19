@@ -24,6 +24,9 @@
 // Extensions
     "extensions.autoUpdate": true,
 // Files
+    "files.associations": {
+        "*.xml": "krpano"
+    },
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
