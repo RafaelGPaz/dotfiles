@@ -8,7 +8,6 @@
     "editor.cursorBlinking": "solid",
     "editor.letterSpacing": 0.5,
     "editor.minimap.enabled": false,
-    "editor.matchBrackets": false,
     "editor.multiCursorModifier": "alt",
     "editor.tokenColorCustomizations": {
         "[Material Theme Darker High Contrast]": {
