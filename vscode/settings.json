@@ -67,7 +67,7 @@
     "window.zoomLevel": 0,
 // Workbench
     "workbench.colorTheme": "Material Theme Darker High Contrast",
-    "workbench.colorTheme": "One Monokai",
+    "workbench.editor.labelFormat": "long",
     "workbench.colorCustomizations": {
         "activityBarBadge.background": "#C6FF00",
         "editor.lineHighlightBackground": "#393939",
