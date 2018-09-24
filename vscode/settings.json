@@ -43,6 +43,10 @@
 // Git,
     "git.autofetch": true,
     "git.confirmSync": false,
+    "git.ignoredRepositories": [
+        "/Users/rafael/dotfiles/dotbot",
+        "/Users/rafael/dotfiles/bin/clustergit"
+    ],
     "git.path": "/usr/bin/git",
 // Gitlens
     "gitlens.advanced.messages": {
@@ -172,5 +176,5 @@
             "extension.vim_end",
             "extension.vim_delete"
         ]
-    },
+    }
 }

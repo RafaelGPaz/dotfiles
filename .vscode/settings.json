@@ -1,7 +1,3 @@
 {
-    "python.pythonPath": "/Users/rafael/.pyenv/versions/3.6.0/bin/python",
-    "git.ignoredRepositories": [
-        "/Users/rafael/dotfiles/dotbot",
-        "/Users/rafael/dotfiles/bin/clustergit"
-    ]
+    "python.pythonPath": "/Users/rafael/.pyenv/versions/3.6.0/bin/python"
 }
