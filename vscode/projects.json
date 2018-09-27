@@ -263,7 +263,6 @@
 		"paths": [],
 		"group": ""
 	},
-
 	{
 		"name": "Stirling University - Graduation Day",
 		"rootPath": "$home/virtual-tours/stirling-university/graduation-day",
@@ -330,7 +329,6 @@
 		"paths": [],
 		"group": ""
 	},
-
 	{
 		"name": "GForces - Example V10 New Backgrounds",
 		"rootPath": "$home/virtual-tours/gforces/examples/projects/examples/v10_backgrounds",
@@ -400,6 +398,12 @@
 	{
 		"name": "Isuzu Manufacturer v1",
 		"rootPath": "$home/virtual-tours/gforces/manufacturers/isuzu_manufacturer/v1.code-workspace",
+		"paths": [],
+		"group": ""
+	},
+	{
+		"name": "CSKILLS / CITB",
+		"rootPath": "/Volumes/Extra/virtual-tours/cskills",
 		"paths": [],
 		"group": ""
 	}
