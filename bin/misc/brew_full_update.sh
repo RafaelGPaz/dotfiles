@@ -4,7 +4,7 @@
 
     if [ "$1" != '--quick' ]; then
       printf "Removing brew cache\n"
-      brew cleanup --force -s && rm -rf $(brew --cache)
+      brew cleanup -s && rm -rf $(brew --cache)
       printf "Running brew update\n"
       brew update
     fi
