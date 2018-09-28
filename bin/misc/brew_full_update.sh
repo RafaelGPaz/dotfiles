@@ -10,7 +10,7 @@
     fi
     for c in $(brew cask list); do
 
-        current="$(brew cask info $c | sed -n '1p' | sed -n 's/^.*: \(.*\)$/\1/p')"
+        current="$(brew cask info $c | sed -n '1p' | sed -n 's/^.*: //p' | sed -e 's/ (auto_updates)//g')"
         installed=( $(ls /usr/local/Caskroom/$c))
 
       if (! [[ " ${installed[@]} " == *" $current "* ]]); then
