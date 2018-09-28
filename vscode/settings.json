@@ -52,8 +52,9 @@
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
     },
-    "gitlens.historyExplorer.enabled": false,
-    "gitlens.resultsExplorer.files.layout": "list",
+    "gitlens.currentLine.enabled": false,
+    "gitlens.historyExplorer.avatars": false,
+    "gitlens.resultsExplorer.files.layout": "tree",
 // Integrated Terminal
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.fontSize": 13,
