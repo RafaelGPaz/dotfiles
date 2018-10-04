@@ -71,7 +71,6 @@ def main():
     # Remove old models from dictionary
     for old_model in to_be_removed:
         del tours[old_model]
-        #pprint(old_model)
 
     # Export dictionary as JSON
     with open('interiors-filtered.json', 'w') as f:
