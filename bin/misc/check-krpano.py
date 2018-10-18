@@ -46,3 +46,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Cron:
+# 59 23 * * * /home/rafaelgp/bin/check-krpano.py
