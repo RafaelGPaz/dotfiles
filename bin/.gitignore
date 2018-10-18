@@ -6,6 +6,7 @@
 .DS_Store
 .AppleDouble
 .LSOverride
+private.py
 
 # Icon must end with two \r
 Icon
