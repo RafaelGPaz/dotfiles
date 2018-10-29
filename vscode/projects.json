@@ -30,6 +30,12 @@
 		"group": ""
 	},
 	{
+		"name": "Chevrolet Manufacturer v4",
+		"rootPath": "$home/virtual-tours/gforces/manufacturers/chevrolet_manufacturer/v4.code-workspace",
+		"paths": [],
+		"group": ""
+	},
+	{
 		"name": "Lexus Manufacturer v1",
 		"rootPath": "$home/virtual-tours/gforces/manufacturers/lexus_manufacturer/v1.code-workspace",
 		"paths": [],
