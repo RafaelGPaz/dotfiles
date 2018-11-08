@@ -3,14 +3,6 @@
 from lxml import html
 import requests
 import time
-import tweepy
-# Import tweeter private keys
-from private import cfg
-
-def get_api(cfg):
-    auth = tweepy.OAuthHandler(cfg['consumer_key'], cfg['consumer_secret'])
-    auth.set_access_token(cfg['access_token'], cfg['access_token_secret'])
-    return tweepy.API(auth)
 
 def main():
     page = requests.get('http://krpano.com/download/')
@@ -31,21 +23,17 @@ def main():
     today = time.strftime("%Y-%m-%d")
     # today = BuildDateClean
 
-    # print(version);
-    # print(BuildDateClean);
+    # print(version)
+    # print(BuildDateClean)
     # print(today)
 
     if BuildDateClean == today :
-        # Wait until 9am to post the tweet
-        time.sleep(32400)
-        api = get_api(cfg)
-        tweet = version + buildDate + ' released! Click on the following linkto download it #krpano http://krpano.com/download/'
-        status = api.update_status(status=tweet)
-
-        print(tweet)
+        message = version + buildDate + ' released!'
+        print(message)
 
 if __name__ == "__main__":
     main()
 
 # Cron:
-# 59 23 * * * /home/rafaelgp/bin/check-krpano.py
+# cronttab -e
+# 59 23 * * * /home/USERNAME/bin/check-krpano.py
