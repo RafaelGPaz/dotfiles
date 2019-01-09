@@ -355,7 +355,7 @@
 	},
 	{
 		"name": "TourVista Website V2",
-		"rootPath": "$home/websites/tourvista-v2",
+		"rootPath": "$home/websites/tourvista-v2/tourvista.co.uk/pelican",
 		"paths": [],
 		"group": ""
 	},
