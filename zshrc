@@ -46,26 +46,14 @@ export LDFLAGS="-L$(brew --prefix openssl)/lib"
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then  eval "$(pyenv virtualenv-init -)"; fi
 # ---
-# pyenv-virtualenv: to configure a global environment
+# pyenv-virtualenv: to configure a local, global or shell environment.
+# To manage virtualenvs in projects use virtualenv-wrapper (see below)
 # Usage:
-# pyenv virtualenv 3.6.0 pelican
+# pyenv virtualenv 3.6.0 3.0.7
 # pyenv virtualenvs
-# pyenv activate pelican
-# pyenv deactivate pelican
-# pyenv uninstall pelican
 # ---
 # virtualenv-wrapper: to keep all virtualenvs in the same directory and manage them
-# Usage:
-# mktmpenv
-# lsvirtualenv
-# showvirtualenv pelican
-# rmvirtualenv pelicon
-# cpvirtualenv pelicon pelican2
-# allvirtualenv pip install -U pip
-# workon pelican
-# deactivote
-# cdvirtualenv
-# lssitepackages
+# Type wirtualenvwrapper to list al the commands.
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="false" # Use virtualenv instead of pyenv
 export WORKON_HOME=$HOME/.virtualenvs
 pyenv virtualenvwrapper_lazy
