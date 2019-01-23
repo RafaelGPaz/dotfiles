@@ -396,6 +396,12 @@
 		"group": ""
 	},
 	{
+		"name": "Kia Manufacturer v2",
+		"rootPath": "$home/virtual-tours/gforces/manufacturers/kia_manufacturer/v2.code-workspace",
+		"paths": [],
+		"group": ""
+	},
+	{
 		"name": "Renault Manufacturer v1",
 		"rootPath": "$home/virtual-tours/gforces/manufacturers/renault_manufacturer/v1.code-workspace",
 		"paths": [],
