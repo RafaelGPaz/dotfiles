@@ -67,7 +67,7 @@
 // Window
     "window.titleBarStyle": "custom",
     "window.zoomLevel": 0,
-// Workbench
+    // Workbench
     "workbench.colorTheme": "Material Theme Darker High Contrast",
     "workbench.editor.labelFormat": "long",
     "workbench.colorCustomizations": {
@@ -105,8 +105,6 @@
         "textLink.foreground": "#C6FF00"
     },
 // Vim
-    "vim.cmdLineInitialColon": true,
-    "vim.disableExtension": true,
     "vim.easymotion": true,
     "vim.easymotionMarkerFontSize": "15",
     "vim.easymotionMarkerBackgroundColor": "#1e1e1e",
@@ -115,15 +113,7 @@
     "vim.hlsearch": true,
     "vim.leader": "<space>",
     "vim.neovimPath": "/usr/local/bin/nvim",
-    "vim.statusBarColorControl": true,
-    "vim.statusBarColors": {
-        "normal": "#005f5f",
-        "insert": "#5f0000",
-        "visual": "#5f00af",
-        "visualline": "#005f87",
-        "visualblock": "#86592d",
-        "replace": "#000000"
-    },
+    "vim.statusBarColorControl": false,
     "vim.useSystemClipboard": true,
     "vim.visualstar": true,
     "vim.insertModeKeyBindings": [
@@ -133,11 +123,10 @@
             "after": ["<Esc>"]
         },
     ],
-    "vim.otherModesKeyBindingsNonRecursive": [
+    "vim.normalModeKeyBindings": [
         // Open VSCode Palette with colon
         {
             "before": [":"],
-            "after": [],
             "commands": [
                 {
                     "command": "workbench.action.showCommands",
@@ -145,21 +134,9 @@
                 }
             ]
         },
-        // Open Vim Palette with <SPACE> colon
-        {
-            "before": ["<leader>", ":"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "extension.showCmdLine",
-                    "args": []
-                }
-            ]
-        },
         // Delete line last character
         {
             "before": ["<leader>", "x"],
-            "after": [],
             "commands": [
                 {
                     "command":"macros.deleteLastChar"
@@ -169,13 +146,28 @@
         // Toggle comment
 		{
             "before": ["<leader>","c","c"],
-            "after": [],
             "commands": [
                 {
                     "command": "editor.action.commentLine"
                 }
             ]
         },
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        // Turn off search highlight
+        {
+            "before":["<C-n>"],
+            "commands": [
+                ":nohl",
+             ]
+        },
+        // Save document
+        {
+            "before": ["leader", "w"],
+            "commands": [
+                "workbench.action.files.save",
+            ]
+        }
     ],
     "macros": {
         "deleteLastChar": [
