@@ -50,8 +50,6 @@
         "suppressShowKeyBindingsNotice": true
     },
     "gitlens.currentLine.enabled": false,
-    "gitlens.historyExplorer.avatars": false,
-    "gitlens.resultsExplorer.files.layout": "tree",
     "gitlens.views.fileHistory.avatars": false,
     "gitlens.views.lineHistory.avatars": false,
     "gitlens.views.compare.files.layout": "tree",
