@@ -265,7 +265,7 @@
 	},
 	{
 		"name": "Website Tours",
-		"rootPath": "$home/virtual-tours/website-tours",
+		"rootPath": "/Volumes/Extra/virtual-tours/website-tours",
 		"paths": [],
 		"group": ""
 	},
