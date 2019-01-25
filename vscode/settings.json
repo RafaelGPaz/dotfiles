@@ -17,6 +17,8 @@
     "editor.wordBasedSuggestions": true,
     "editor.wordSeparators": "`~!@#$%^&*()-_=+[{]}\\|;:'\",.<>/?",
     "editor.wordWrap": "on",
+// Emmet
+    "emmet.includeLanguages": {"jinja-html": "html"},
 // Empty Indent
     "emptyIndent.removeIndent": false,// Explorer
     "explorer.confirmDelete": false,
