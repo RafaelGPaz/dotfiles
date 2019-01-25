@@ -4,7 +4,7 @@
     "breadcrumbs.enabled": true,
 // Editor
     "editor.fontFamily": "'Hack', 'LiberationMono'",
-    "editor.fontSize": 13,
+    "editor.fontSize": 14,
     "editor.cursorBlinking": "solid",
     "editor.letterSpacing": 0.5,
     "editor.minimap.enabled": false,
