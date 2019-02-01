@@ -176,6 +176,25 @@
             ]
         }
     ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        // Indent/outdent lines (repeatable)
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        },
+    ],
     "macros": {
         "deleteLastChar": [
             "extension.vim_end",
