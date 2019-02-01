@@ -28,7 +28,3 @@
     done
 
     brew upgrade
-
-    # Update antigen plugins and oh_my_zsh too
-    antigen update
-    upgrade_oh_my_zsh
