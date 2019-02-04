@@ -16,10 +16,12 @@ def main():
     parser = argparse.ArgumentParser(description='Merges all the XML files into \
     "tour.xm". It also creates languages XML files if they already exists, or if \
     it is secified in the arguments')
-    parser.add_argument('-e', action='store_true', dest='enxmlfile', \
-                              default=False, help='Create en.xml file')
     parser.add_argument('-a', action='store_true', dest='arxmlfile', \
                               default=False, help='Create ar.xml file')
+    parser.add_argument('-d', action='store_true', dest='dexmlfile', \
+                              default=False, help='Create de.xml file')
+    parser.add_argument('-e', action='store_true', dest='enxmlfile', \
+                              default=False, help='Create en.xml file')
     parser.add_argument('-n', action='store_true', dest='nlxmlfile', \
                               default=False, help='Create nl.xml file')
 
@@ -91,6 +93,7 @@ def main():
         enusxml = os.path.join(tour, 'files' ,'en_us.xml')
         arxml = os.path.join(tour, 'files' ,'ar.xml')
         nlxml = os.path.join(tour, 'files' ,'nl.xml')
+        dexml = os.path.join(tour, 'files' ,'de.xml')
         safeRm(tourxml)
         with open(tourxml, 'w', encoding='utf-8') as outfile:
             outfile.writelines('<?xml version="1.0" encoding="UTF-8"?>\n<krpano version="1.19">\n')
@@ -123,6 +126,15 @@ def main():
                 else:
                     print(line.rstrip())
             logger.info('[ OK ] ' + nlxml)
+        if (os.path.isfile(dexml)) or (args.dexmlfile == True):
+            shutil.copyfile(tourxml,dexml)
+            for linenum,line in enumerate( fileinput.FileInput(dexml,inplace=1) ):
+                if linenum==2 :
+                    print('    <config german="true" />')
+                    print(line.rstrip())
+                else:
+                    print(line.rstrip())
+            logger.info('[ OK ] ' + dexml)
 
         allxmlfiles = []
 
