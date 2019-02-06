@@ -240,12 +240,6 @@
 		"group": ""
 	},
 	{
-		"name": "Gforces - Cadillac Manufacturer V4",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/cadillac_manufacturer/v4.code-workspace",
-		"paths": [],
-		"group": ""
-	},
-	{
 		"name": "Gforces V10 Shared folder",
 		"rootPath": "$home/virtual-tours/gforces/cars/shared",
 		"paths": [],
