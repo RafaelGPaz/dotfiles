@@ -6,3 +6,5 @@ Host tourvista 81.4.107.13
     HostName 81.4.107.13
     IdentityFile ~/.ssh/tourvista
     User rafaelgp
+
+ServerAliveInterval 120
