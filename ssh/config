@@ -1,7 +1,3 @@
-Host parallax 81.4.120.251
-    HostName 81.4.120.251
-    IdentityFile ~/.ssh/parallax
-    User rafaelgp
 Host tourvista 81.4.107.13
     HostName 81.4.107.13
     IdentityFile ~/.ssh/tourvista
