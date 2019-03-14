@@ -1,5 +1,5 @@
-Host tourvista 81.4.107.13
-    HostName 81.4.107.13
+Host tourvista 185.52.3.247
+    HostName 185.52.3.247
     IdentityFile ~/.ssh/tourvista
     User rafaelgp
 
