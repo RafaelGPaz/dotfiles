@@ -107,6 +107,7 @@
         "textLink.foreground": "#C6FF00"
     },
 // Vim
+"vim.disableExtension": true,
     "vim.easymotion": true,
     "vim.easymotionMarkerFontSize": "17",
     "vim.easymotionMarkerHeight": 17,
