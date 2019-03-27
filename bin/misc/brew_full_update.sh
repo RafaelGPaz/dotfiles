@@ -9,7 +9,9 @@
       brew update
     fi
     for c in $(brew cask list); do
-
+        if [ "$c" == "carbon-copy-cloner" ]; then
+          continue;
+        fi
         current="$(brew cask info $c | sed -n '1p' | sed -n 's/^.*: //p' | sed -e 's/ (auto_updates)//g')"
         installed=( $(ls /usr/local/Caskroom/$c))
 
