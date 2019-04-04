@@ -9,6 +9,11 @@
     "editor.letterSpacing": 0.5,
     "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "alt",
+    "editor.quickSuggestions": {
+      "other": false,
+      "comments": false,
+      "strings": false
+    },
     "editor.tokenColorCustomizations": {
         "[Material Theme Darker High Contrast]": {
             "comments": "#777"
@@ -107,7 +112,7 @@
         "textLink.foreground": "#C6FF00"
     },
 // Vim
-"vim.disableExtension": true,
+"vim.disableExtension": false,
     "vim.easymotion": true,
     "vim.easymotionMarkerFontSize": "17",
     "vim.easymotionMarkerHeight": 17,
