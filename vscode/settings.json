@@ -75,6 +75,7 @@
     "window.titleBarStyle": "custom",
     "window.zoomLevel": 0,
     // Workbench
+    "workbench.activityBar.visible": false,
     "workbench.colorTheme": "Material Theme Darker High Contrast",
     "workbench.editor.labelFormat": "long",
     "workbench.colorCustomizations": {
