@@ -1,6 +1,0 @@
-Host tourvista 185.52.3.247
-    HostName 185.52.3.247
-    IdentityFile ~/.ssh/tourvista
-    User rafaelgp
-
-ServerAliveInterval 120
