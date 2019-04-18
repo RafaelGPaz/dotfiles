@@ -1,9 +1,9 @@
 // My Custom Keybindings
 [
     {
-        "key": "cmd+v",
-        "command": "pasteAndIndent.action",
-        "when": "editorTextFocus && !editorReadonly"
+        // Toggle Side Bar
+        "key": "ctrl+b",
+        "command": "workbench.action.toggleSidebarVisibility"
     },
     {
         "key": "cmd+v",
@@ -14,5 +14,9 @@
         "key": "cmd+shift+v",
         "command": "editor.action.clipboardPasteAction",
         "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "workbench.action.focusActiveEditorGroup"
     }
 ]

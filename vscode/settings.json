@@ -124,6 +124,9 @@
     "vim.easymotionKeys": "hklyuiopnmqwertzxcvbasdgjf",
     "vim.easymotionMarkerYOffset": 3,
     "vim.enableNeovim": true,
+    "vim.handleKeys": {
+      "<C-n>": false
+    },
     "vim.hlsearch": true,
     "vim.leader": "<space>",
     "vim.neovimPath": "/usr/local/bin/nvim",
@@ -138,6 +141,33 @@
         },
     ],
     "vim.normalModeKeyBindings": [
+        // Save document
+        {
+            "before": ["leader", "w"],
+            "commands": [
+                "workbench.action.files.save",
+            ]
+        },
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        // Switch window (buffer)
+        {
+            "before": ["<leader>", "p"],
+            "commands": [
+                {
+                    "command": "workbench.action.openNextRecentlyUsedEditorInGroup"
+                }
+            ]
+        },
+        // Switch window (buffer)
+        {
+            "before": ["<leader>", "b"],
+            "commands": [
+                {
+                    "command": "workbench.action.switchWindow"
+                }
+            ]
+        },
         // Open VSCode Palette with colon
         {
             "before": [":"],
@@ -148,16 +178,25 @@
                 }
             ]
         },
-        // Delete line last character
+        // Open explorer
         {
-            "before": ["<leader>", "x"],
+            "before": ["<leader>", "e"],
             "commands": [
                 {
-                    "command":"macros.deleteLastChar"
+                    "command": "workbench.view.explorer"
                 }
             ]
         },
-        // Toggle comment
+        // Open GIT
+        {
+            "before": ["<leader>", "g"],
+            "commands": [
+                {
+                    "command": "workbench.view.scm"
+                }
+            ]
+        },
+        //  Toggle comment
 		{
             "before": ["<leader>","c","c"],
             "commands": [
@@ -166,20 +205,20 @@
                 }
             ]
         },
-    ],
-    "vim.normalModeKeyBindingsNonRecursive": [
         // Turn off search highlight
         {
-            "before":["<C-n>"],
+            "before":["<C-c>"],
             "commands": [
                 ":nohl",
              ]
         },
-        // Save document
+        // Delete line last character
         {
-            "before": ["leader", "w"],
+            "before": ["<leader>", "x"],
             "commands": [
-                "workbench.action.files.save",
+                {
+                    "command":"macros.deleteLastChar"
+                }
             ]
         },
         // Fix undo bug
