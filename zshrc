@@ -57,24 +57,14 @@ pyenv virtualenvwrapper_lazy
 ######################################################
 # Aliases                                            #
 ######################################################
-alias off="sudo poweroff"
-alias reboot_and_sfck="sudo shutdown -rF now"
 alias lsb="ls -1 | sed -e 's/\..*$//'"
-alias rmgf="rm -fv '/media/c/Users/Rafael/Downloads/Assets-GForces 360 Makes and Models (Responses).xlsx'"
 alias sz="source ~/.zshrc && echo '.zshrc sourced'"
 
 alias update_pip="python -m pip install -U pip"
 alias findallbutjpg='find . -type f ! -iname *jpg'
-alias backup_img='rsync -zvra --delete /home/rafael/ /media/rafael/Life/life_img/'
-alias backup_plus='rsync -zvra /home/rafael/ /media/rafael/Life/life_plus/'
-alias backup_virtualbox='rsync -zvra --delete --exclude .cache --exclude .emacs.d /home/rafael/ /media/rafael/Elements/home_debian/'
-alias backup_all='backup_img && backup_plus'
 alias clusterg='dotfiles/bin/clustergit/clustergit'
 alias gitrecursive='clusterg --recursive --skip-symlinks -e "./\..*" -e virtual-tours -e Local -e Library && clusterg --recursive -d ~/virtual-tours/ -e gforces &&   clusterg -d ~/virtual-tours/gforces/cars/'
 alias code='code-insiders'
-alias powershell='pwsh'
 alias brew='~/dotfiles/bin/misc/brew'
 alias remove_-min_string='for file in *; do mv "${file}" "${file//\-min/}"; done'
-alias import_v10='open -a Adobe\ Photoshop\ CC\ 2017 "/Users/rafael/dotfiles/bin/adobe-extendscript/import_v10.jsx"'
-alias export_v10='open -a Adobe\ Photoshop\ CC\ 2017 "/Users/rafael/dotfiles/bin/adobe-extendscript/export_v10.jsx"'
 alias echopath='echo "${PATH//:/"\n"}"'
