@@ -32,29 +32,25 @@ antigen apply
 ######################################################
 # Python                                             #
 ######################################################
-# pyenv: to install python interpreters
+# pyenv:
+# It installs python interpreters
 # Usage:
-# pyenv install 3.6.0
-# pyenv shell 3.6.0
-# pyenv global 3.6.0
+# pyenv install 3.7.0
+# pyenv shell 3.7.0
+# pyenv global 3.7.0
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-# Fix 'pyenv install' bug by telling the compiler where the openssl package is located
-# https://github.com/pyenv/pyenv/wiki/Common-build-problems
-export CFLAGS="-I$(brew --prefix openssl)/include"
-export LDFLAGS="-L$(brew --prefix openssl)/lib"
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-if which pyenv-virtualenv-init > /dev/null; then  eval "$(pyenv virtualenv-init -)"; fi
+if command -v pyenv 1>/dev/null 2>&1; then;  eval "$(pyenv init -)"; fi
 # ---
-# pyenv-virtualenv: to configure a local, global or shell environment.
-# To manage virtualenvs in projects use virtualenv-wrapper (see below)
-# Usage:
-# pyenv virtualenv 3.6.0 3.0.7
-# pyenv virtualenvs
+# pyenv-virtualenv:
+# It's a pyenv plugin.
+# It manages virtualenvs by configuring a local, global or shell environments.
+# I prefer to use virtualenv-wrapper (see below).
 # ---
-# virtualenv-wrapper: to keep all virtualenvs in the same directory and manage them
+# virtualenv-wrapper:
+# It's a pyenv plugin.
+# It keeps all virtualenvs in one directory ($WORKON_HOME) and manage them.
 # Type wirtualenvwrapper to list al the commands.
-export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="false" # Use virtualenv instead of pyenv
 export WORKON_HOME=$HOME/.virtualenvs
 pyenv virtualenvwrapper_lazy
 
