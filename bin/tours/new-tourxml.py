@@ -22,6 +22,8 @@ def main():
                               default=False, help='Create de.xml file')
     parser.add_argument('-e', action='store_true', dest='enxmlfile', \
                               default=False, help='Create en.xml file')
+    parser.add_argument('-i', action='store_true', dest='itxmlfile', \
+                              default=False, help='Create it.xml file')
     parser.add_argument('-n', action='store_true', dest='nlxmlfile', \
                               default=False, help='Create nl.xml file')
 
@@ -92,6 +94,7 @@ def main():
         enxml = os.path.join(tour, 'files' ,'en.xml')
         enusxml = os.path.join(tour, 'files' ,'en_us.xml')
         arxml = os.path.join(tour, 'files' ,'ar.xml')
+        itxml = os.path.join(tour, 'files' ,'it.xml')
         nlxml = os.path.join(tour, 'files' ,'nl.xml')
         dexml = os.path.join(tour, 'files' ,'de.xml')
         safeRm(tourxml)
@@ -117,6 +120,15 @@ def main():
                 else:
                     print(line.rstrip())
             logger.info('[ OK ] ' + arxml)
+        if (os.path.isfile(itxml)) or (args.itxmlfile == True):
+            shutil.copyfile(tourxml,itxml)
+            for linenum,line in enumerate( fileinput.FileInput(itxml,inplace=1) ):
+                if linenum==2 :
+                    print('    <config italian="true" />')
+                    print(line.rstrip())
+                else:
+                    print(line.rstrip())
+            logger.info('[ OK ] ' + itxml)
         if (os.path.isfile(nlxml)) or (args.nlxmlfile == True):
             shutil.copyfile(tourxml,nlxml)
             for linenum,line in enumerate( fileinput.FileInput(nlxml,inplace=1) ):
