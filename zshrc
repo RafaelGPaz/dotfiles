@@ -8,14 +8,11 @@ export PATH="/usr/local/bin:/usr/local/sbin:$PATH:$HOME/dotfiles/bin/misc:$HOME/
 source /usr/local/share/antigen/antigen.zsh
 # Load the oh-my-zsh's library
 antigen use oh-my-zsh
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
+# robbyrussell
 antigen bundles <<EOBUNDLES
-brew
-command-not-found
 common-aliases
 git
 rsync
-virtualenvwrapper
 z
 EOBUNDLES
 # Syntax highlighting bundle
