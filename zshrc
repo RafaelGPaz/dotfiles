@@ -15,16 +15,16 @@ git
 rsync
 z
 EOBUNDLES
-# Syntax highlighting bundle
+# zsh-users
 antigen bundle zsh-users/zsh-autosuggestions # Fish-like auto suggestions
 antigen bundle zsh-users/zsh-completions # Extra zsh completions
 antigen bundle zsh-users/zsh-syntax-highlighting
-# Theme. Don't use 'antigen theme'
-antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
-# Tell antigen that you're done
+# other
+antigen theme romkatv/powerlevel10k # Minimal terminal theme
 antigen apply
 
+# Command prompt
+source .purepower
 
 ######################################################
 # Python                                             #
