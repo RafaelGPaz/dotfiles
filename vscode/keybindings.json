@@ -1,11 +1,6 @@
 // My Custom Keybindings
 [
     {
-        // Toggle Side Bar
-        "key": "ctrl+b",
-        "command": "workbench.action.toggleSidebarVisibility"
-    },
-    {
         "key": "cmd+v",
         "command": "editor.action.clipboardPasteAction",
         "when": "!editorTextFocus"
@@ -16,7 +11,28 @@
         "when": "editorTextFocus && !editorReadonly"
     },
     {
+        // Toggle Side Bar
+        "key": "ctrl+b",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        // Focus on editor group
         "key": "ctrl+g",
         "command": "workbench.action.focusActiveEditorGroup"
-    }
+    },
+    {
+        // Open Explorer tab
+        "key": "ctrl+w e",
+        "command": "workbench.view.explorer"
+    },
+    {
+        // Open Git tab
+        "key": "ctrl+w s",
+        "command": "workbench.view.scm"
+    },
+    {
+        // Open Gitlens tab
+        "key": "ctrl+w g",
+        "command": "gitlens.views.fileHistory:gitlens.focus"
+    },
 ]

@@ -134,10 +134,16 @@
     "vim.useSystemClipboard": true,
     "vim.visualstar": true,
     "vim.insertModeKeyBindings": [
-        // Bind jj to <Esc> in insert mode:
+        // Bind jj to <Esc>
         {
             "before": ["j","j"],
             "after": ["<Esc>"]
+        },
+        // Bind jw to <Esc> and save
+        {
+            "before": ["j","w"],
+            "after": ["<Esc>"],
+            "commands": ["workbench.action.files.save"]
         },
     ],
     "vim.normalModeKeyBindings": [
@@ -150,127 +156,60 @@
         },
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
-        // Switch window (buffer)
+        // Switch previous buffer
         {
             "before": ["<leader>", "p"],
-            "commands": [
-                {
-                    "command": "workbench.action.openNextRecentlyUsedEditorInGroup"
-                }
-            ]
+            "commands": ["workbench.action.openNextRecentlyUsedEditorInGroup", "list.select"]
         },
-        // Switch window (buffer)
+        // Open file in project
         {
             "before": ["<leader>", "b"],
-            "commands": [
-                {
-                    "command": "workbench.action.switchWindow"
-                }
-            ]
+            "commands": ["workbench.action.quickOpen"]
+        },
+        // Switch to open buffers
+        {
+            "before": ["<leader>", "B"],
+            "commands": ["workbench.action.openNextRecentlyUsedEditorInGroup"]
         },
         // Open VSCode Palette with colon
         {
             "before": [":"],
-            "commands": [
-                {
-                    "command": "workbench.action.showCommands",
-                    "args": []
-                }
-            ]
-        },
-        // Open explorer
-        {
-            "before": ["<leader>", "e"],
-            "commands": [
-                {
-                    "command": "workbench.view.explorer"
-                }
-            ]
-        },
-        // Open GIT
-        {
-            "before": ["<leader>", "g"],
-            "commands": [
-                {
-                    "command": "workbench.view.scm"
-                }
-            ]
-        },
-        // Open GitLense
-        {
-            "before": ["<leader>", "l"],
-            "commands": [
-                {
-                    "command": "gitlens.views.fileHistory:gitlens.focus"
-                }
-            ]
+            "commands": ["workbench.action.showCommands"]
         },
         //  Toggle comment
 		{
             "before": ["<leader>","c","c"],
-            "commands": [
-                {
-                    "command": "editor.action.commentLine"
-                }
-            ]
+            "commands": ["editor.action.commentLine"]
         },
         // Turn off search highlight
         {
             "before":["<C-c>"],
-            "commands": [
-                ":nohl",
-             ]
+            "commands": [":nohl"]
         },
         // Delete line last character
         {
             "before": ["<leader>", "x"],
-            "commands": [
-                {
-                    "command":"macros.deleteLastChar"
-                }
-            ]
+            "commands": ["macros.deleteLastChar"]
         },
         // Fix undo bug
         {
-            "before": [
-                "u"
-            ],
-            "after": [],
-            "commands": [
-                {
-                    "command": "undo"
-                }
-            ]
+            "before": ["u"],
+            "commands": ["undo"]
         },
         {
-            "before": [
-                "<C-r>"
-            ],
-            "after": [],
-            "commands": [
-                {
-                    "command": "redo"
-                }
-            ]
+            "before": ["<C-r>"],
+            "commands": ["redo"]
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         // Indent/outdent lines (repeatable)
         {
-            "before": [
-                ">"
-            ],
-            "commands": [
-                "editor.action.indentLines"
-            ]
+            "before": [">"],
+            "commands": ["editor.action.indentLines"]
         },
         {
-            "before": [
-                "<"
-            ],
-            "commands": [
-                "editor.action.outdentLines"
-            ]
+            "before": ["<"],
+            "commands": ["editor.action.outdentLines"]
         },
     ],
     "macros": {
