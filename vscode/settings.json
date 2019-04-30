@@ -196,6 +196,15 @@
                 }
             ]
         },
+        // Open GitLense
+        {
+            "before": ["<leader>", "l"],
+            "commands": [
+                {
+                    "command": "gitlens.views.fileHistory:gitlens.focus"
+                }
+            ]
+        },
         //  Toggle comment
 		{
             "before": ["<leader>","c","c"],
