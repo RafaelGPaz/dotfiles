@@ -16,6 +16,7 @@
       "comments": false,
       "strings": false
     },
+    "editor.smoothScrolling": true,
     "editor.tabSize": 4,
     "editor.tokenColorCustomizations": {
         "[Material Theme Darker High Contrast]": {
