@@ -119,6 +119,7 @@
         "tab.activeForeground": "#C6FF00",
         "textLink.foreground": "#C6FF00"
     },
+    "workbench.statusBar.feedback.visible": false,
 // Vim
 "vim.disableExtension": false,
     "vim.easymotion": true,
