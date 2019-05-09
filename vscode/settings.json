@@ -28,8 +28,10 @@
 // Emmet
     "emmet.includeLanguages": {"jinja-html": "html"},
 // Empty Indent
-    "emptyIndent.removeIndent": false,// Explorer
+    "emptyIndent.removeIndent": false,
+// Explorer
     "explorer.confirmDelete": false,
+    "explorer.openEditors.visible": 0,
 // Extensions
     "extensions.autoUpdate": true,
 // Files
