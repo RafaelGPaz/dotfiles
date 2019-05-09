@@ -16,7 +16,7 @@
       "comments": false,
       "strings": false
     },
-    "editor.tabSize": "4",
+    "editor.tabSize": 4,
     "editor.tokenColorCustomizations": {
         "[Material Theme Darker High Contrast]": {
             "comments": "#777"
