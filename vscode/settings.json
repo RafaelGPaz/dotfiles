@@ -37,6 +37,7 @@
 // Extensions
     "extensions.autoUpdate": true,
 // Files
+    "files.insertFinalNewline": true,
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
