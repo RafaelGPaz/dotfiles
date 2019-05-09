@@ -35,4 +35,19 @@
         "key": "ctrl+w g",
         "command": "gitlens.views.fileHistory:gitlens.focus"
     },
+        // Save document
+    {
+        "key": "ctrl+s",
+        "command": "workbench.action.files.save"
+    },
+        // Exit insert mode
+    {
+        "key": "ctrl+w ctrl+w",
+        "command": "macros.exitVimInsertMode"
+    },
+        // Save and escape insert mode
+    {
+        "key": "ctrl+w ctrl+s",
+        "command": "macros.saveAndExitVimInsertMode"
+    },
 ]

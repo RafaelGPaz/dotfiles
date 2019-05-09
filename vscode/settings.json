@@ -143,17 +143,6 @@
     "vim.useSystemClipboard": true,
     "vim.visualstar": true,
     "vim.insertModeKeyBindings": [
-        // Bind jj to <Esc>
-        {
-            "before": ["j","j"],
-            "after": ["<Esc>"]
-        },
-        // Bind jw to <Esc> and save
-        {
-            "before": ["j","w"],
-            "after": ["<Esc>"],
-            "commands": ["workbench.action.files.save"]
-        },
     ],
     "vim.normalModeKeyBindings": [
         // Save document
@@ -225,6 +214,14 @@
         "deleteLastChar": [
             "extension.vim_end",
             "extension.vim_delete"
+        ],
+        "exitVimInsertMode": [
+            "workbench.action.files.save",
+            "extension.vim_escape"
+        ],
+        "saveAndExitVimInsertMode": [
+            "workbench.action.files.save",
+            "extension.vim_escape"
         ]
     }
 }
