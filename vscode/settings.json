@@ -68,7 +68,6 @@
     "terminal.integrated.shell.windows": "C:\\WINDOWS\\system32\\WindowsPowershell\\v1.0\\powershell.exe",
 // Material Theme
     "materialTheme.accent": "Acid Lime",
-    "materialTheme.autoApplyIcons": false,
 // Powershell
     "powershell.integratedConsole.showOnStartup": false,
 // Window
