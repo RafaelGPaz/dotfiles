@@ -85,6 +85,7 @@
     "workbench.activityBar.visible": false,
     "workbench.colorTheme": "Material Theme Darker High Contrast",
     "workbench.editor.labelFormat": "long",
+    "workbench.editor.showTabs": false,
     "workbench.colorCustomizations": {
         "activityBarBadge.background": "#C6FF00",
         "breadcrumb.activeSelectionForeground": "#C6FF00",
