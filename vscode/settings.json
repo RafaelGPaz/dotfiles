@@ -3,9 +3,11 @@
 // Breadcrumbs
     "breadcrumbs.enabled": true,
 // Editor
+    "editor.cursorBlinking": "solid",
+    "editor.detectIndentation": true,
     "editor.fontFamily": "'Hack', 'LiberationMono'",
     "editor.fontSize": 14,
-    "editor.cursorBlinking": "solid",
+    "editor.insertSpaces": true,
     "editor.letterSpacing": 0.5,
     "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "alt",
@@ -14,6 +16,7 @@
       "comments": false,
       "strings": false
     },
+    "editor.tabSize": "4",
     "editor.tokenColorCustomizations": {
         "[Material Theme Darker High Contrast]": {
             "comments": "#777"
