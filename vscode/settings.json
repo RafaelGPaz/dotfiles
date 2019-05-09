@@ -4,6 +4,7 @@
     "breadcrumbs.enabled": true,
 // Editor
     "editor.cursorBlinking": "solid",
+    "editor.cursorSmoothCaretAnimation": true,
     "editor.detectIndentation": true,
     "editor.fontFamily": "'Hack', 'LiberationMono'",
     "editor.fontSize": 14,
