@@ -82,7 +82,7 @@
 // Window
     "window.titleBarStyle": "custom",
     "window.zoomLevel": 0,
-    // Workbench
+// Workbench
     "workbench.activityBar.visible": false,
     "workbench.colorTheme": "Material Theme Darker High Contrast",
     "workbench.editor.labelFormat": "long",
@@ -124,7 +124,7 @@
     "workbench.sideBar.location": "right",
     "workbench.statusBar.feedback.visible": false,
 // Vim
-"vim.disableExtension": false,
+    "vim.disableExtension": false,
     "vim.easymotion": true,
     "vim.easymotionMarkerFontSize": "17",
     "vim.easymotionMarkerHeight": 17,
@@ -149,34 +149,89 @@
     "vim.normalModeKeyBindings": [
         // Save document
         {
-            "before": ["leader", "w"],
+            "before": ["leader","f","s"],
             "commands": [
                 "workbench.action.files.save",
             ]
         },
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
-        // Switch previous buffer
+        // Split editor vertically > cmd + \
         {
-            "before": ["<leader>", "p"],
-            "commands": ["workbench.action.openNextRecentlyUsedEditorInGroup", "list.select"]
+            "before": ["<leader>","w","/"],
+            "commands": ["workbench.action.splitEditor"]
         },
-        // Open file in project
+        // Split editor horizontaly
         {
-            "before": ["<leader>", "b"],
+            "before": ["<leader>","w","-"],
+            "commands": ["workbench.action.splitEditorDown"]
+        },
+        // Find a file > cmd + o
+        {
+            "before": ["<leader>","f", "f"],
+            "commands": ["workbench.action.files.openFileFolder"]
+        },
+        // Save a file > cmd + s
+        {
+            "before": ["<leader>","f", "s"],
+            "commands": ["workbench.action.files.save"]
+        },
+        // Save all files > cmd + alt + s
+        {
+            "before": ["<leader>","f", "s", "a"],
+            "commands": ["workbench.action.files.save"]
+        },
+        // Search & replace in file > cmd + alt + f
+        {
+            "before": ["<leader>","f", "r"],
+            "commands": ["editor.action.startFindReplaceAction"]
+        },
+        // Open project > cmd + alt + p
+        {
+            "before": ["<leader>","p", "p"],
+            "commands": ["projectManager.listProjects"]
+        },
+        // Open file in project > cmd + p
+        {
+            "before": ["<leader>","p", "o"],
             "commands": ["workbench.action.quickOpen"]
         },
-        // Switch to open buffers
+        // Search file in project > cmd + shift + f
         {
-            "before": ["<leader>", "B"],
+            "before": ["<leader>","p", "s"],
+            "commands": ["workbench.view.search"]
+        },
+        // Search & replace in project > ctrl + shift + f
+        {
+            "before": ["<leader>","p", "r"],
+            "commands": ["workbench.action.replaceInFiles"]
+        },
+        // Kill current buffer > cmd + w
+        {
+            "before": ["<leader>","b","d"],
+            "commands": ["workbench.action.closeActiveEditor"]
+        },
+        // Switch previous buffer > ctrl + tab
+        {
+            "before": ["<leader>", "tab"],
+            "commands": ["workbench.action.openNextRecentlyUsedEditorInGroup", "list.select"]
+        },
+        // List all opened buffers
+        {
+            "before": ["<leader>","b","b"],
             "commands": ["workbench.action.openNextRecentlyUsedEditorInGroup"]
         },
-        // Open VSCode Palette with colon
+        // Search in file > cmd + f
+        {
+            "before": ["<leader>","s","s"],
+            "commands": ["actions.find"]
+        },
+        // Open VSCode Palette with colon > cmd + shift + p
         {
             "before": [":"],
             "commands": ["workbench.action.showCommands"]
         },
-        //  Toggle comment
+        //  Toggle comment > cmd + /
 		{
             "before": ["<leader>","c","c"],
             "commands": ["editor.action.commentLine"]
