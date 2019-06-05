@@ -126,7 +126,7 @@
     "workbench.sideBar.location": "right",
     "workbench.startupEditor": "none",
     "workbench.statusBar.feedback.visible": false,
-    "workbench.tips.enabled": true,
+    "workbench.tips.enabled": false,
 // Vim
     "vim.disableExtension": false,
     "vim.easymotion": true,
