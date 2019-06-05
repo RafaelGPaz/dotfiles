@@ -24,7 +24,7 @@ antigen theme romkatv/powerlevel10k # Minimal terminal theme
 antigen apply
 
 # Command prompt
-source .purepower
+source ~/dotfiles/.purepower
 
 ######################################################
 # Python                                             #
