@@ -123,7 +123,9 @@
         "textLink.foreground": "#C6FF00"
     },
     "workbench.sideBar.location": "right",
+    "workbench.startupEditor": "none",
     "workbench.statusBar.feedback.visible": false,
+    "workbench.tips.enabled": true,
 // Vim
     "vim.disableExtension": false,
     "vim.easymotion": true,
