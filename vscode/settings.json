@@ -51,6 +51,7 @@
         "**/*.psb": true,
         "**/*.swf": true
     },
+    "files.simpleDialog.enable": true,
     "files.trimTrailingWhitespace": true,
 // Git,
     "git.autofetch": true,
