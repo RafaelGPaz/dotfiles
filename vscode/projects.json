@@ -412,5 +412,9 @@
 		"rootPath": "/Volumes/Extra/virtual-tours/cskills",
 		"paths": [],
 		"group": ""
+	},
+	{
+		"name": "GForces - Example - Car Interior Hotspots",
+		"rootPath": "$home/virtual-tours/gforces/examples/car-interior-hotspots"
 	}
 ]
