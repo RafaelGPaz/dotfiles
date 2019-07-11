@@ -495,5 +495,12 @@
 		"paths": [],
 		"group": "",
 		"enabled": true
+	},
+	{
+		"name": "MG Manufacturer v1",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/mg_manufacturer/v1",
+		"paths": [],
+		"group": "",
+		"enabled": true
 	}
 ]
