@@ -111,6 +111,20 @@
             "debugOptions": [
                 "RedirectOutput"
             ]
+        },
+        {
+            "name": "Tractors - All",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "cwd": "/Users/rafael/virtual-tours/tractor-media/"
+        },
+        {
+            "name": "Tractors - Brand",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "cwd": "/Users/rafael/virtual-tours/tractor-media/massey_ferguson/"
         }
     ]
 }
