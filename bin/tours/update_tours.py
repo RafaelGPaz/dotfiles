@@ -87,22 +87,25 @@ def main():
     for item in alltours:
         logger.info("[TOUR] " + item)
 
+        interior_html_dest = os.path.join(root, item, "interior.html")
+        interiordevel_html_dest = os.path.join(root, item, "interiordevel.html")
+
         # index.html
-        index_html_dest = os.path.join(root, item, "index.html")
-        replace_tourname(index_html_orig,index_html_dest)
+        if not os.path.exists(interior_html_dest):
+            index_html_dest = os.path.join(root, item, "index.html")
+            replace_tourname(index_html_orig,index_html_dest)
 
          # devel.html
-        devel_html_dest = os.path.join(root, item, "devel.html")
-        replace_tourname(devel_html_orig,devel_html_dest)
+        if not os.path.exists(interiordevel_html_dest):
+            devel_html_dest = os.path.join(root, item, "devel.html")
+            replace_tourname(devel_html_orig,devel_html_dest)
 
          # interior.html
         if os.path.exists(interior_html_orig):
-            interior_html_dest = os.path.join(root, item, "interior.html")
             replace_tourname(interior_html_orig,interior_html_dest)
 
          # interiordevel.html
         if os.path.exists(interiordevel_html_orig):
-            interiordevel_html_dest = os.path.join(root, item, "interiordevel.html")
             replace_tourname(interiordevel_html_orig,interiordevel_html_dest)
 
          # devel.xml
