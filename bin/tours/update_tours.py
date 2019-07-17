@@ -26,7 +26,8 @@ def main():
         '%(log_color)s%(levelname)s:%(message)s',
         log_colors={
             'DEBUG': 'green',
-            'INFO': 'cyan'
+            'INFO': 'cyan',
+            'WARNING': 'red'
         }))
 
     logger = colorlog.getLogger()
@@ -89,6 +90,8 @@ def main():
 
         interior_html_dest = os.path.join(root, item, "interior.html")
         interiordevel_html_dest = os.path.join(root, item, "interiordevel.html")
+        scenes_path = os.path.join(root, '.src', 'panos', item )
+        numscenes = len([f for f in os.listdir(scenes_path)if os.path.isfile(os.path.join(scenes_path, f))])
 
         # index.html
         if not os.path.exists(interior_html_dest):
@@ -109,9 +112,14 @@ def main():
             replace_tourname(interiordevel_html_orig,interiordevel_html_dest)
 
          # devel.xml
-        devel_xml_dest = os.path.join(root, item, "files", "devel.xml")
-        shutil.copyfile(devel_xml_orig, devel_xml_dest)
-        logger.info("[ -- ] files/devel.xml")
+         # Don't copy it if there are more than 1 scene
+        if numscenes > 1:
+            logger.warning("[ NO ] files/devel.xml")
+        else:
+            devel_xml_dest = os.path.join(root, item, "files", "devel.xml")
+            shutil.copyfile(devel_xml_orig, devel_xml_dest)
+            logger.info("[ -- ] files/devel.xml")
+
 
         # en.xml
         if os.path.exists(en_xml_orig):
