@@ -502,5 +502,19 @@
 		"paths": [],
 		"group": "",
 		"enabled": true
+	},
+	{
+		"name": "Bell Classics - Cars",
+		"rootPath": "/Users/rafael/virtual-tours/bell-classics/cars",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
+		"name": "Bell Classics - Showroom",
+		"rootPath": "/Users/rafael/virtual-tours/bell-classics/showroom",
+		"paths": [],
+		"group": "",
+		"enabled": true
 	}
 ]
