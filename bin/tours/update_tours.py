@@ -91,7 +91,8 @@ def main():
         interior_html_dest = os.path.join(root, item, "interior.html")
         interiordevel_html_dest = os.path.join(root, item, "interiordevel.html")
         scenes_path = os.path.join(root, '.src', 'panos', item )
-        numscenes = len([f for f in os.listdir(scenes_path)if os.path.isfile(os.path.join(scenes_path, f))])
+        if os.path.isdir(scenes_path):
+            numscenes = len([f for f in os.listdir(scenes_path)if os.path.isfile(os.path.join(scenes_path, f))])
 
         # index.html
         if not os.path.exists(interior_html_dest):
