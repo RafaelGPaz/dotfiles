@@ -93,6 +93,8 @@ def main():
         scenes_path = os.path.join(root, '.src', 'panos', item )
         if os.path.isdir(scenes_path):
             numscenes = len([f for f in os.listdir(scenes_path)if os.path.isfile(os.path.join(scenes_path, f))])
+        else:
+            numscenes = 1
 
         # index.html
         if not os.path.exists(interior_html_dest):
