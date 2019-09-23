@@ -516,5 +516,12 @@
 		"paths": [],
 		"group": "",
 		"enabled": true
+	},
+	{
+		"name": "Toyota Supra 2019 VR Visualiser",
+		"rootPath": "/Users/rafael/virtual-tours/gforces/examples/visualiser/toyota_manufacturer",
+		"paths": [],
+		"group": "",
+		"enabled": true
 	}
 ]
