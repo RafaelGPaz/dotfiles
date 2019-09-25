@@ -203,6 +203,13 @@
 		"enabled": true
 	},
 	{
+		"name": "GForces GMC Manufacturer v3",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/gmc_manufacturer/v3",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
 		"name": "GForces - Example - V10 Experience",
 		"rootPath": "$home/virtual-tours/gforces/examples/projects/examples/V10-experience",
 		"paths": [],
