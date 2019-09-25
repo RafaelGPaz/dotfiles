@@ -163,19 +163,19 @@ def main():
         filesdir = os.path.join(tourbasename, 'files')
         scenesdir = os.path.join(tourbasename, 'files', 'scenes')
         parentdir = os.path.basename(os.path.abspath('..'))
-        krdir = os.path.join(os.path.expanduser('~'), 'Documents', 'software', 'virtual-tours', 'krpano')
+        krdir = os.path.join('/', 'Users', 'rafael', 'Documents', 'software', 'virtual-tours', 'krpano')
         krpath = os.path.join(krdir, 'bin', 'krpanotools')
         krtemplates = os.path.join(krdir, 'krpano_conf', 'templates')
         if webvr == "yes":
             if preview1024 == "yes":
-                krconfig = '-config=' + krtemplates + '/tv_tiles_with_vr_preview_1024.config'
+                krconfig = '-config=' + krtemplates + '/tiles_for_vr_preview_1024.config'
             else:
-                krconfig = '-config=' + krtemplates + '/tv_tiles_with_vr.config'
+                krconfig = '-config=' + krtemplates + '/tiles_for_vr.config'
         else:
             if preview1024 == "yes":
-                krconfig = '-config=' + krtemplates + '/tv_tiles_for_cars_ipad_preview_1024.config'
+                krconfig = '-config=' + krtemplates + '/tiles_for_mobile_preview_1024.config'
             else:
-                krconfig = '-config=' + krtemplates + '/tv_tiles_for_cars_ipad.config'
+                krconfig = '-config=' + krtemplates + '/tiles_for_mobile.config'
 
         krcall = [krpath, "makepano", krconfig, car]
 
