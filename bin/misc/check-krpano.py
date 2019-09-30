@@ -11,7 +11,7 @@ def main():
     version = tree.xpath('//div[@class="paragraph"]//h2/text()')
     buildDate = tree.xpath('//span[@class="smallcomment"]/text()')
 
-    # Comver list to string
+    # Convert list to string
     version = ''.join(version)
     buildDate = ''.join(buildDate)
 
