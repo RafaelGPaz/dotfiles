@@ -190,7 +190,7 @@ def main():
                 outputtilesdir = os.path.join(outputdir, 'scenes', tourbasename)
                 outputxmlfile = os.path.join(outputdir, tourbasename) + '.xml'
                 replaceorigin = 'scenes/' + tourbasename
-                replacedest = '%SWFPATH%/../' + carbasename + '/files/scenes/' + tourbasename
+                replacedest = '%ROOT%/../files/scenes/' + tourbasename
                 xmlfile = os.path.join(carbasename, 'files', 'scenes',  tourbasename) + '.xml'
                 xmlfilebck = os.path.join(carbasename, 'files', 'scenes', tourbasename) + '_bck.xml'
                 message = carbasename + '/' + tourbasename
@@ -204,7 +204,7 @@ def main():
                 outputtilesdir = os.path.join(outputdir, 'scenes', tourbasename)
                 outputxmlfile = os.path.join(outputdir, tourbasename) + '.xml'
                 replaceorigin = 'scenes/' + tourbasename
-                replacedest = '%SWFPATH%/../' + tourbasename + '/files/scenes/tiles'
+                replacedest = '%ROOT%/../' + tourbasename + '/files/scenes/tiles'
                 message = tourbasename + '/' + carbasename
                 xmlfile = os.path.join(tourbasename, 'files', 'scenes', 'scene') + '.xml'
                 xmlfilebck = os.path.join(tourbasename, 'files', 'scenes', 'scene') + '_bck.xml'
@@ -219,7 +219,7 @@ def main():
                 outputtilesdir = os.path.join(outputdir, 'scenes', tourbasename)
                 outputxmlfile = os.path.join(outputdir, tourbasename) + '.xml'
                 replaceorigin = 'scenes/' + tourbasename
-                replacedest = '%SWFPATH%/../../' + carbasename + '/files/scenes/' + tourbasename
+                replacedest = '%ROOT%/../../' + carbasename + '/files/scenes/' + tourbasename
                 message = os.path.join(carbasename, tourbasename)
                 xmlfile = os.path.join(carbasename, 'files', 'scenes', tourbasename) + '.xml'
                 xmlfilebck = os.path.join(carbasename, 'files', 'scenes', tourbasename) + '_bck.xml'
@@ -234,7 +234,7 @@ def main():
                 outputxmlfile = os.path.join(outputdir, tourbasename) + '.xml'
                 replaceorigin = 'scenes/' + tourbasename
                 if os.path.exists('./shared/'):
-                    replacedest = '%SWFPATH%/../' + tourbasename + '/files/scenes/tiles'
+                    replacedest = '%ROOT%/../' + tourbasename + '/files/scenes/tiles'
                 else:
                     replacedest = '%CURRENTXML%/scenes/' + tourbasename
                 message = os.path.join(carbasename, tourbasename)
