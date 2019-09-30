@@ -23,7 +23,7 @@
         "[Material Theme Darker High Contrast]": {
             "comments": "#777"
         }
-        },
+    },
     "editor.wordBasedSuggestions": true,
     "editor.wordSeparators": "`~!@#$%^&*()-_=+[{]}\\|;:'\",.<>/?",
     "editor.wordWrap": "on",
@@ -65,6 +65,8 @@
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
     },
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.codeLens.recentChange.enabled": false,
     "gitlens.currentLine.enabled": false,
     "gitlens.views.fileHistory.avatars": false,
     "gitlens.views.lineHistory.avatars": false,
@@ -84,7 +86,7 @@
 // Window
     "window.titleBarStyle": "custom",
     "window.zoomLevel": 0,
-// Workbench
+    // Workbench
     "workbench.activityBar.visible": false,
     "workbench.colorTheme": "Material Theme Darker High Contrast",
     "workbench.editor.labelFormat": "long",
