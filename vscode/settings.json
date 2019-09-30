@@ -22,8 +22,8 @@
     "editor.tokenColorCustomizations": {
         "[Material Theme Darker High Contrast]": {
             "comments": "#777"
+        }
         },
-    },
     "editor.wordBasedSuggestions": true,
     "editor.wordSeparators": "`~!@#$%^&*()-_=+[{]}\\|;:'\",.<>/?",
     "editor.wordWrap": "on",
@@ -155,9 +155,9 @@
         {
             "before": ["leader","f","s"],
             "commands": [
-                "workbench.action.files.save",
+                "workbench.action.files.save"
             ]
-        },
+        }
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
         // Split editor vertically > cmd + \
@@ -269,7 +269,7 @@
         {
             "before": ["<"],
             "commands": ["editor.action.outdentLines"]
-        },
+        }
     ],
     "macros": {
         "deleteLastChar": [
