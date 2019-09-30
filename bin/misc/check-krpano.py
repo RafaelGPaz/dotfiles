@@ -8,7 +8,7 @@ def main():
     page = requests.get('http://krpano.com/download/')
     tree = html.fromstring(page.content)
 
-    version = tree.xpath('//div[@class="paragraph"]//h2/text()')
+    version = tree.xpath('//h1/text()')
     buildDate = tree.xpath('//span[@class="smallcomment"]/text()')
 
     # Convert list to string
