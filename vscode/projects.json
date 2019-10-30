@@ -530,5 +530,12 @@
 		"paths": [],
 		"group": "",
 		"enabled": true
+	},
+	{
+		"name": "GForces Example Kia Experience",
+		"rootPath": "/Users/rafael/virtual-tours/gforces/examples/kia-experience",
+		"paths": [],
+		"group": "",
+		"enabled": true
 	}
 ]
