@@ -190,7 +190,7 @@ def main():
                 outputtilesdir = os.path.join(outputdir, 'scenes', tourbasename)
                 outputxmlfile = os.path.join(outputdir, tourbasename) + '.xml'
                 replaceorigin = 'scenes/' + tourbasename
-                replacedest = '%ROOT%/../files/scenes/' + tourbasename
+                replacedest = '%ROOT%/../' + carbasename + '/files/scenes/' + tourbasename
                 xmlfile = os.path.join(carbasename, 'files', 'scenes',  tourbasename) + '.xml'
                 xmlfilebck = os.path.join(carbasename, 'files', 'scenes', tourbasename) + '_bck.xml'
                 message = carbasename + '/' + tourbasename
