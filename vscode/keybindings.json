@@ -50,4 +50,12 @@
         "key": "ctrl+w ctrl+s",
         "command": "macros.saveAndExitVimInsertMode"
     },
+    {
+        "key": "cmd+j",
+        "command": "-workbench.action.togglePanel"
+    },
+    {
+        "key": "cmd+j",
+        "command": "workbench.action.togglePanel"
+    },
 ]
