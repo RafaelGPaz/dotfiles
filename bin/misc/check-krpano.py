@@ -3,32 +3,20 @@
 from lxml import html
 import requests
 import time
+import sys
 
 def main():
-    page = requests.get('http://krpano.com/download/')
+    page = requests.get('http://krpano.com/news/')
     tree = html.fromstring(page.content)
 
-    version = tree.xpath('//h1/text()')
-    buildDate = tree.xpath('//span[@class="smallcomment"]/text()')
-
-    # Convert list to string
+    version = tree.xpath('(//div[@class="newstitle"])[1]/a/text()')
+    buildDate = tree.xpath('(//span[@class="newsdate"])[1]/a/text()')
     version = ''.join(version)
     buildDate = ''.join(buildDate)
-
-    # Remove 7 first characters "(build "
-    BuildDateClean = buildDate[7:]
-    # Remove last character ")"
-    BuildDateClean = BuildDateClean[:-1]
-
     today = time.strftime("%Y-%m-%d")
-    # today = BuildDateClean
 
-    # print(version)
-    # print(BuildDateClean)
-    # print(today)
-
-    if BuildDateClean == today :
-        message = version + buildDate + ' released!'
+    if buildDate == today :
+        message = version + ' (' + buildDate + ') released!'
         print(message)
 
 if __name__ == "__main__":
