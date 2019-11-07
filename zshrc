@@ -24,7 +24,7 @@ antigen theme romkatv/powerlevel10k # Minimal terminal theme
 antigen apply
 
 # Command prompt
-source ~/dotfiles/.purepower
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 ######################################################
 # Python                                             #

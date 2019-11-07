@@ -10,6 +10,7 @@
     ~/.dotfiles: ''
     ~/.gitconfig:
     ~/.gitignore.global:
+    ~/.p10k.zsh:
     ~/.zshrc:
     ~/Documents/Adobe Scripts: bin/adobe-extendscript
     ~/Library/Application Support/Code - Insiders/User: vscode
