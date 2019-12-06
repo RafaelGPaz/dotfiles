@@ -537,5 +537,12 @@
 		"paths": [],
 		"group": "",
 		"enabled": true
+	},
+	{
+		"name": "GForces Lists",
+		"rootPath": "/Users/rafael/virtual-tours/gforces/html",
+		"paths": [],
+		"group": "",
+		"enabled": true
 	}
 ]
