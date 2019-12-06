@@ -26,6 +26,8 @@ def main():
                               default=False, help='Create it.xml file')
     parser.add_argument('-n', action='store_true', dest='nlxmlfile', \
                               default=False, help='Create nl.xml file')
+    parser.add_argument('-s', action='store_true', dest='skxmlfile', \
+                              default=False, help='Create sk.xml file')
 
     args = parser.parse_args()
 
@@ -96,6 +98,7 @@ def main():
         arxml = os.path.join(tour, 'files' ,'ar.xml')
         itxml = os.path.join(tour, 'files' ,'it.xml')
         nlxml = os.path.join(tour, 'files' ,'nl.xml')
+        skxml = os.path.join(tour, 'files' ,'sk.xml')
         dexml = os.path.join(tour, 'files' ,'de.xml')
         safeRm(tourxml)
         with open(tourxml, 'w', encoding='utf-8') as outfile:
@@ -138,6 +141,15 @@ def main():
                 else:
                     print(line.rstrip())
             logger.info('[ OK ] ' + nlxml)
+        if (os.path.isfile(skxml)) or (args.skxmlfile == True):
+            shutil.copyfile(tourxml,skxml)
+            for linenum,line in enumerate( fileinput.FileInput(skxml,inplace=1) ):
+                if linenum==2 :
+                    print('    <config slovakian="true" />')
+                    print(line.rstrip())
+                else:
+                    print(line.rstrip())
+            logger.info('[ OK ] ' + skxml)
         if (os.path.isfile(dexml)) or (args.dexmlfile == True):
             shutil.copyfile(tourxml,dexml)
             for linenum,line in enumerate( fileinput.FileInput(dexml,inplace=1) ):
