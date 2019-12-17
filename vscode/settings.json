@@ -215,21 +215,32 @@
             "before": ["<leader>","p", "r"],
             "commands": ["workbench.action.replaceInFiles"]
         },
+        // ---------- BUFFER
+        // Alternate buffer > ctrl + tab
+        {
+            "before": ["<leader>", "tab"],
+            "commands": ["workbench.action.openNextRecentlyUsedEditorInGroup", "list.select"]
+        },
         // Kill current buffer > cmd + w
         {
             "before": ["<leader>","b","d"],
             "commands": ["workbench.action.closeActiveEditor"]
-        },
-        // Switch previous buffer > ctrl + tab
-        {
-            "before": ["<leader>", "tab"],
-            "commands": ["workbench.action.openNextRecentlyUsedEditorInGroup", "list.select"]
         },
         // List all opened buffers
         {
             "before": ["<leader>","b","b"],
             "commands": ["workbench.action.openNextRecentlyUsedEditorInGroup"]
         },
+        // Kill other buffers
+        {
+            "before": ["<leader>","b","m"],
+            "commands": ["workbench.action.closeEditorsInOtherGroups"]
+        }
+        // New empty buffer > ctrl + n
+        {
+            "before": ["<leader>","b","N"],
+            "commands": ["workbench.action.files.newUntitledFile"]
+        }
         // Search in file > cmd + f
         {
             "before": ["<leader>","s","s"],
