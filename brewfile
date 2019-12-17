@@ -5,11 +5,11 @@ tap 'puma/puma'
 
 cask 'alfred'
 brew 'antigen'
-cask 'android-file-transfer'
 cask 'appcleaner'
 cask 'caffeine'
 cask 'ccleaner'
 cask 'chromedriver
+cask 'commander-one'
 brew 'dos2unix'
 cask 'dropbox'
 brew 'exiftool'
