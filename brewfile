@@ -16,7 +16,6 @@ brew 'exiftool'
 brew 'ffmpeg'
 cask 'filezilla'
 cask 'firefox'
-cask 'freefilesync'
 cask 'fspviewer'
 brew 'geckodriver
 brew 'gnu-sed'
