@@ -86,6 +86,8 @@
     "materialTheme.accent": "Acid Lime",
 // Powershell
     "powershell.integratedConsole.showOnStartup": false,
+// Search
+    "search.enableSearchEditorPreview": true,
 // Window
     "window.titleBarStyle": "custom",
     "window.zoomLevel": 0,
