@@ -1,4 +1,5 @@
 vscode/workspaceStorage/
 vscode/globalStorage/
 nvim/plugged/
+nvim/autoload/
 *jsxbin
