@@ -239,12 +239,12 @@
         {
             "before": ["<leader>","b","m"],
             "commands": ["workbench.action.closeEditorsInOtherGroups"]
-        }
+        },
         // New empty buffer > ctrl + n
         {
             "before": ["<leader>","b","N"],
             "commands": ["workbench.action.files.newUntitledFile"]
-        }
+        },
         // Search in file > cmd + f
         {
             "before": ["<leader>","s","s"],
