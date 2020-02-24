@@ -175,6 +175,13 @@
 		"enabled": true
 	},
 	{
+		"name": "GForces - LEVC Manufacturer v2",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/levc_manufacturer/v2",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
 		"name": "Arsenal - Twitter",
 		"rootPath": "$home/virtual-tours/arsenal/twitter",
 		"paths": [],
