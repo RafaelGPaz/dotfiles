@@ -551,5 +551,12 @@
 		"paths": [],
 		"group": "",
 		"enabled": true
+	},
+	{
+		"name": "Apartments",
+		"rootPath": "/Users/rafael/virtual-tours/apartments",
+		"paths": [],
+		"group": "",
+		"enabled": true
 	}
 ]
