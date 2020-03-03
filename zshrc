@@ -68,3 +68,4 @@ alias echopath='echo "${PATH//:/"\n"}"'
 alias p_helper="tr ':' '\n' <<< $(/usr/libexec/path_helper)"
 alias krjsyalm='npx js-yaml ~/Documents/projects/vscode-krpano/syntaxes/krpano.tmLanguage.yaml > ~/Documents/projects/vscode-krpano/syntaxes/krpano.tmLanguage.json'
 alias ou="open-url.sh $1"
+alias delchat="gsed -i '/chat/d' ~/.zsh_history"
