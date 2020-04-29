@@ -112,6 +112,13 @@
 		"enabled": true
 	},
 	{
+		"name": "TourVista Website V2",
+		"rootPath": "/Volumes/Extra/websites/tourvista/tourvista-v2/tourvista.co.uk/pelican",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
 		"name": "TourVista Website",
 		"rootPath": "$home/websites/tourvista/tourvista.co.uk/pelican",
 		"paths": [],
@@ -401,13 +408,6 @@
 	{
 		"name": "GForces - Example V10 New Backgrounds",
 		"rootPath": "$home/virtual-tours/gforces/examples/projects/examples/v10_backgrounds",
-		"paths": [],
-		"group": "",
-		"enabled": true
-	},
-	{
-		"name": "TourVista Website V2",
-		"rootPath": "$home/websites/tourvista-v2/tourvista.co.uk/pelican",
 		"paths": [],
 		"group": "",
 		"enabled": true
