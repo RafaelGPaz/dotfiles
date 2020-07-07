@@ -136,7 +136,7 @@ def main():
             shutil.copyfile(tourxml,nlxml)
             for linenum,line in enumerate( fileinput.FileInput(nlxml,inplace=1) ):
                 if linenum==2 :
-                    print('    <config duch="true" />')
+                    print('    <config dutch="true" />')
                     print(line.rstrip())
                 else:
                     print(line.rstrip())
