@@ -558,5 +558,12 @@
 		"paths": [],
 		"group": "",
 		"enabled": true
+	},
+	{
+		"name": "GForces - Nissan Munufacturer v1",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/nissan_manufacturer/v1",
+		"paths": [],
+		"group": "",
+		"enabled": true
 	}
 ]
