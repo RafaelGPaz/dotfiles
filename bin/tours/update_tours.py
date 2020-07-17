@@ -54,10 +54,6 @@ def main():
                     fout.write(line.replace(first_tour, item).replace(str(titleorig), str(titledest)))
                     if ('scene1' in line):
                         testing = "1"
-        if(filename == 'index.html'):
-            if(testing == "0"):
-                logger.critical("ERROR")
-                sys.exit("Tour name doesn't match. Check first car 'index.html' and 'content/index.xml' files")
 
         logger.info("[ -- ] " + filename)
 
