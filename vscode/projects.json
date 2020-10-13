@@ -565,5 +565,12 @@
 		"paths": [],
 		"group": "",
 		"enabled": true
+	},
+	{
+		"name": "Website - Smile GBAS WG ",
+		"rootPath": "/Users/rafael/websites/jekyll-websites/project",
+		"paths": [],
+		"group": "",
+		"enabled": true
 	}
 ]
