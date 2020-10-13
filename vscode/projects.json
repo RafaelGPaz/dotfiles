@@ -280,6 +280,13 @@
 		"enabled": true
 	},
 	{
+		"name": "Gforces - Cadillac Manufacturer V3",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/cadillac_manufacturer/v3",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
 		"name": "Gforces V10 Shared folder",
 		"rootPath": "$home/virtual-tours/gforces/cars/shared",
 		"paths": [],
