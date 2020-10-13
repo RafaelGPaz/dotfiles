@@ -69,6 +69,8 @@
 	recentrepo = /media/sf_E_DRIVE/virtual_tours/gforces/cars/.src
 [include]
 	path = ~/.gitconfig.local
+[pull]
+	rebase = false
 [push]
 	default = simple
 [web]
