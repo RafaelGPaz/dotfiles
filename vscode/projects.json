@@ -112,13 +112,6 @@
 		"enabled": true
 	},
 	{
-		"name": "TourVista Website V2",
-		"rootPath": "/Volumes/Extra/websites/tourvista/tourvista/tourvista.co.uk/pelican",
-		"paths": [],
-		"group": "",
-		"enabled": true
-	},
-	{
 		"name": "TourVista Website",
 		"rootPath": "$home/websites/tourvista/tourvista.co.uk/pelican",
 		"paths": [],
