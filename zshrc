@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH:$HOME/dotfiles/bin/misc:$HOME/dotfiles/bin/newvt:$HOME/dotfiles/bin/tours"
+export PATH="/usr/local/bin:/usr/local/sbin:$HOME/.gem/ruby/2.7.0/bin:$PATH:$HOME/dotfiles/bin/misc:$HOME/dotfiles/bin/newvt:$HOME/dotfiles/bin/tours"
 
 ######################################################
 # Antigen                                            #
@@ -74,3 +74,7 @@ alias p_helper="tr ':' '\n' <<< $(/usr/libexec/path_helper)"
 alias krjsyalm='npx js-yaml ~/Documents/projects/vscode-krpano/syntaxes/krpano.tmLanguage.yaml > ~/Documents/projects/vscode-krpano/syntaxes/krpano.tmLanguage.json'
 alias ou="open-url.sh $1"
 alias delchat="gsed -i '/chat/d; /myfree/d' ~/.zsh_history"
+alias j="jekyll"
+alias js="jekyll serve"
+alias bjs="bundle exec jekyll serve"
+alias bjb="bundle exec jekyll build"
