@@ -103,6 +103,11 @@ def main():
     else:
         panosdir = os.path.join(os.getcwd(),'.src', 'panos')
 
+    # Delete kmem: folder
+    kmemdir = os.path.join(os.getcwd(),'kmem:')
+    if os.path.exists(kmemdir):
+        shutil.rmtree(kmemdir)
+
     # Delete any residual files or folders
     for root, _, _ in os.walk(panosdir):
         for filepath in glob.glob(os.path.join(root, "*.kro")):
