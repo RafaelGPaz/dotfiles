@@ -35,6 +35,13 @@
 		"enabled": true
 	},
 	{
+		"name": "Chevrolet Manufacturer v4",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/chevrolet_manufacturer/v4",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
 		"name": "Lexus Manufacturer v1",
 		"rootPath": "$home/virtual-tours/gforces/manufacturers/lexus_manufacturer/v1.code-workspace",
 		"paths": [],
@@ -212,6 +219,13 @@
 	{
 		"name": "GForces GMC Manufacturer v3",
 		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/gmc_manufacturer/v3",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
+		"name": "GForces GMC Manufacturer v4",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/gmc_manufacturer/v4",
 		"paths": [],
 		"group": "",
 		"enabled": true
