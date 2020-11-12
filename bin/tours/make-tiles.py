@@ -13,6 +13,11 @@ import colorlog
 
 from usefulfunctions import mkdirif, query_yes_no
 
+def delete_kmem_folder():
+    kmemdir = os.path.join(os.getcwd(),'kmem:')
+    if os.path.exists(kmemdir):
+        shutil.rmtree(kmemdir)
+
 def extract_content(xmlfile, xmlfilebck):
     # 'xmlfilebck' after extraction is applied:
     # <krpano>
@@ -103,10 +108,7 @@ def main():
     else:
         panosdir = os.path.join(os.getcwd(),'.src', 'panos')
 
-    # Delete kmem: folder
-    kmemdir = os.path.join(os.getcwd(),'kmem:')
-    if os.path.exists(kmemdir):
-        shutil.rmtree(kmemdir)
+    delete_kmem_folder()
 
     # Delete any residual files or folders
     for root, _, _ in os.walk(panosdir):
@@ -291,6 +293,8 @@ def main():
             # Delete output folder
             if os.path.exists(outputdir):
                 shutil.rmtree(outputdir)
+
+    delete_kmem_folder()
 
     logger.info('Finished')
 
