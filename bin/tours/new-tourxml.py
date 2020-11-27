@@ -46,7 +46,7 @@ def main():
     alltours = []
     bad_words = ['<krpano', '</krpano>', '<krpano version', 'coordfinder']
     bad_folders = ['shared']
-    bad_files = ['coordfinder', 'editor_and_options']
+    bad_files = ['coordfinder', 'editor_and_options','toolbox']
     shared_dir = os.path.join(os.getcwd(), "shared")
     plugins_dir = os.path.join(shared_dir, "plugins")
     include_dir = ''.join(glob.glob(os.path.join(shared_dir, "include*")))
