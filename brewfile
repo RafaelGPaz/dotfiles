@@ -3,6 +3,7 @@ cask_args appdir: '/Applications'
 tap 'homebrew/bundle'
 tap 'puma/puma'
 
+cask 'adobe-dng-converter'
 cask 'alfred'
 brew 'antigen'
 cask 'appcleaner'
