@@ -17,5 +17,57 @@
 		"prefix": "hid",
 		"body": "hide=\"y\"",
 		"description": "Hide attribute for Gforces config.xml"
+	},
+	"GForces - Hotspot Title and Text": {
+		"prefix": "tit",
+		"body": [
+		"<data name=\"title_hs_1_en\"></data>",
+		"<data name=\"text_hs_1_en\"></data>",
+		"<data name=\"title_hs_2_en\"></data>",
+		"<data name=\"text_hs_2_en\"></data>",
+		"<data name=\"title_hs_3_en\"></data>",
+		"<data name=\"text_hs_3_en\"></data>",
+		"<data name=\"title_hs_4_en\"></data>",
+		"<data name=\"text_hs_4_en\"></data>",
+		"<data name=\"title_hs_5_en\"></data>",
+		"<data name=\"text_hs_5_en\"></data>",
+		"<data name=\"title_hs_6_en\"></data>",
+		"<data name=\"text_hs_6_en\"></data>",
+		"<data name=\"title_hs_7_en\"></data>",
+		"<data name=\"text_hs_7_en\"></data>",
+		"<data name=\"title_hs_8_en\"></data>",
+		"<data name=\"text_hs_8_en\"></data>",
+		"<data name=\"title_hs_9_en\"></data>",
+		"<data name=\"text_hs_9_en\"></data>",
+		"<data name=\"title_hs_10_en\"></data>",
+		"<data name=\"text_hs_10_en\"></data>"
+		],
+		"description": "Insert <data> tags for text hotspots"
+	},
+	"GForces - Hotspot Title and Text": {
+		"prefix": "tit-ar",
+		"body": [
+		"<data name=\"title_hs_1_ar\"></data>",
+		"<data name=\"text_hs_1_ar\"></data>",
+		"<data name=\"title_hs_2_ar\"></data>",
+		"<data name=\"text_hs_2_ar\"></data>",
+		"<data name=\"title_hs_3_ar\"></data>",
+		"<data name=\"text_hs_3_ar\"></data>",
+		"<data name=\"title_hs_4_ar\"></data>",
+		"<data name=\"text_hs_4_ar\"></data>",
+		"<data name=\"title_hs_5_ar\"></data>",
+		"<data name=\"text_hs_5_ar\"></data>",
+		"<data name=\"title_hs_6_ar\"></data>",
+		"<data name=\"text_hs_6_ar\"></data>",
+		"<data name=\"title_hs_7_ar\"></data>",
+		"<data name=\"text_hs_7_ar\"></data>",
+		"<data name=\"title_hs_8_ar\"></data>",
+		"<data name=\"text_hs_8_ar\"></data>",
+		"<data name=\"title_hs_9_ar\"></data>",
+		"<data name=\"text_hs_9_ar\"></data>",
+		"<data name=\"title_hs_10_ar\"></data>",
+		"<data name=\"text_hs_10_ar\"></data>"
+		],
+		"description": "Insert <data> translatiin tags for text hotspots"
 	}
 }
