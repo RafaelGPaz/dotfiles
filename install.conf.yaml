@@ -6,14 +6,18 @@
 
 - link:
     ~/.bash_profile:
-    ~/.config/powershell: powershell
+    # ~/.config/powershell:
+      # create: true
+      # path: powershell
     ~/.dotfiles: ''
     ~/.gitconfig:
     ~/.gitignore.global:
     ~/.p10k.zsh:
     ~/.zshrc:
-    ~/Documents/Adobe Scripts: bin/adobe-extendscript
-    ~/Library/Application Support/Code - Insiders/User: vscode
+    # ~/Documents/Adobe Scripts: bin/adobe-extendscript
+    ~/Library/Application Support/Code - Insiders/User:
+      force: true
+      path: vscode
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
     - if [[ ! -a $HOME/.hushlogin ]]; then touch "$HOME/.hushlogin"; fi # Prevent last login message in terminal
