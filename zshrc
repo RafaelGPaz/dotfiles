@@ -47,7 +47,12 @@ if command -v pyenv 1>/dev/null 2>&1; then;  eval "$(pyenv init -)"; fi
 # virtualenv-wrapper:
 # It's a pyenv plugin.
 # It keeps all virtualenvs in one directory ($WORKON_HOME) and manage them.
-# Type wirtualenvwrapper to list al the commands.
+# Type virtualenvwrapper to list al the commands.
+# Install: pip3 install virtualenvwrapper
+# Use:
+# 1. Type 'mkvirtualenv -a [path to project folder] [projectname]'
+# 2. In a terminal type: workon [projectname]
+# 3. Run python install -r requirements.txt
 export WORKON_HOME=$HOME/.virtualenvs
 pyenv virtualenvwrapper_lazy
 
