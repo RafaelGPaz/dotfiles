@@ -3,7 +3,7 @@
 // Breadcrumbs
     "breadcrumbs.enabled": true,
 // Diff Editor
-    "diffEditor.renderSideBySide": true,
+    "diffEditor.renderSideBySide": false,
 // Editor
     "editor.cursorBlinking": "solid",
     "editor.detectIndentation": true,
