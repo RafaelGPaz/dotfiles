@@ -586,5 +586,19 @@
 		"paths": [],
 		"group": "",
 		"enabled": true
+	},
+	{
+		"name": "Electra - GDI",
+		"rootPath": "/Users/rafael/virtual-tours/electra/gdi",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
+		"name": "The Kings School - Metareal",
+		"rootPath": "/Users/rafael/virtual-tours/the-kings-school/metareal",
+		"paths": [],
+		"group": "",
+		"enabled": true
 	}
 ]
