@@ -96,6 +96,7 @@
     // Workbench
     "workbench.activityBar.visible": false,
     "workbench.colorTheme": "Material Theme Darker High Contrast",
+    "workbench.editor.enablePreview": true,
     "workbench.editor.labelFormat": "long",
     "workbench.editor.showTabs": false,
     "workbench.colorCustomizations": {
