@@ -55,6 +55,11 @@ defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 # Disable smart quotes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
+#  Make dock only display apps that are currently running
+defaults write com.apple.dock static-only -bool true
+
+# Reduce Dock's icon size
+defaults write com.apple.dock tilesize -int 34
 ###############################################################################
 # SSD-specific tweaks                                                         #
 ###############################################################################
