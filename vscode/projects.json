@@ -15,21 +15,21 @@
 	},
 	{
 		"name": "Chevrolet Manufacturer v1",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/chevrolet_manufacturer/v1.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/chevrolet_manufacturer/v1",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Chevrolet Manufacturer v2",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/chevrolet_manufacturer/v2.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/chevrolet_manufacturer/v2",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Chevrolet Manufacturer v3",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/chevrolet_manufacturer/v3.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/chevrolet_manufacturer/v3",
 		"paths": [],
 		"group": "",
 		"enabled": true
@@ -43,56 +43,42 @@
 	},
 	{
 		"name": "Lexus Manufacturer v1",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/lexus_manufacturer/v1.code-workspace",
+		"rootPath": "/Volumes/Extra/gforces/manufacturers/lexus_manufacturer/v1",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Lexus Manufacturer v2",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/lexus_manufacturer/v2.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/lexus_manufacturer/v2",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Lexus Manufacturer v3",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/lexus_manufacturer/v3.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/lexus_manufacturer/v3",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Lexus Manufacturer v4",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/lexus_manufacturer/v4.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/lexus_manufacturer/v4",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Toyota Manufacturer v1",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/toyota_manufacturer/v1.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/toyota_manufacturer/v1",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Toyota Manufacturer v2",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/toyota_manufacturer/v2.code-workspace",
-		"paths": [],
-		"group": "",
-		"enabled": true
-	},
-	{
-		"name": "Powershell",
-		"rootPath": "$home/.config/powershell/",
-		"paths": [],
-		"group": "",
-		"enabled": true
-	},
-	{
-		"name": "New-GforcesTour",
-		"rootPath": "$home/dotfiles/powershell/Scripts/New-GforcesTour/",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/toyota_manufacturer/v2",
 		"paths": [],
 		"group": "",
 		"enabled": true
@@ -112,13 +98,6 @@
 		"enabled": true
 	},
 	{
-		"name": "AFrame-Project1",
-		"rootPath": "$home/projects/AFrame/AFrame-Project1",
-		"paths": [],
-		"group": "",
-		"enabled": true
-	},
-	{
 		"name": "TourVista Website",
 		"rootPath": "$home/websites/tourvista/tourvista.co.uk/pelican",
 		"paths": [],
@@ -127,56 +106,56 @@
 	},
 	{
 		"name": "Maplewell Hall School",
-		"rootPath": "$home/virtual-tours/maplewell_hall_school",
+		"rootPath": "/Volumes/Extra/virtual-tours/maplewell_hall_school",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Henley Business School",
-		"rootPath": "$home/virtual-tours/henley_business_school",
+		"rootPath": "/Volumes/Extra/virtual-tours/henley_business_school",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Gforces - Advanced hs v2",
-		"rootPath": "$home/virtual-tours/gforces/examples/projects/examples/advanced_hs/advanced_hs_v2",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/examples/projects/examples/advanced_hs/advanced_hs_v2",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Health and Safety",
-		"rootPath": "$home/virtual-tours/health_and_safety",
+		"rootPath": "/Volumes/Extra/virtual-tours/health_and_safety",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "HROwen - Examples",
-		"rootPath": "$home/virtual-tours/hr_owen/examples",
+		"rootPath": "/Volumes/Extra/virtual-tours/hr_owen/examples",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Gforces - Examples - Lexus IS 2017",
-		"rootPath": "$home/virtual-tours/gforces/examples/projects/examples/lexus_is_2017",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/examples/projects/examples/lexus_is_2017",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "HROwen - Second hand cars",
-		"rootPath": "$home/virtual-tours/hr_owen/second_hand_cars",
+		"rootPath": "/Volumes/Extra/virtual-tours/hr_owen/second_hand_cars",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Gforces - LEVC Manufacturer v1",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/levc_manufacturer/v1.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/levc_manufacturer/v1",
 		"paths": [],
 		"group": "",
 		"enabled": true
@@ -190,28 +169,21 @@
 	},
 	{
 		"name": "Arsenal - Twitter",
-		"rootPath": "$home/virtual-tours/arsenal/twitter",
-		"paths": [],
-		"group": "",
-		"enabled": true
-	},
-	{
-		"name": "GForces - Cars V10",
-		"rootPath": "$home/virtual-tours/gforces/cars/.src",
+		"rootPath": "/Volumes/Extra/virtual-tours/arsenal/twitter",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "GForces GMC Manufacturer v1",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/gmc_manufacturer/v1.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/gmc_manufacturer/v1",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "GForces GMC Manufacturer v2",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/gmc_manufacturer/v2.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/gmc_manufacturer/v2",
 		"paths": [],
 		"group": "",
 		"enabled": true
@@ -232,7 +204,7 @@
 	},
 	{
 		"name": "GForces - Example - V10 Experience",
-		"rootPath": "$home/virtual-tours/gforces/examples/projects/examples/V10-experience",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/examples/projects/examples/V10-experience",
 		"paths": [],
 		"group": "",
 		"enabled": true
@@ -246,49 +218,49 @@
 	},
 	{
 		"name": "Gforces - Ford Manufacturer v1",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/ford_manufacturer/v1.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/ford_manufacturer/v1",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Gforces - Ford Manufacturer v2",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/ford_manufacturer/v2.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/ford_manufacturer/v2",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Gforces - Ford Manufacturer v3",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/ford_manufacturer/v3.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/ford_manufacturer/v3",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "GForces - Lincoln Manufacturer v1",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/lincoln_manufacturer/v1.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/lincoln_manufacturer/v1",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Clarendon - Covent Garden Safari",
-		"rootPath": "$home/virtual-tours/clarendon-covent-garden-safari/vs.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/clarendon-covent-garden-safari/vs.code-workspace",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Gforces - Cadillac Manufacturer V1",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/cadillac_manufacturer/v1.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/cadillac_manufacturer/v1",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Gforces - Cadillac Manufacturer V2",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/cadillac_manufacturer/v2.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/cadillac_manufacturer/v2",
 		"paths": [],
 		"group": "",
 		"enabled": true
@@ -302,21 +274,21 @@
 	},
 	{
 		"name": "Gforces V10 Shared folder",
-		"rootPath": "$home/virtual-tours/gforces/cars/shared",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/cars/shared",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Gforces - Dodge Manufacturer v1",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/dodge_manufacturer/v1.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/dodge_manufacturer/v1",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Gforces - Chrysler Manufacturer v1",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/chrysler_manufacturer/v1.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/chrysler_manufacturer/v1",
 		"paths": [],
 		"group": "",
 		"enabled": true
@@ -330,98 +302,98 @@
 	},
 	{
 		"name": "Gforces - Jeep Manufacturer v1",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/jeep_manufacturer/v1.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/jeep_manufacturer/v1",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "GForces - Volvo Manufacturer v1",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/volvo_manufacturer/v1.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/volvo_manufacturer/v1",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Stirling University - Graduation Day",
-		"rootPath": "$home/virtual-tours/stirling-university/graduation-day",
+		"rootPath": "/Volumes/Extra/virtual-tours/stirling-university/graduation-day",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Stirling University - Stirling Court Hotel",
-		"rootPath": "$home/virtual-tours/stirling-university/stirling-court-hotel",
+		"rootPath": "/Volumes/Extra/virtual-tours/stirling-university/stirling-court-hotel",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Stirling University - Student Accommodation",
-		"rootPath": "$home/virtual-tours/stirling-university/student-accommodation",
+		"rootPath": "/Volumes/Extra/virtual-tours/stirling-university/student-accommodation",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Stirling University - Virtual Tour",
-		"rootPath": "$home/virtual-tours/stirling-university/virtual-tour",
+		"rootPath": "/Volumes/Extra/virtual-tours/stirling-university/virtual-tour",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "GForces - Ram  Manufacturer v1",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/ram_manufacturer/v1.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/ram_manufacturer/v1",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Gforces - Honda Manufacturer v1",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/honda_manufacturer/v1.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/honda_manufacturer/v1",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "GForces - Mazda Manufacturer v1",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/mazda_manufacturer/v1.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/mazda_manufacturer/v1",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Gforces - Mazda Manufacturer v2",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/mazda_manufacturer/v2.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/mazda_manufacturer/v2",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "GForces - Mazda Manufacturer v3",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/mazda_manufacturer/v3.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/mazda_manufacturer/v3",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "GForces - Mazda Manufacturer v4",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/mazda_manufacturer/v4.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/mazda_manufacturer/v4",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Gforces - Suzuki Manufacturer v1",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/suzuki_manufacturer/v1.code-workspace",
+		"rootPath": "$/Volumes/Extra/virtual-tours/gforces/manufacturers/suzuki_manufacturer/v1",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "GForces - Example V10 New Backgrounds",
-		"rootPath": "$home/virtual-tours/gforces/examples/projects/examples/v10_backgrounds",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/examples/projects/examples/v10_backgrounds",
 		"paths": [],
 		"group": "",
 		"enabled": true
@@ -435,70 +407,63 @@
 	},
 	{
 		"name": "GForces Example Multiview",
-		"rootPath": "$home/virtual-tours/gforces/examples/projects/examples/multi-view",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/examples/projects/examples/multi-view",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Tractor New Holland T6080",
-		"rootPath": "$home/virtual-tours/tractors/new-holland-t6080",
-		"paths": [],
-		"group": "",
-		"enabled": true
-	},
-	{
-		"name": "Adobe Extendscript Folder",
-		"rootPath": "$home/dotfiles/bin/adobe-extendscript",
+		"rootPath": "/Volumes/Extra/virtual-tours/tractors/new-holland-t6080",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Yachts",
-		"rootPath": "$home/virtual-tours/yachts/",
+		"rootPath": "/Volumes/Extra/virtual-tours/yachts/",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Kia Manufacturer v1",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/kia_manufacturer/v1.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/kia_manufacturer/v1",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Kia Manufacturer v2",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/kia_manufacturer/v2.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/kia_manufacturer/v2",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Renault Manufacturer v1",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/renault_manufacturer/v1.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/renault_manufacturer/v1",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Subaru Manufacturer v1",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/subaru_manufacturer/v1.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/subaru_manufacturer/v1",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Vauxhall Manufacturer v1",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/vauxhall_manufacturer/v1.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/vauxhall_manufacturer/v1",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Isuzu Manufacturer v1",
-		"rootPath": "$home/virtual-tours/gforces/manufacturers/isuzu_manufacturer/v1.code-workspace",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/isuzu_manufacturer/v1",
 		"paths": [],
 		"group": "",
 		"enabled": true
@@ -512,14 +477,14 @@
 	},
 	{
 		"name": "GForces - Example - Car Interior Hotspots",
-		"rootPath": "$home/virtual-tours/gforces/examples/car-interior-hotspots",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/examples/car-interior-hotspots",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Tractor Media",
-		"rootPath": "/Users/rafael/virtual-tours/tractor-media",
+		"rootPath": "/Volumes/Extra/virtual-tours/tractor-media",
 		"paths": [],
 		"group": "",
 		"enabled": true
@@ -533,42 +498,42 @@
 	},
 	{
 		"name": "Bell Classics - Cars",
-		"rootPath": "/Users/rafael/virtual-tours/bell-classics/cars",
+		"rootPath": "/Volumes/Extra/virtual-tours/bell-classics/cars",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Bell Classics - Showroom",
-		"rootPath": "/Users/rafael/virtual-tours/bell-classics/showroom",
+		"rootPath": "/Volumes/Extra/virtual-tours/bell-classics/showroom",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Toyota Supra 2019 VR Visualiser",
-		"rootPath": "/Users/rafael/virtual-tours/gforces/examples/visualiser/toyota_manufacturer",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/examples/visualiser/toyota_manufacturer",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "GForces Example Kia Experience",
-		"rootPath": "/Users/rafael/virtual-tours/gforces/examples/kia-experience",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/examples/kia-experience",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "GForces Lists",
-		"rootPath": "/Users/rafael/virtual-tours/gforces/html",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/html",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Apartments",
-		"rootPath": "/Users/rafael/virtual-tours/apartments",
+		"rootPath": "%home/virtual-tours/apartments",
 		"paths": [],
 		"group": "",
 		"enabled": true
@@ -582,21 +547,21 @@
 	},
 	{
 		"name": "Website - Smile GBAS WG ",
-		"rootPath": "/Users/rafael/websites/jekyll-websites/project",
+		"rootPath": "$home/websites/jekyll-websites/project",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "Electra - GDI",
-		"rootPath": "/Users/rafael/virtual-tours/electra/gdi",
+		"rootPath": "/Volumes/Extra/virtual-tours/electra/gdi",
 		"paths": [],
 		"group": "",
 		"enabled": true
 	},
 	{
 		"name": "The Kings School - Metareal",
-		"rootPath": "/Users/rafael/virtual-tours/the-kings-school/metareal",
+		"rootPath": "/Volumes/Extra/virtual-tours/the-kings-school/metareal",
 		"paths": [],
 		"group": "",
 		"enabled": true
