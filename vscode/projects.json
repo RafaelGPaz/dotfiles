@@ -572,5 +572,12 @@
 		"paths": [],
 		"group": "",
 		"enabled": true
+	},
+	{
+		"name": "GForces - BMW Manufacturer v2",
+		"rootPath": "/Volumes/Extra/virtual-tours/gforces/manufacturers/bmw_manufacturer/v2",
+		"paths": [],
+		"group": "",
+		"enabled": true
 	}
 ]
