@@ -565,5 +565,12 @@
 		"paths": [],
 		"group": "",
 		"enabled": true
+	},
+	{
+		"name": "Electra - Demo",
+		"rootPath": "/Users/rafael/virtual-tours/electra/electra-demo",
+		"paths": [],
+		"group": "",
+		"enabled": true
 	}
 ]
