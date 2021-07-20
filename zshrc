@@ -26,6 +26,10 @@ antigen apply
 # Command prompt
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# zsh-completions
+autoload -Uz compinit
+compinit
+
 ######################################################
 # Python                                             #
 ######################################################
