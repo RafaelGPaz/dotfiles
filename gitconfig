@@ -86,3 +86,5 @@
     cmd = code --wait --diff $LOCAL $REMOTE
 [credential]
 	helper = store
+[user]
+	email = 21228383+RafaelGPaz@users.noreply.github.com
